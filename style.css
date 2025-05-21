@@ -1,1 +1,352 @@
+/* Global Resets and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f9f9f9; /* Light grey background for a softer look */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px; /* Base font size */
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px; /* Max width for content */
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50; /* Dark blue-grey for headings */
+    margin-bottom: 0.8em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8em; margin-bottom: 0.5em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; color: #34495e; } /* Slightly lighter for sub-sub-headings */
+
+p {
+    margin-bottom: 1.2em;
+}
+
+a {
+    color: #16a085; /* Teal accent color */
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #1abc9c; /* Lighter teal on hover */
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-bottom: 1.5em;
+    padding-left: 20px; /* Standard indentation for lists */
+}
+
+li {
+    margin-bottom: 0.8em;
+}
+
+/* Header & Navigation */
+.site-header {
+    background-color: #2c3e50; /* Dark blue-grey */
+    color: #ecf0f1; /* Light grey/white text */
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.site-title {
+    font-size: 1.8em;
+    margin-bottom: 0;
+}
+.site-title a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+.site-title a:hover {
+    color: #fff;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.main-nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background-color: #34495e; /* Slightly lighter for hover/active */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hamburger Menu for Mobile */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    cursor: pointer;
+}
+
+
+/* Main Content Area */
+main {
+    background-color: #fff;
+    padding: 30px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #34495e; /* Slightly lighter than header */
+    color: #bdc3c7; /* Muted grey text */
+    text-align: center;
+    padding: 2em 0;
+    font-size: 0.9em;
+}
+.site-footer p {
+    margin-bottom: 0.5em;
+}
+.site-footer a {
+    color: #ecf0f1;
+}
+.site-footer a:hover {
+    color: #fff;
+}
+
+/* Homepage Specific */
+.hero {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Space between image and text */
+    margin-bottom: 2em;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image img {
+    max-width: 250px; /* Control image size */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    float: none; /* Remove float from original */
+}
+
+.highlights-section {
+    background-color: #f0f4f8; /* Very light blue for highlight background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 2em;
+}
+.highlights-section h2 {
+    margin-top: 0;
+}
+
+/* Publication & List Item Styling */
+.publication-item, .talk-item, .teaching-item, .award-item, .service-item {
+    margin-bottom: 1.5em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+}
+.publication-item:last-child, .talk-item:last-child, .teaching-item:last-child, .award-item:last-child, .service-item:last-child {
+    border-bottom: none;
+}
+
+.publication-title, .talk-title {
+    font-weight: 500; /* Montserrat medium */
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+    font-size: 1.15em; /* Slightly larger than body text */
+    margin-bottom: 0.3em;
+}
+
+.publication-authors, .talk-details {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 0.3em;
+}
+
+.publication-venue, .talk-venue {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 0.5em;
+}
+
+.publication-links a, .talk-links a {
+    margin-right: 10px;
+    font-size: 0.9em;
+    background-color: #e9ecef;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #16a085;
+    display: inline-block;
+    margin-top: 5px;
+}
+.publication-links a:hover, .talk-links a:hover {
+    background-color: #dde2e6;
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+.publication-notes { /* For "Preprint available upon request", "Based on PhD thesis" etc. */
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 0.3em;
+    padding-left: 15px; /* Indent notes slightly */
+    border-left: 2px solid #16a085;
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+/* Button Style for CV download etc */
+.btn {
+    display: inline-block;
+    background-color: #16a085;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+.btn:hover {
+    background-color: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* MathJax specific - ensure it doesn't get too wide */
+.MathJax_Display, .MJXc-display {
+    overflow-x: auto;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+
+    .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .main-nav ul {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-nav ul.active {
+        display: flex; /* Show when active (JS toggle) */
+    }
+
+    .main-nav li {
+        margin-left: 0;
+        width: 100%;
+    }
+    .main-nav a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #34495e;
+    }
+    .main-nav li:last-child a {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+        position: absolute;
+        top: 22px; /* Adjust as needed */
+        right: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center; /* Center image on mobile */
+        text-align: center;
+    }
+    .hero-text {
+        order: 2; /* Text below image */
+    }
+    .hero-image {
+        order: 1; /* Image above text */
+        margin-bottom: 1em;
+    }
+    .hero-image img {
+        max-width: 200px; /* Slightly smaller for mobile */
+    }
+}
+
+/* Specific for list item details (like teaching Q-scores) */
+.detail-item {
+    margin-bottom: 0.5em;
+}
+.detail-label {
+    font-weight: bold;
+    color: #34495e;
+}
+.detail-value {
+    color: #555;
+}
+
+/* For sections like Volunteering and Music */
+.info-section ul {
+    list-style-type: disc; /* Or none, if preferred */
+}
+.info-section li {
+    margin-bottom: 0.5em;
+}
