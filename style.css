@@ -9,20 +9,41 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --primary-text-color: #333;
+    --heading-color: #2c3e50;       /* Dark Slate Blue/Grey - Professional */
+    --header-bg: #2c3e50;           /* Dark Slate Blue/Grey */
+    --header-text-color: #ecf0f1;   /* Light Grey/White */
+    --footer-bg: #34495e;           /* Slightly Lighter Dark Slate Blue/Grey */
+    --footer-text-color: #bdc3c7;   /* Muted Grey */
+    --footer-link-color: #ecf0f1;
+
+    --accent-blue: #005A9C;         /* A strong, professional navy/royal blue */
+    --accent-blue-hover: #0078D4;   /* A slightly brighter, but still professional blue */
+    
+    --light-background: #f9f9f9;
+    --content-background: #fff;
+    --border-color: #eee;
+    
+    --highlight-section-bg: #e6f0f7; /* Very light, muted blue for highlight sections */
+    --link-tag-bg: #d9e8f5;          /* Light blue for [arXiv], [journal] tag backgrounds */
+    --link-tag-bg-hover: #c0d9f0;    /* Hover for link tags */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.7;
-    color: #333;
-    background-color: #f9f9f9; /* Light grey background for a softer look */
+    color: var(--primary-text-color);
+    background-color: var(--light-background); 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
 }
 
 .container {
     width: 90%;
-    max-width: 1000px; /* Max width for content */
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     flex-grow: 1;
@@ -30,7 +51,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
-    color: #2c3e50; /* Dark blue-grey for headings */
+    color: var(--heading-color);
     margin-bottom: 0.8em;
     line-height: 1.3;
 }
@@ -38,25 +59,25 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2.8em; margin-bottom: 0.5em; }
 h2 { font-size: 2.2em; }
 h3 { font-size: 1.8em; }
-h4 { font-size: 1.4em; color: #34495e; } /* Slightly lighter for sub-sub-headings */
+h4 { font-size: 1.4em; color: #34495e; } /* Slightly lighter than main heading color */
 
 p {
     margin-bottom: 1.2em;
 }
 
 a {
-    color: #16a085; /* Teal accent color */
+    color: var(--accent-blue);
     text-decoration: none;
 }
 
 a:hover, a:focus {
-    color: #1abc9c; /* Lighter teal on hover */
+    color: var(--accent-blue-hover);
     text-decoration: underline;
 }
 
 ul, ol {
     margin-bottom: 1.5em;
-    padding-left: 20px; /* Standard indentation for lists */
+    padding-left: 20px;
 }
 
 li {
@@ -65,8 +86,8 @@ li {
 
 /* Header & Navigation */
 .site-header {
-    background-color: #2c3e50; /* Dark blue-grey */
-    color: #ecf0f1; /* Light grey/white text */
+    background-color: var(--header-bg);
+    color: var(--header-text-color);
     padding: 1em 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -84,7 +105,7 @@ li {
     margin-bottom: 0;
 }
 .site-title a {
-    color: #ecf0f1;
+    color: var(--header-text-color);
     text-decoration: none;
 }
 .site-title a:hover {
@@ -104,7 +125,7 @@ li {
 }
 
 .main-nav a {
-    color: #ecf0f1;
+    color: var(--header-text-color);
     text-decoration: none;
     font-weight: 500;
     padding: 5px 10px;
@@ -114,25 +135,25 @@ li {
 
 .main-nav a:hover,
 .main-nav a.active {
-    background-color: #34495e; /* Slightly lighter for hover/active */
+    background-color: var(--footer-bg); /* Using footer-bg for a coordinated dark accent */
     color: #fff;
     text-decoration: none;
 }
 
 /* Hamburger Menu for Mobile */
 .menu-toggle {
-    display: none; /* Hidden by default */
+    display: none;
     font-size: 1.5em;
     background: none;
     border: none;
-    color: #ecf0f1;
+    color: var(--header-text-color);
     cursor: pointer;
 }
 
 
 /* Main Content Area */
 main {
-    background-color: #fff;
+    background-color: var(--content-background);
     padding: 30px 0;
     box-shadow: 0 0 15px rgba(0,0,0,0.05);
     border-radius: 8px;
@@ -142,8 +163,8 @@ main {
 
 /* Footer */
 .site-footer {
-    background-color: #34495e; /* Slightly lighter than header */
-    color: #bdc3c7; /* Muted grey text */
+    background-color: var(--footer-bg);
+    color: var(--footer-text-color);
     text-align: center;
     padding: 2em 0;
     font-size: 0.9em;
@@ -152,7 +173,7 @@ main {
     margin-bottom: 0.5em;
 }
 .site-footer a {
-    color: #ecf0f1;
+    color: var(--footer-link-color);
 }
 .site-footer a:hover {
     color: #fff;
@@ -161,8 +182,8 @@ main {
 /* Homepage Specific */
 .hero {
     display: flex;
-    align-items: flex-start; /* Align items to the top */
-    gap: 30px; /* Space between image and text */
+    align-items: flex-start;
+    gap: 30px;
     margin-bottom: 2em;
 }
 
@@ -171,15 +192,15 @@ main {
 }
 
 .hero-image img {
-    max-width: 250px; /* Control image size */
+    max-width: 250px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    float: none; /* Remove float from original */
+    float: none;
 }
 
 .highlights-section {
-    background-color: #f0f4f8; /* Very light blue for highlight background */
+    background-color: var(--highlight-section-bg);
     padding: 20px;
     border-radius: 8px;
     margin-top: 2em;
@@ -192,17 +213,17 @@ main {
 .publication-item, .talk-item, .teaching-item, .award-item, .service-item {
     margin-bottom: 1.5em;
     padding-bottom: 1em;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
 }
 .publication-item:last-child, .talk-item:last-child, .teaching-item:last-child, .award-item:last-child, .service-item:last-child {
     border-bottom: none;
 }
 
 .publication-title, .talk-title {
-    font-weight: 500; /* Montserrat medium */
+    font-weight: 500;
     font-family: 'Montserrat', sans-serif;
-    color: #2c3e50;
-    font-size: 1.15em; /* Slightly larger than body text */
+    color: var(--heading-color);
+    font-size: 1.15em;
     margin-bottom: 0.3em;
 }
 
@@ -222,25 +243,24 @@ main {
 .publication-links a, .talk-links a {
     margin-right: 10px;
     font-size: 0.9em;
-    background-color: #e9ecef;
+    background-color: var(--link-tag-bg);
     padding: 3px 8px;
     border-radius: 3px;
-    color: #16a085;
+    color: var(--accent-blue);
     display: inline-block;
     margin-top: 5px;
 }
 .publication-links a:hover, .talk-links a:hover {
-    background-color: #dde2e6;
-    color: #1abc9c;
+    background-color: var(--link-tag-bg-hover);
+    color: var(--accent-blue-hover);
     text-decoration: none;
 }
 
-.publication-notes { /* For "Preprint available upon request", "Based on PhD thesis" etc. */
+.publication-notes {
     font-size: 0.85em;
     color: #666;
     margin-top: 0.3em;
-    padding-left: 15px; /* Indent notes slightly */
-    border-left: 2px solid #16a085;
+    border-left: 2px solid var(--accent-blue); /* Changed border to blue */
     padding-left: 10px;
     margin-left: 5px;
 }
@@ -248,7 +268,7 @@ main {
 /* Button Style for CV download etc */
 .btn {
     display: inline-block;
-    background-color: #16a085;
+    background-color: var(--accent-blue);
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -258,7 +278,7 @@ main {
     margin-top: 10px;
 }
 .btn:hover {
-    background-color: #1abc9c;
+    background-color: var(--accent-blue-hover);
     color: #fff;
     text-decoration: none;
 }
@@ -286,12 +306,12 @@ main {
     }
 
     .main-nav ul {
-        display: none; /* Hide nav links by default on mobile */
+        display: none;
         flex-direction: column;
         width: 100%;
     }
     .main-nav ul.active {
-        display: flex; /* Show when active (JS toggle) */
+        display: flex;
     }
 
     .main-nav li {
@@ -301,33 +321,33 @@ main {
     .main-nav a {
         display: block;
         padding: 10px;
-        border-bottom: 1px solid #34495e;
+        border-bottom: 1px solid var(--footer-bg); /* Using footer-bg for consistency */
     }
     .main-nav li:last-child a {
         border-bottom: none;
     }
 
     .menu-toggle {
-        display: block; /* Show hamburger icon */
+        display: block;
         position: absolute;
-        top: 22px; /* Adjust as needed */
+        top: 22px;
         right: 20px;
     }
 
     .hero {
         flex-direction: column;
-        align-items: center; /* Center image on mobile */
+        align-items: center;
         text-align: center;
     }
     .hero-text {
-        order: 2; /* Text below image */
+        order: 2;
     }
     .hero-image {
-        order: 1; /* Image above text */
+        order: 1;
         margin-bottom: 1em;
     }
     .hero-image img {
-        max-width: 200px; /* Slightly smaller for mobile */
+        max-width: 200px;
     }
 }
 
@@ -345,7 +365,7 @@ main {
 
 /* For sections like Volunteering and Music */
 .info-section ul {
-    list-style-type: disc; /* Or none, if preferred */
+    list-style-type: disc;
 }
 .info-section li {
     margin-bottom: 0.5em;
