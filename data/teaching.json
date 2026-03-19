@@ -1,0 +1,160 @@
+{
+  "instructor": [
+    {
+      "id": "inst-1",
+      "course": "Math 223b",
+      "title": "Rational points on varieties",
+      "institution": "Harvard University",
+      "semester": "Spring 2025",
+      "year": 2025,
+      "rating": null,
+      "ratingMax": 5.0,
+      "links": {},
+      "notes": "expected"
+    },
+    {
+      "id": "inst-2",
+      "course": "Math 295x",
+      "title": "Arithmetic statistics",
+      "institution": "Harvard University",
+      "semester": "Spring 2024",
+      "year": 2024,
+      "rating": 5.0,
+      "ratingMax": 5.0,
+      "links": { "website": "https://ashvin-swaminathan.github.io/home/Math223br.html" },
+      "notes": null
+    },
+    {
+      "id": "inst-3",
+      "course": "Math 223br",
+      "title": "Rational Points on Varieties",
+      "institution": "Harvard University",
+      "semester": "Spring 2024",
+      "year": 2024,
+      "rating": null,
+      "ratingMax": 5.0,
+      "links": { "website": "https://ashvin-swaminathan.github.io/home/Math223br.html" },
+      "notes": null
+    }
+  ],
+  "assistant": [
+    {
+      "id": "asst-1",
+      "course": "Math 202",
+      "title": "Linear algebra with applications",
+      "institution": "Princeton University",
+      "semester": "2020",
+      "year": 2020,
+      "rating": 4.0,
+      "ratingMax": 5.0,
+      "links": {},
+      "notes": null
+    }
+  ],
+  "courseAssistant": [
+    {
+      "id": "ca-1",
+      "course": "Math 137",
+      "title": "Introduction to algebraic geometry",
+      "institution": "Harvard University",
+      "professor": "Peter Kronheimer",
+      "semester": "2017",
+      "year": 2017,
+      "rating": 5.0,
+      "ratingMax": 5.0,
+      "links": {},
+      "notes": null
+    },
+    {
+      "id": "ca-2",
+      "course": "Math 131",
+      "title": "Topology I: Topological spaces & the fundamental group",
+      "institution": "Harvard University",
+      "professor": "Joe Harris",
+      "semester": "2016",
+      "year": 2016,
+      "rating": 4.5,
+      "ratingMax": 5.0,
+      "links": {},
+      "notes": null
+    },
+    {
+      "id": "ca-3",
+      "course": "Math 123",
+      "title": "Algebra II: Theory of rings & fields",
+      "institution": "Harvard University",
+      "professor": "Arul Shankar",
+      "semester": "2016",
+      "year": 2016,
+      "rating": 4.9,
+      "ratingMax": 5.0,
+      "links": {},
+      "notes": null
+    },
+    {
+      "id": "ca-4",
+      "course": "Math 114",
+      "title": "Analysis II: Measure, integration, & Banach spaces",
+      "institution": "Harvard University",
+      "professor": "Daniel Cristofaro-Gardiner",
+      "semester": "2015",
+      "year": 2015,
+      "rating": 4.9,
+      "ratingMax": 5.0,
+      "links": {},
+      "notes": null
+    },
+    {
+      "id": "ca-5",
+      "course": "Math 55b",
+      "title": "Honors real & complex analysis",
+      "institution": "Harvard University",
+      "professor": "Dennis Gaitsgory",
+      "semester": "2015",
+      "year": 2015,
+      "rating": 4.3,
+      "ratingMax": 5.0,
+      "links": {},
+      "notes": null
+    },
+    {
+      "id": "ca-6",
+      "course": "Math 55a",
+      "title": "Honors abstract algebra",
+      "institution": "Harvard University",
+      "professor": "Dennis Gaitsgory",
+      "semester": "2014",
+      "year": 2014,
+      "rating": 4.6,
+      "ratingMax": 5.0,
+      "links": {},
+      "notes": null
+    }
+  ],
+  "mentorship": [
+    {
+      "id": "ment-1",
+      "name": "Matt King",
+      "role": "Harvard PhD student",
+      "period": "2022-2024",
+      "description": "Coauthored paper",
+      "links": { "arxiv": "https://arxiv.org/pdf/2409.02717.pdf" }
+    },
+    {
+      "id": "ment-2",
+      "name": "Eliot Hodges",
+      "role": "Harvard undergrad",
+      "period": "2024-present",
+      "description": "Advised senior thesis; winner of the Hoopes Prize; coauthored papers (in preparation).",
+      "links": {}
+    },
+    {
+      "id": "ment-3",
+      "name": "Tanav Choudhary",
+      "role": "Harvard undergrad",
+      "period": "2025-present",
+      "description": null,
+      "links": {}
+    }
+  ]
+}

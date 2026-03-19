@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Ashvin Swaminathan</title>
+<style>
+  :root { --accent: #034694; --bg: #fff; --fg: #1a1a1a; --border: #ccc; --hover: #e8eef6; --radius: 6px; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; color: var(--fg); background: var(--bg); line-height: 1.5; }
+
+  /* Header */
+  .header { background: var(--accent); color: #fff; padding: 12px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .header h1 { font-size: 18px; font-weight: 600; }
+  .header button { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 6px 14px; border-radius: var(--radius); cursor: pointer; font-size: 13px; }
+  .header button:hover { background: rgba(255,255,255,0.25); }
+
+  /* Tabs */
+  .tabs { display: flex; border-bottom: 2px solid var(--border); background: #f7f8fa; padding: 0 24px; overflow-x: auto; }
+  .tab { padding: 10px 18px; cursor: pointer; font-size: 14px; font-weight: 500; border-bottom: 2px solid transparent; margin-bottom: -2px; color: #555; white-space: nowrap; }
+  .tab:hover { color: var(--accent); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* Content */
+  .content { max-width: 960px; margin: 24px auto; padding: 0 24px; }
+  .placeholder { text-align: center; padding: 80px 24px; color: #888; }
+
+  /* Entry list */
+  .entry-list { list-style: none; }
+  .entry-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 12px; border-bottom: 1px solid #eee; gap: 12px; }
+  .entry-item:hover { background: var(--hover); }
+  .entry-title { font-size: 14px; flex: 1; }
+  .entry-meta { font-size: 12px; color: #777; }
+  .entry-actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .entry-actions button { font-size: 12px; padding: 3px 10px; border-radius: var(--radius); cursor: pointer; border: 1px solid var(--border); background: #fff; }
+  .entry-actions button:hover { background: var(--hover); }
+  .entry-actions .del:hover { background: #fdd; color: #a00; border-color: #e88; }
+
+  .add-btn { display: inline-block; margin: 16px 0; padding: 8px 16px; font-size: 13px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius); cursor: pointer; }
+  .add-btn:hover { opacity: 0.9; }
+
+  /* Form */
+  .form-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; z-index: 100; }
+  .form-panel { background: #fff; border-radius: 8px; width: 600px; max-width: 95vw; max-height: 90vh; overflow-y: auto; padding: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+  .form-panel h2 { font-size: 16px; margin-bottom: 16px; color: var(--accent); }
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 3px; color: #555; }
+  .field input, .field textarea, .field select { width: 100%; padding: 7px 10px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 13px; font-family: inherit; }
+  .field textarea { min-height: 80px; resize: vertical; }
+  .radio-group { display: flex; gap: 12px; flex-wrap: wrap; padding: 4px 0; }
+  .radio-group label { font-size: 13px; font-weight: 400; display: flex; align-items: center; gap: 4px; }
+  .form-btns { display: flex; gap: 8px; margin-top: 16px; }
+  .form-btns button { padding: 8px 18px; border-radius: var(--radius); cursor: pointer; font-size: 13px; border: 1px solid var(--border); }
+  .btn-save { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn-cancel { background: #fff; }
+
+  /* Modal */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; z-index: 200; }
+  .modal { background: #fff; border-radius: 8px; padding: 24px; max-width: 480px; width: 90vw; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+  .modal h2 { font-size: 16px; margin-bottom: 12px; color: var(--accent); }
+  .modal pre { background: #f0f0f0; padding: 12px; border-radius: var(--radius); font-size: 13px; margin: 12px 0; overflow-x: auto; }
+  .modal button { padding: 8px 18px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius); cursor: pointer; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Site Admin</h1>
+  <button id="btn-open">Open data/ Folder</button>
+  <button id="btn-build">Build &amp; Deploy</button>
+  <span id="status" style="font-size:13px;opacity:0.8"></span>
+</div>
+
+<div class="tabs" id="tabs">
+  <div class="tab active" data-tab="papers">Papers</div>
+  <div class="tab" data-tab="talks">Talks</div>
+  <div class="tab" data-tab="teaching">Teaching</div>
+  <div class="tab" data-tab="vita">Vita</div>
+  <div class="tab" data-tab="news">News</div>
+  <div class="tab" data-tab="profile">Profile</div>
+</div>
+
+<div class="content" id="content">
+  <div class="placeholder">Click <strong>Open data/ Folder</strong> to get started.</div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var dirHandle = null;
+  var data = {};
+  var activeTab = 'papers';
+
+  var TABS = ['papers', 'talks', 'teaching', 'vita', 'news', 'profile'];
+  var PAPER_SECTIONS = [
+    { id: 'in-preparation', title: 'In Preparation' },
+    { id: 'submitted', title: 'Submitted' },
+    { id: 'accepted', title: 'Accepted' },
+    { id: 'published', title: 'Published' },
+    { id: 'thesis', title: 'Thesis' },
+    { id: 'expository', title: 'Expository' }
+  ];
+  var PAPER_STATUSES = ['in-preparation', 'submitted', 'published', 'accepted', 'thesis', 'expository'];
+  var TALK_TYPES = ['invited', 'contributed'];
+
+  // ── File I/O ──────────────────────────────────────────────────
+  async function openFolder() {
+    try {
+      dirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+      await loadAll();
+      setStatus('Folder opened');
+      render();
+    } catch (e) {
+      if (e.name !== 'AbortError') setStatus('Error: ' + e.message);
+    }
+  }
+
+  async function readJSON(name) {
+    try {
+      var fh = await dirHandle.getFileHandle(name);
+      var file = await fh.getFile();
+      return JSON.parse(await file.text());
+    } catch (e) { return null; }
+  }
+
+  async function writeJSON(name, obj) {
+    var fh = await dirHandle.getFileHandle(name, { create: true });
+    var writable = await fh.createWritable();
+    await writable.write(JSON.stringify(obj, null, 2) + '\n');
+    await writable.close();
+  }
+
+  async function loadAll() {
+    for (var i = 0; i < TABS.length; i++) {
+      if (TABS[i] === 'news') continue; // news lives in profile.json
+      data[TABS[i]] = await readJSON(TABS[i] + '.json');
+    }
+  }
+
+  async function saveFile(tab) {
+    await writeJSON(tab + '.json', data[tab]);
+    setStatus(tab + '.json saved');
+  }
+
+  // ── Helpers ───────────────────────────────────────────────────
+  function setStatus(msg) { document.getElementById('status').textContent = msg; }
+  function esc(s) { if (!s) return ''; var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function genId(prefix) { return prefix + '-' + Date.now().toString(36); }
+
+  // ── Tabs ──────────────────────────────────────────────────────
+  document.getElementById('tabs').addEventListener('click', function (e) {
+    var tab = e.target.getAttribute('data-tab');
+    if (!tab) return;
+    activeTab = tab;
+    document.querySelectorAll('.tab').forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-tab') === tab); });
+    render();
+  });
+
+  // ── Render ────────────────────────────────────────────────────
+  function render() {
+    var el = document.getElementById('content');
+    if (!dirHandle) { el.innerHTML = '<div class="placeholder">Click <strong>Open data/ Folder</strong> to get started.</div>'; return; }
+    if (activeTab === 'news') { renderNews(el); return; }
+    var d = data[activeTab];
+    if (!d) { el.innerHTML = '<div class="placeholder">No data found for ' + activeTab + '.json</div>'; return; }
+
+    if (activeTab === 'papers') renderPapers(el, d);
+    else if (activeTab === 'talks') renderTalks(el, d);
+    else if (activeTab === 'teaching') renderTeaching(el, d);
+    else renderGeneric(el, d);
+  }
+
+  function entryHTML(title, meta, idx, section) {
+    var dataAttr = section ? ' data-section="' + esc(section) + '"' : '';
+    return '<li class="entry-item"' + dataAttr + '><div><div class="entry-title">' + esc(title) + '</div><div class="entry-meta">' + esc(meta) + '</div></div>'
+      + '<div class="entry-actions"><button class="edit" data-idx="' + idx + '"' + dataAttr + '>Edit</button>'
+      + '<button class="del" data-idx="' + idx + '"' + dataAttr + '>Delete</button></div></li>';
+  }
+
+  // ── Papers ────────────────────────────────────────────────────
+  function renderPapers(el, d) {
+    var html = '<button class="add-btn" id="add-entry">+ Add Paper</button><ul class="entry-list">';
+    (d.sections || []).forEach(function (sec) {
+      html += '<li style="padding:10px 12px;font-weight:600;color:var(--accent);border-bottom:1px solid #eee">' + esc(sec.title) + '</li>';
+      (sec.papers || []).forEach(function (p, i) {
+        html += entryHTML(p.title, [p.authors ? p.authors.join(', ') : '', p.year, p.venue].filter(Boolean).join(' | '), i, sec.id);
+      });
+    });
+    html += '</ul>';
+    el.innerHTML = html;
+    bindListEvents('papers');
+  }
+
+  function getPaperSection(d, sectionId) {
+    return (d.sections || []).find(function (s) { return s.id === sectionId; });
+  }
+
+  // ── Talks ─────────────────────────────────────────────────────
+  function renderTalks(el, d) {
+    var html = '<button class="add-btn" id="add-entry">+ Add Talk</button><ul class="entry-list">';
+    TALK_TYPES.forEach(function (type) {
+      var talks = d[type] || [];
+      if (!talks.length) return;
+      html += '<li style="padding:10px 12px;font-weight:600;color:var(--accent);border-bottom:1px solid #eee">' + esc(type.charAt(0).toUpperCase() + type.slice(1)) + '</li>';
+      talks.forEach(function (t, i) {
+        html += entryHTML(t.title, [t.venue, t.date].filter(Boolean).join(' | '), i, type);
+      });
+    });
+    html += '</ul>';
+    el.innerHTML = html;
+    bindListEvents('talks');
+  }
+
+  // ── Teaching ──────────────────────────────────────────────────
+  function renderTeaching(el, d) {
+    var html = '<button class="add-btn" id="add-entry">+ Add Course</button><ul class="entry-list">';
+    ['instructor', 'teaching_fellow', 'course_assistant'].forEach(function (role) {
+      var items = d[role] || [];
+      if (!items.length) return;
+      html += '<li style="padding:10px 12px;font-weight:600;color:var(--accent);border-bottom:1px solid #eee">' + esc(role.replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); })) + '</li>';
+      items.forEach(function (c, i) {
+        html += entryHTML(c.course + ': ' + c.title, [c.institution, c.semester].filter(Boolean).join(' | '), i, role);
+      });
+    });
+    html += '</ul>';
+    el.innerHTML = html;
+    bindListEvents('teaching');
+  }
+
+  // ── News (manual highlights in profile.json) ─────────────────
+  function renderNews(el) {
+    var profile = data.profile;
+    if (!profile) { el.innerHTML = '<div class="placeholder">No profile.json loaded</div>'; return; }
+    if (!profile.highlights) profile.highlights = [];
+    var manuals = [];
+    profile.highlights.forEach(function (h, i) {
+      if (h.manual) manuals.push({ item: h, idx: i });
+    });
+    var html = '<p style="margin-bottom:12px;font-size:13px;color:#888">Manual news items shown on the homepage. Auto-generated items (latest paper, upcoming talks) are not listed here.</p>';
+    html += '<button class="add-btn" id="add-news">+ Add News Item</button><ul class="entry-list">';
+    manuals.forEach(function (m) {
+      html += '<li class="entry-item"><div><div class="entry-title">' + esc(m.item.text) + '</div><div class="entry-meta">'
+        + (m.item.link ? m.item.link : 'no link') + ' | sortDate: ' + (m.item.sortDate || '?')
+        + '</div></div><div class="entry-actions">'
+        + '<button class="edit" data-idx="' + m.idx + '">Edit</button>'
+        + '<button class="del" data-idx="' + m.idx + '">Delete</button></div></li>';
+    });
+    html += '</ul>';
+    el.innerHTML = html;
+
+    document.getElementById('add-news').addEventListener('click', function () { openNewsForm(null, null); });
+    document.querySelectorAll('.entry-actions .edit').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = parseInt(this.getAttribute('data-idx'));
+        openNewsForm(profile.highlights[idx], idx);
+      });
+    });
+    document.querySelectorAll('.entry-actions .del').forEach(function (btn) {
+      btn.addEventListener('click', async function () {
+        if (!confirm('Delete this news item?')) return;
+        var idx = parseInt(this.getAttribute('data-idx'));
+        profile.highlights.splice(idx, 1);
+        await saveFile('profile');
+        render();
+      });
+    });
+  }
+
+  function openNewsForm(item, idx) {
+    var isNew = idx === null;
+    var overlay = document.createElement('div');
+    overlay.className = 'form-overlay';
+    var panel = document.createElement('div');
+    panel.className = 'form-panel';
+    panel.innerHTML = '<h2>' + (isNew ? 'Add' : 'Edit') + ' News Item</h2>';
+
+    var h = item || { text: '', link: '', sortDate: new Date().getFullYear().toString(), manual: true };
+    var f = document.createDocumentFragment();
+    f.appendChild(field('Text', 'textarea', 'text', h.text));
+    f.appendChild(field('Link URL (optional)', 'text', 'link', h.link));
+    f.appendChild(field('Sort Year (for ordering)', 'text', 'sortDate', h.sortDate));
+    panel.appendChild(f);
+
+    var btns = document.createElement('div');
+    btns.className = 'form-btns';
+    btns.innerHTML = '<button class="btn-save">Save</button><button class="btn-cancel">Cancel</button>';
+    panel.appendChild(btns);
+    overlay.appendChild(panel);
+    document.body.appendChild(overlay);
+
+    btns.querySelector('.btn-cancel').addEventListener('click', function () { overlay.remove(); });
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.remove(); });
+
+    btns.querySelector('.btn-save').addEventListener('click', async function () {
+      var obj = {
+        text: val(panel, 'text'),
+        link: val(panel, 'link') || null,
+        sortDate: val(panel, 'sortDate') || String(new Date().getFullYear()),
+        manual: true
+      };
+      if (isNew) {
+        data.profile.highlights.push(obj);
+      } else {
+        data.profile.highlights[idx] = obj;
+      }
+      await saveFile('profile');
+      overlay.remove();
+      render();
+    });
+  }
+
+  // ── Generic (vita, profile) ───────────────────────────────────
+  function renderGeneric(el, d) {
+    var json = JSON.stringify(d, null, 2);
+    el.innerHTML = '<p style="margin-bottom:12px;font-size:13px;color:#888">Raw JSON editor for <strong>' + activeTab + '.json</strong></p>'
+      + '<textarea id="raw-json" style="width:100%;min-height:400px;font-family:monospace;font-size:13px;padding:12px;border:1px solid var(--border);border-radius:var(--radius)">' + esc(json) + '</textarea>'
+      + '<button class="add-btn" id="save-raw" style="margin-top:8px">Save</button>';
+    document.getElementById('save-raw').addEventListener('click', async function () {
+      try {
+        data[activeTab] = JSON.parse(document.getElementById('raw-json').value);
+        await saveFile(activeTab);
+      } catch (e) { alert('Invalid JSON: ' + e.message); }
+    });
+  }
+
+  // ── List events ───────────────────────────────────────────────
+  function bindListEvents(tab) {
+    var addBtn = document.getElementById('add-entry');
+    if (addBtn) addBtn.addEventListener('click', function () { openForm(tab, null, null); });
+
+    document.querySelectorAll('.entry-actions .edit').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = parseInt(this.getAttribute('data-idx'));
+        var section = this.getAttribute('data-section');
+        var item = getItem(tab, section, idx);
+        openForm(tab, item, { section: section, idx: idx });
+      });
+    });
+
+    document.querySelectorAll('.entry-actions .del').forEach(function (btn) {
+      btn.addEventListener('click', async function () {
+        if (!confirm('Delete this entry?')) return;
+        var idx = parseInt(this.getAttribute('data-idx'));
+        var section = this.getAttribute('data-section');
+        deleteItem(tab, section, idx);
+        await saveFile(tab);
+        render();
+      });
+    });
+  }
+
+  function getItem(tab, section, idx) {
+    if (tab === 'papers') return getPaperSection(data.papers, section).papers[idx];
+    if (tab === 'talks') return data.talks[section][idx];
+    if (tab === 'teaching') return data.teaching[section][idx];
+    return null;
+  }
+
+  function deleteItem(tab, section, idx) {
+    if (tab === 'papers') getPaperSection(data.papers, section).papers.splice(idx, 1);
+    else if (tab === 'talks') data.talks[section].splice(idx, 1);
+    else if (tab === 'teaching') data.teaching[section].splice(idx, 1);
+  }
+
+  // ── Form ──────────────────────────────────────────────────────
+  function openForm(tab, item, loc) {
+    var isNew = !item;
+    var overlay = document.createElement('div');
+    overlay.className = 'form-overlay';
+    var panel = document.createElement('div');
+    panel.className = 'form-panel';
+    panel.innerHTML = '<h2>' + (isNew ? 'Add' : 'Edit') + ' ' + tab.charAt(0).toUpperCase() + tab.slice(1).replace(/s$/, '') + '</h2>';
+
+    if (tab === 'papers') panel.appendChild(paperForm(item));
+    else if (tab === 'talks') panel.appendChild(talkForm(item));
+    else if (tab === 'teaching') panel.appendChild(teachingForm(item));
+
+    var btns = document.createElement('div');
+    btns.className = 'form-btns';
+    btns.innerHTML = '<button class="btn-save">Save</button><button class="btn-cancel">Cancel</button>';
+    panel.appendChild(btns);
+    overlay.appendChild(panel);
+    document.body.appendChild(overlay);
+
+    btns.querySelector('.btn-cancel').addEventListener('click', function () { overlay.remove(); });
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.remove(); });
+
+    btns.querySelector('.btn-save').addEventListener('click', async function () {
+      var obj = collectForm(tab, panel, item);
+      if (isNew) {
+        insertItem(tab, obj, panel);
+      } else {
+        updateItem(tab, loc.section, loc.idx, obj);
+      }
+      await saveFile(tab);
+      overlay.remove();
+      render();
+    });
+  }
+
+  function field(label, type, name, value, opts) {
+    var d = document.createElement('div'); d.className = 'field';
+    var l = document.createElement('label'); l.textContent = label; d.appendChild(l);
+    if (type === 'textarea') {
+      var ta = document.createElement('textarea'); ta.name = name; ta.value = value || ''; d.appendChild(ta);
+    } else if (type === 'select') {
+      var s = document.createElement('select'); s.name = name;
+      (opts || []).forEach(function (o) {
+        var opt = document.createElement('option'); opt.value = o.value || o; opt.textContent = o.label || o;
+        if ((o.value || o) === value) opt.selected = true;
+        s.appendChild(opt);
+      });
+      d.appendChild(s);
+    } else if (type === 'radio') {
+      var rg = document.createElement('div'); rg.className = 'radio-group';
+      (opts || []).forEach(function (o) {
+        var rl = document.createElement('label');
+        var r = document.createElement('input'); r.type = 'radio'; r.name = name; r.value = o;
+        if (o === value) r.checked = true;
+        rl.appendChild(r); rl.appendChild(document.createTextNode(o)); rg.appendChild(rl);
+      });
+      d.appendChild(rg);
+    } else {
+      var inp = document.createElement('input'); inp.type = type || 'text'; inp.name = name; inp.value = value || ''; d.appendChild(inp);
+    }
+    return d;
+  }
+
+  function paperForm(item) {
+    var f = document.createDocumentFragment();
+    var p = item || { title: '', authors: [], status: 'in-preparation', year: null, venue: '', pages: '', abstract: '', links: {} };
+    f.appendChild(field('Title', 'text', 'title', p.title));
+    f.appendChild(field('Authors (comma-separated)', 'text', 'authors', (p.authors || []).join(', ')));
+    f.appendChild(field('Section', 'select', 'section', p.status, PAPER_SECTIONS.map(function (s) { return { value: s.id, label: s.title }; })));
+    f.appendChild(field('Status', 'radio', 'status', p.status, PAPER_STATUSES));
+    f.appendChild(field('Year', 'number', 'year', p.year));
+    f.appendChild(field('Venue', 'text', 'venue', p.venue));
+    f.appendChild(field('Pages', 'text', 'pages', p.pages));
+    f.appendChild(field('Abstract', 'textarea', 'abstract', p.abstract));
+    f.appendChild(field('arXiv URL', 'text', 'arxiv', (p.links || {}).arxiv));
+    f.appendChild(field('Journal URL', 'text', 'journal', (p.links || {}).journal));
+    f.appendChild(field('PDF URL', 'text', 'pdf', (p.links || {}).pdf));
+    f.appendChild(field('GitHub URL', 'text', 'github', (p.links || {}).github));
+    return f;
+  }
+
+  function talkForm(item) {
+    var f = document.createDocumentFragment();
+    var t = item || { title: '', venue: '', venueUrl: '', institutionName: '', event: '', date: '', year: null, links: {} };
+    f.appendChild(field('Title', 'text', 'title', t.title));
+    f.appendChild(field('Venue (full)', 'text', 'venue', t.venue));
+    f.appendChild(field('Institution Name (linked portion)', 'text', 'institutionName', t.institutionName));
+    f.appendChild(field('Institution/Venue URL', 'text', 'venueUrl', t.venueUrl));
+    f.appendChild(field('Event', 'text', 'event', t.event));
+    f.appendChild(field('Date', 'text', 'date', t.date));
+    f.appendChild(field('Year', 'number', 'year', t.year));
+    f.appendChild(field('Type', 'radio', 'type', (item && item._type) || 'invited', TALK_TYPES));
+    f.appendChild(field('Slides URL', 'text', 'slides', (t.links || {}).slides));
+    f.appendChild(field('Video URL', 'text', 'video', (t.links || {}).video));
+    return f;
+  }
+
+  function teachingForm(item) {
+    var f = document.createDocumentFragment();
+    var c = item || { course: '', title: '', institution: '', semester: '', year: null, rating: null, ratingMax: 5.0, links: {}, notes: '' };
+    f.appendChild(field('Course Code', 'text', 'course', c.course));
+    f.appendChild(field('Title', 'text', 'title', c.title));
+    f.appendChild(field('Institution', 'text', 'institution', c.institution));
+    f.appendChild(field('Semester', 'text', 'semester', c.semester));
+    f.appendChild(field('Year', 'number', 'year', c.year));
+    f.appendChild(field('Role', 'select', 'role', '', ['instructor', 'teaching_fellow', 'course_assistant']));
+    f.appendChild(field('Website URL', 'text', 'website', (c.links || {}).website));
+    return f;
+  }
+
+  function val(panel, name) { var el = panel.querySelector('[name="' + name + '"]'); return el ? el.value.trim() : ''; }
+  function valRadio(panel, name) { var el = panel.querySelector('[name="' + name + '"]:checked'); return el ? el.value : ''; }
+
+  function collectForm(tab, panel, existing) {
+    if (tab === 'papers') {
+      var links = {};
+      if (val(panel, 'arxiv')) links.arxiv = val(panel, 'arxiv');
+      if (val(panel, 'journal')) links.journal = val(panel, 'journal');
+      if (val(panel, 'pdf')) links.pdf = val(panel, 'pdf');
+      if (val(panel, 'github')) links.github = val(panel, 'github');
+      return {
+        id: (existing && existing.id) || genId('paper'),
+        title: val(panel, 'title'),
+        authors: val(panel, 'authors').split(',').map(function (s) { return s.trim(); }).filter(Boolean),
+        status: valRadio(panel, 'status') || 'in-preparation',
+        year: val(panel, 'year') ? parseInt(val(panel, 'year')) : null,
+        venue: val(panel, 'venue') || null,
+        pages: val(panel, 'pages') || null,
+        abstract: val(panel, 'abstract') || null,
+        links: links,
+        notes: (existing && existing.notes) || null
+      };
+    }
+    if (tab === 'talks') {
+      var tLinks = {};
+      if (val(panel, 'slides')) tLinks.slides = val(panel, 'slides');
+      if (val(panel, 'video')) tLinks.video = val(panel, 'video');
+      return {
+        id: (existing && existing.id) || genId('talk'),
+        title: val(panel, 'title'),
+        venue: val(panel, 'venue'),
+        venueUrl: val(panel, 'venueUrl') || null,
+        institutionName: val(panel, 'institutionName') || null,
+        event: val(panel, 'event') || null,
+        date: val(panel, 'date'),
+        year: val(panel, 'year') ? parseInt(val(panel, 'year')) : null,
+        _type: valRadio(panel, 'type') || 'invited',
+        links: tLinks
+      };
+    }
+    if (tab === 'teaching') {
+      var cLinks = {};
+      if (val(panel, 'website')) cLinks.website = val(panel, 'website');
+      return {
+        id: (existing && existing.id) || genId('course'),
+        course: val(panel, 'course'),
+        title: val(panel, 'title'),
+        institution: val(panel, 'institution'),
+        semester: val(panel, 'semester'),
+        year: val(panel, 'year') ? parseInt(val(panel, 'year')) : null,
+        rating: (existing && existing.rating) || null,
+        ratingMax: (existing && existing.ratingMax) || 5.0,
+        links: cLinks,
+        notes: (existing && existing.notes) || null,
+        _role: val(panel, 'role') || 'instructor'
+      };
+    }
+    return {};
+  }
+
+  function insertItem(tab, obj, panel) {
+    if (tab === 'papers') {
+      var secId = val(panel, 'section') || obj.status;
+      var sec = getPaperSection(data.papers, secId);
+      if (!sec) { sec = { id: secId, title: secId, papers: [] }; data.papers.sections.push(sec); }
+      sec.papers.push(obj);
+    } else if (tab === 'talks') {
+      var tType = obj._type || 'invited'; delete obj._type;
+      if (!data.talks[tType]) data.talks[tType] = [];
+      data.talks[tType].unshift(obj);
+    } else if (tab === 'teaching') {
+      var role = obj._role || 'instructor'; delete obj._role;
+      if (!data.teaching[role]) data.teaching[role] = [];
+      data.teaching[role].unshift(obj);
+    }
+  }
+
+  function updateItem(tab, section, idx, obj) {
+    if (tab === 'papers') {
+      getPaperSection(data.papers, section).papers[idx] = obj;
+    } else if (tab === 'talks') {
+      delete obj._type;
+      data.talks[section][idx] = obj;
+    } else if (tab === 'teaching') {
+      delete obj._role;
+      data.teaching[section][idx] = obj;
+    }
+  }
+
+  // ── Build modal ───────────────────────────────────────────────
+  function showBuildModal() {
+    var overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.innerHTML = '<div class="modal"><h2>Build &amp; Deploy</h2>'
+      + '<p>Run the following in your terminal:</p>'
+      + '<pre>npm run build &amp;&amp; git push</pre>'
+      + '<p style="font-size:13px;color:#888;margin-bottom:12px">This rebuilds the static site and pushes to GitHub Pages.</p>'
+      + '<button id="close-modal">Close</button></div>';
+    document.body.appendChild(overlay);
+    overlay.querySelector('#close-modal').addEventListener('click', function () { overlay.remove(); });
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.remove(); });
+  }
+
+  // ── Init ──────────────────────────────────────────────────────
+  document.getElementById('btn-open').addEventListener('click', openFolder);
+  document.getElementById('btn-build').addEventListener('click', showBuildModal);
+})();
+</script>
+</body>
+</html>

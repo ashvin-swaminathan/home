@@ -1,0 +1,77 @@
+<h1>Vita</h1>
+
+<section class="vita-section">
+    <h2>Education</h2>
+    <ul class="vita-list">
+        <% vita.education.forEach(function(ed) { %>
+            <li class="vita-item education-item">
+                <strong><%= ed.degree %></strong>, <%= ed.institution %><br>
+                <% if (ed.advisors) { %>
+                    <em>Senior Thesis Advisors:</em>
+                    <% ed.advisors.forEach(function(a, i) { %>
+                        <a href="<%= a.url %>"><%= a.name %></a><%= i < ed.advisors.length - 1 ? ' and ' : '' %>
+                    <% }); %>
+                <% } else if (ed.advisor) { %>
+                    <em>Advisor:</em> <a href="<%= ed.advisorUrl %>"><%= ed.advisor %></a>
+                <% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>
+
+<section class="vita-section">
+    <h2>Honors and Awards</h2>
+    <ul class="vita-list">
+        <% vita.awards.forEach(function(a) { %>
+            <li class="vita-item">
+                <%= a.name %><% if (a.year) { %>, <%= a.year %><% } %><% if (a.amount) { %> (<%= a.amount %>)<% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>
+
+<section class="vita-section">
+    <h2>Professional Service</h2>
+    <h3>Academic Service</h3>
+    <ul class="vita-list">
+        <% vita.service.forEach(function(s) { %>
+            <li class="vita-item">
+                <%= s.role %>, <% if (s.url) { %><a href="<%= s.url %>" target="_blank" rel="noopener"><%= s.organization %></a><% } else { %><%= s.organization %><% } %><% if (s.period) { %> (<%= s.period %>)<% } %>
+            </li>
+        <% }); %>
+    </ul>
+    <h3>Journal Refereeing</h3>
+    <p class="refereeing-list"><em><%= vita.refereeing.join(', ') %></em></p>
+</section>
+
+<section class="vita-section">
+    <h2>Volunteering</h2>
+    <ul class="vita-list">
+        <% vita.volunteering.forEach(function(v) { %>
+            <li class="vita-item">
+                <%= v.role %>, <% if (v.url) { %><a href="<%= v.url %>" target="_blank" rel="noopener"><%= v.organization %></a><% } else { %><%= v.organization %><% } %><% if (v.period) { %>, <%= v.period %><% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>
+
+<section class="vita-section">
+    <h2>Classical Music</h2>
+    <ul class="vita-list music-list">
+        <% vita.music.forEach(function(m) { %>
+            <li class="vita-item">
+                <% if (m.url) { %><%- m.description.replace(/([\w@.]+(?:\s+[\w@.]+)*)/, function(match) { return match; }) %>
+                <% } else { %><%- m.description %><% } %>
+                <% if (m.links && m.links.pdf) { %><a href="<%= m.links.pdf %>" class="resource-tag" target="_blank" rel="noopener">pdf</a><% } %>
+                <% if (m.url) { %> (<a href="<%= m.url %>" target="_blank" rel="noopener">website</a>)<% } %>
+                <% if (m.subitems) { %>
+                    <ul>
+                        <% m.subitems.forEach(function(sub) { %>
+                            <li><%= sub.text %> <% if (sub.links && sub.links.pdf) { %><a href="<%= sub.links.pdf %>" class="resource-tag" target="_blank" rel="noopener">pdf</a><% } %></li>
+                        <% }); %>
+                    </ul>
+                <% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>

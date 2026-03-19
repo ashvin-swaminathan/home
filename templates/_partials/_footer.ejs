@@ -1,0 +1,10 @@
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <p>&copy; <span class="current-year"></span> <%= profile.name %>.</p>
+        <p>
+            <a href="mailto:<%= profile.email %>"><%= profile.email %></a>
+            <% if (profile.socialLinks && profile.socialLinks.x) { %> · <a href="<%= profile.socialLinks.x %>" target="_blank" rel="noopener">X</a><% } %>
+            <% if (profile.socialLinks && profile.socialLinks.linkedin) { %> · <a href="<%= profile.socialLinks.linkedin %>" target="_blank" rel="noopener">LinkedIn</a><% } %>
+        </p>
+    </div>
+</footer>

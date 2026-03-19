@@ -1,0 +1,17 @@
+<header class="site-header" role="banner">
+    <div class="header-inner">
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html"<%= currentPage === 'home' ? ' class="active"' : '' %>>Home</a></li>
+                <li><a href="research.html"<%= currentPage === 'research' ? ' class="active"' : '' %>>Research</a></li>
+                <li><a href="talks.html"<%= currentPage === 'talks' ? ' class="active"' : '' %>>Talks</a></li>
+                <li><a href="teaching.html"<%= currentPage === 'teaching' ? ' class="active"' : '' %>>Teaching</a></li>
+                <li><a href="vita.html"<%= currentPage === 'vita' ? ' class="active"' : '' %>>Vita</a></li>
+                <li><a href="<%= profile.cv %>" target="_blank" rel="noopener">CV</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

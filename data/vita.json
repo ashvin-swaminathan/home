@@ -1,0 +1,66 @@
+{
+  "education": [
+    {
+      "degree": "PhD in Mathematics",
+      "institution": "Princeton University",
+      "advisor": "Manjul Bhargava",
+      "advisorUrl": "https://www.math.princeton.edu/people/manjul-bhargava"
+    },
+    {
+      "degree": "AB in Mathematics",
+      "institution": "Harvard College",
+      "advisor": "Joe Harris and Anand Patel",
+      "advisorUrl": null,
+      "advisors": [
+        { "name": "Joe Harris", "url": "https://www.math.harvard.edu/people/harris-joe/" },
+        { "name": "Anand Patel", "url": "https://sites.google.com/view/anand-patel/home" }
+      ]
+    }
+  ],
+  "awards": [
+    { "name": "Hoopes Prize for Senior Thesis Advising", "year": 2025, "amount": "$1000" },
+    { "name": "Princeton Engineering Council Teaching Award (Math 202)", "year": 2021, "amount": null },
+    { "name": "Frank and Brennie Morgan Prize", "year": 2017, "amount": "$1200" },
+    { "name": "David B. Mumford Prize", "year": 2017, "amount": null },
+    { "name": "Paul and Daisy Soros Fellowship for New Americans", "year": "2017-2019", "amount": "$90,000" },
+    { "name": "NSF Graduate Research Fellowship", "year": "2017-2022", "amount": "$150,000" },
+    { "name": "Hertz Fellowship – Finalist", "year": 2017, "amount": null },
+    { "name": "Centennial Fellowship, Princeton University", "year": "2017-2021", "amount": null },
+    { "name": "Harvard University Certificate of Distinction in Teaching (Math 114, 123, 131)", "year": null, "amount": null },
+    { "name": "John Harvard Scholar for Academic Achievement", "year": "2016, 2015, 2014", "amount": null },
+    { "name": "Robert Fletcher Rogers Prize", "year": 2016, "amount": null },
+    { "name": "Phi Beta Kappa – Junior 24", "year": 2016, "amount": null },
+    { "name": "Barry M. Goldwater Scholarship (Fellow – 2016, Honorable Mention – 2015)", "year": "2015-2016", "amount": null },
+    { "name": "Detur Book Prize for Academic Excellence", "year": 2014, "amount": null },
+    { "name": "Siemens Competition in Math, Science, and Technology – Regional Finalist", "year": 2013, "amount": null },
+    { "name": "Siemens AP Science Award – National Winner", "year": 2013, "amount": null }
+  ],
+  "service": [
+    { "role": "Assistant Director of Graduate Studies", "organization": "Harvard Mathematics", "period": "2024-2025" },
+    { "role": "Co-organizer", "organization": "Harvard Number Theory Seminar", "url": "https://ashvin-swaminathan.github.io/home/NTSeminar.html" },
+    { "role": "Member", "organization": "Harvard Math Department Community Committee", "url": "https://sites.harvard.edu/math-community/" }
+  ],
+  "refereeing": [
+    "Essential Number Theory",
+    "International Mathematics Research Notices",
+    "Involve",
+    "Mathematische Annalen",
+    "Mathematical Proceedings of the Cambridge Philosophical Society",
+    "Research in Number Theory",
+    "Research in the Mathematical Sciences",
+    "Proceedings of the American Mathematical Society"
+  ],
+  "volunteering": [
+    { "role": "Volunteer", "organization": "Broken Tail Animal Rescue", "url": "https://www.brokentailrescue.org/", "period": null },
+    { "role": "Tutor and Classroom Assistant", "organization": "Cambridge Learning Center", "period": "2022-2023" },
+    { "role": "Tutor", "organization": "MIT Introduction to Technology, Engineering, and Science Program", "period": "2024" }
+  ],
+  "music": [
+    { "description": "Music Review of Matthew Aucoin's \"Its Own Accord\", 2016", "links": { "pdf": "http://scholar.princeton.edu/sites/default/files/ashvin/files/review-aucoin.pdf" } },
+    { "description": "Letter from Susanna: Handel's Messiah as a universal vehicle of deliverance, 2016", "links": { "pdf": "http://scholar.princeton.edu/sites/default/files/ashvin/files/letter-messiah.pdf" } },
+    { "description": "Violinist, Harvard–Radcliffe Orchestra (Conductor: Federico Cortese), 2013-2014", "url": "http://www.hcs.harvard.edu/%7Ehro/", "subitems": [{ "text": "Program Annotator for Dvorak's Violin Concerto, Beethoven's Symphony No. 3 (Eroica), and Verdi's Requiem", "links": { "pdf": "http://scholar.princeton.edu/sites/default/files/ashvin/files/hro-program-notes-2013-2014.pdf" } }] },
+    { "description": "John Near Grant Recipient, The Harker School, 2013", "subitems": [{ "text": "Authored research paper on Copland's El Salon Mexico & Bernstein's West Side Story", "links": { "pdf": "http://scholar.princeton.edu/sites/default/files/ashvin/files/swaminathanfinal2013.pdf" } }] },
+    { "description": "Violinist, San Francisco Symphony Youth Orchestra (Conductor: Donato Cabrera), 2010-2013", "url": "http://www.sfsymphony.org/Youth-Family/Youth-Orchestra" },
+    { "description": "Violinist, Music@Menlo Summer Chamber Music Festival and Institute (Directors: Wu Han & David Finckel), 2006, 2008, 2009", "url": "https://www.musicatmenlo.org/" }
+  ]
+}

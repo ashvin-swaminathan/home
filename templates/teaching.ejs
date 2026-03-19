@@ -1,0 +1,54 @@
+<h1>Teaching</h1>
+
+<section class="teaching-section">
+    <h2>Instructor, Harvard University</h2>
+    <ul class="teaching-list">
+        <% teaching.instructor.forEach(function(c) { %>
+            <li class="teaching-item">
+                <span class="course-code">[<%= c.course %>]</span>
+                <span class="course-title"><%= c.title %></span>, <%= c.semester %><%= c.notes ? ' (' + c.notes + ')' : '' %>.
+                <% if (c.rating) { %><span class="rating">Q-score: <%= c.rating %>/<%= c.ratingMax %></span><% } %>
+                <% if (c.links && c.links.website) { %><a href="<%= c.links.website %>" class="resource-tag" target="_blank" rel="noopener">Course Website</a><% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>
+
+<section class="teaching-section">
+    <h2>Assistant Instructor, Princeton University</h2>
+    <ul class="teaching-list">
+        <% teaching.assistant.forEach(function(c) { %>
+            <li class="teaching-item">
+                <span class="course-code">[<%= c.course %>]</span>
+                <span class="course-title"><%= c.title %></span>, <%= c.semester %>.
+                <% if (c.rating) { %><span class="rating">Rating: <%= c.rating %>/<%= c.ratingMax %></span><% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>
+
+<section class="teaching-section">
+    <h2>Course Assistant, Harvard University</h2>
+    <ul class="teaching-list">
+        <% teaching.courseAssistant.forEach(function(c) { %>
+            <li class="teaching-item">
+                <span class="course-code">[<%= c.course %>]</span>
+                <span class="course-title"><%= c.title %></span> (<%= c.professor %>), <%= c.semester %>.
+                <% if (c.rating) { %><span class="rating">Q-score: <%= c.rating %>/<%= c.ratingMax %></span><% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>
+
+<section class="teaching-section">
+    <h2>Research Mentorship</h2>
+    <ul class="teaching-list">
+        <% teaching.mentorship.forEach(function(m) { %>
+            <li class="teaching-item mentorship-item">
+                <strong><%= m.name %></strong> (<%= m.role %>), <%= m.period %>.
+                <% if (m.description) { %><%= m.description %><% } %>
+                <% if (m.links && m.links.arxiv) { %><a href="<%= m.links.arxiv %>" class="resource-tag" target="_blank" rel="noopener">arXiv</a><% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>

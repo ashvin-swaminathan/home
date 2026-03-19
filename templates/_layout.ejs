@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('_partials/_head', { title: title, profile: profile }) %>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <%- include('_partials/_nav', { currentPage: currentPage, profile: profile }) %>
+    <main id="main-content">
+        <% if (currentPage === 'home') { %>
+            <%- content %>
+        <% } else { %>
+            <div class="container">
+                <%- content %>
+            </div>
+        <% } %>
+    </main>
+    <%- include('_partials/_footer', { profile: profile }) %>
+    <script src="js/main.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

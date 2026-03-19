@@ -1,0 +1,93 @@
+<h1>Presentations</h1>
+
+<%
+/**
+ * Group talks by title: each unique title gets a list of venues.
+ */
+function groupByTitle(talkList) {
+    var groups = {};
+    var order = {};
+    talkList.forEach(function(t) {
+        var key = t.title;
+        if (!groups[key]) {
+            groups[key] = [];
+            order[key] = 0;
+        }
+        groups[key].push({
+            venue: t.venue,
+            venueUrl: t.venueUrl || null,
+            institutionName: t.institutionName || null,
+            year: t.year,
+            date: t.date,
+            links: t.links || {}
+        });
+        if (t.year > order[key]) order[key] = t.year;
+    });
+
+    var result = Object.keys(groups).map(function(title) {
+        var venues = groups[title].sort(function(a, b) { return (b.year || 0) - (a.year || 0); });
+        return { title: title, venues: venues, mostRecentYear: order[title] };
+    });
+
+    result.sort(function(a, b) { return b.mostRecentYear - a.mostRecentYear; });
+    return result;
+}
+
+/**
+ * Render venue with only the institution part linked.
+ */
+function renderVenue(venue, venueUrl, institutionName) {
+    if (!venueUrl || !institutionName) return venue;
+    var idx = venue.indexOf(institutionName);
+    if (idx === -1) return '<a href="' + venueUrl + '" target="_blank" rel="noopener">' + venue + '</a>';
+    var before = venue.substring(0, idx);
+    var after = venue.substring(idx + institutionName.length);
+    return before + '<a href="' + venueUrl + '" target="_blank" rel="noopener">' + institutionName + '</a>' + after;
+}
+%>
+
+<section class="talks-section">
+    <h2>Invited Talks</h2>
+    <% var invGroups = groupByTitle(talks.invited); %>
+    <div class="talk-grouped-list">
+        <% invGroups.forEach(function(group) { %>
+            <div class="talk-group">
+                <div class="talk-group-title"><%= group.title %></div>
+                <ul class="talk-venues">
+                    <% group.venues.forEach(function(v) { %>
+                        <li>
+                            <%- renderVenue(v.venue, v.venueUrl, v.institutionName) %><% if (v.year) { %>, <span class="talk-venue-year"><%= v.year %></span><% } %>
+                            <% if (v.links.slides || v.links.video) { %>
+                                <% if (v.links.slides) { %><a href="<%= v.links.slides %>" class="resource-tag" target="_blank" rel="noopener">slides</a><% } %>
+                                <% if (v.links.video) { %><a href="<%= v.links.video %>" class="resource-tag" target="_blank" rel="noopener">video</a><% } %>
+                            <% } %>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% }); %>
+    </div>
+</section>
+
+<section class="talks-section">
+    <h2>Contributed Talks</h2>
+    <% var conGroups = groupByTitle(talks.contributed); %>
+    <div class="talk-grouped-list">
+        <% conGroups.forEach(function(group) { %>
+            <div class="talk-group">
+                <div class="talk-group-title"><%= group.title %></div>
+                <ul class="talk-venues">
+                    <% group.venues.forEach(function(v) { %>
+                        <li>
+                            <%- renderVenue(v.venue, v.venueUrl, v.institutionName) %><% if (v.year) { %>, <span class="talk-venue-year"><%= v.year %></span><% } %>
+                            <% if (v.links.slides || v.links.video) { %>
+                                <% if (v.links.slides) { %><a href="<%= v.links.slides %>" class="resource-tag" target="_blank" rel="noopener">slides</a><% } %>
+                                <% if (v.links.video) { %><a href="<%= v.links.video %>" class="resource-tag" target="_blank" rel="noopener">video</a><% } %>
+                            <% } %>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        <% }); %>
+    </div>
+</section>

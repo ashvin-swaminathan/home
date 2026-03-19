@@ -1,0 +1,15 @@
+{
+  "name": "ashvin-swaminathan-website",
+  "version": "1.0.0",
+  "description": "Academic website for Ashvin A. Swaminathan",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch",
+    "serve": "npx serve dist"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.2.0"
+  }
+}

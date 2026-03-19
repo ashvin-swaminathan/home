@@ -1,0 +1,57 @@
+{
+  "name": "Ashvin A. Swaminathan",
+  "shortName": "Ashvin Swaminathan",
+  "authorMatchStrings": ["Swaminathan", "A. Swaminathan", "A.A. Swaminathan", "Ashvin Swaminathan"],
+  "title": "NSF Postdoctoral Fellow & Benjamin Peirce Fellow",
+  "institution": "Department of Mathematics, Harvard University",
+  "institutionUrl": "https://www.harvard.edu/",
+  "mentor": "Melanie Matchett Wood",
+  "mentorUrl": "https://people.math.harvard.edu/~mmwood/",
+  "email": "swaminathan@math.harvard.edu",
+  "photo": "img/photoNormal.jpg",
+  "cv": "files/cv.pdf",
+  "researchBlurb": "My research lies in <em>number&nbsp;theory</em> and <em>algebraic&nbsp;geometry</em>, with a focus on <em>arithmetic&nbsp;statistics</em>, <em>invariant&nbsp;theory</em>, the <em>Cohen-Lenstra&nbsp;heuristics</em>, <em>rational&nbsp;points on&nbsp;varieties</em>, <em>Diophantine&nbsp;equations</em>, and <em>enumerative&nbsp;geometry</em>.",
+  "aiBlurb": "I am increasingly focused on building workflows that combine <em>large language models</em>, <em>symbolic computation</em>, and <em>formal verification</em> to attack research problems in number&nbsp;theory.",
+  "education": "I received my AB in mathematics from <a href=\"https://college.harvard.edu/\">Harvard College</a>, with a senior thesis supervised by <a href=\"https://www.math.harvard.edu/people/harris-joe/\">Joe Harris</a> and <a href=\"https://sites.google.com/view/anand-patel/home\">Anand Patel</a>, as well as an AM in Physics. I completed my MA and PhD at <a href=\"https://www.math.princeton.edu/\">Princeton</a> under <a href=\"https://www.math.princeton.edu/people/manjul-bhargava\">Manjul Bhargava</a>.",
+  "currentActivity": "In Fall 2025, I was on leave from Harvard, participating as a visiting researcher in the special semester on arithmetic statistics at the new <a href=\"https://lmsi.org/\">Lodha Mathematical Sciences Institute</a> in Mumbai, India.",
+  "personal": "Outside of mathematics, I love animals and volunteer at <a href=\"https://www.brokentailrescue.org/\">Broken Tail Animal Rescue</a>. If you are interested in adopting an animal, please check out their website!",
+  "onJobMarket": true,
+  "socialLinks": {
+    "x": "https://x.com/aaswaminathan01",
+    "linkedin": "https://www.linkedin.com/in/ashvin-swaminathan-b159462a5/"
+  },
+  "highlights": [
+    {
+      "text": "New preprint: \"The existence of infinitely many cubic fields with class group of exact 2-rank 1\" (with M. Bhargava, A. Shankar, and A. Siad)",
+      "link": "https://arxiv.org/pdf/2506.05539",
+      "linkText": "[arXiv]",
+      "type": "preprint"
+    },
+    {
+      "text": "Workshop on Arithmetic Statistics of Algebraic Objects, Mathematisches Forschungsinstitut Oberwolfach, November 2025",
+      "type": "talk"
+    },
+    {
+      "text": "Harvard Number Theory Seminar, February 2026.",
+      "type": "talk"
+    },
+    {
+      "text": "Workshop on Arithmetic Statistics, Centre de Recherches Mathématiques, Université de Montréal, March 2026.",
+      "type": "talk"
+    },
+    {
+      "text": "Upcoming: BU Number Theory Seminar, April 2026.",
+      "type": "upcoming"
+    }
+  ],
+  "researchInterests": [
+    "Arithmetic statistics",
+    "Invariant theory",
+    "The Cohen-Lenstra heuristics",
+    "Rational points on varieties",
+    "Diophantine equations",
+    "Enumerative geometry",
+    "AI-Assisted Theorem-Proving",
+    "Formal Verification"
+  ]
+}

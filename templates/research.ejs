@@ -1,0 +1,50 @@
+<h1>Research</h1>
+
+<section class="research-interests">
+    <h2>Research Interests</h2>
+    <ul class="interest-tags">
+        <% profile.researchInterests.forEach(function(interest) { %>
+            <li><%= interest %></li>
+        <% }); %>
+    </ul>
+</section>
+
+<% papers.sections.forEach(function(section) { %>
+<section id="<%= section.id %>" class="papers-section">
+    <h2><%= section.title %></h2>
+    <ol class="paper-list">
+        <% section.papers.forEach(function(paper) { %>
+        <li class="paper-item" id="<%= paper.id %>">
+            <div class="paper-header">
+                <div class="paper-title"><%= paper.title %></div>
+                <% if (paper.authors && paper.authors.length > 0) { %>
+                    <div class="paper-authors"><%- paper.authorsHtml %></div>
+                <% } %>
+                <% if (paper.venue) { %>
+                    <div class="paper-venue"><%- paper.venue %></div>
+                <% } %>
+                <% if (paper.links && Object.keys(paper.links).length > 0) { %>
+                    <div class="paper-links">
+                        <% if (paper.links.arxiv) { %><a href="<%= paper.links.arxiv %>" class="resource-tag" target="_blank" rel="noopener">arXiv</a><% } %>
+                        <% if (paper.links.journal) { %><a href="<%= paper.links.journal %>" class="resource-tag" target="_blank" rel="noopener">journal</a><% } %>
+                        <% if (paper.links.pdf) { %><a href="<%= paper.links.pdf %>" class="resource-tag" target="_blank" rel="noopener">pdf</a><% } %>
+                        <% if (paper.links.github) { %><a href="<%= paper.links.github %>" class="resource-tag" target="_blank" rel="noopener">github</a><% } %>
+                    </div>
+                <% } %>
+                <% if (paper.abstract) { %>
+                    <button class="abstract-toggle" aria-expanded="false" data-target="abstract-<%= paper.id %>">
+                        <span>Abstract</span>
+                        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                <% } %>
+            </div>
+            <% if (paper.abstract) { %>
+                <div class="abstract-content" id="abstract-<%= paper.id %>">
+                    <p><%- paper.abstract %></p>
+                </div>
+            <% } %>
+        </li>
+        <% }); %>
+    </ol>
+</section>
+<% }); %>
