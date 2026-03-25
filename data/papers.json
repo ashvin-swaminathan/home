@@ -71,6 +71,18 @@
       "title": "Arithmetic Statistics and Invariant Theory",
       "papers": [
         {
+          "id": "as-0",
+          "title": "On the quartic invariant of odd-degree binary forms",
+          "authors": ["Ashvin Swaminathan"],
+          "year": 2025,
+          "status": "preprint",
+          "venue": "Preprint. Accompanied by a Lean 4 formalization (~14,500 lines, zero sorry, zero axiom).",
+          "pages": null,
+          "abstract": "We determine the squarefree part of the scalar factor $S(n)$ that arises when the quartic invariant of the generic binary form of odd degree $2n+1$ is expressed as the discriminant of the unique quadratic covariant. The main theorem identifies $\\mathrm{sqf}(S(n))$ with an OEIS sequence: for every prime $p$ and every $n \\geq 1$, $v_p(S(n))$ is odd if and only if $p$ is an odd prime and $n+2$ is a power of $p$. The proof uses Gauss's lemma for multivariate polynomials, Kummer's carry-counting theorem, and a $p$-adic deformation argument. The theorem is accompanied by a complete Lean 4 formalization comprising approximately 14,500 lines across 25 modules, with zero sorry statements and zero axiom declarations, produced via an AI-assisted workflow using Claude Code (Anthropic), Codex (OpenAI), and Aristotle (Harmonic).",
+          "links": { "arxiv": "https://github.com/ashvin-swaminathan/quartic-invariant" },
+          "notes": "AI-assisted proof and formalization"
+        },
+        {
           "id": "as-1",
           "title": "The existence of infinitely many cubic fields with class group of exact $2$-rank $1$",
           "authors": ["Manjul Bhargava", "Arul Shankar", "Artane Siad", "Ashvin Swaminathan"],
