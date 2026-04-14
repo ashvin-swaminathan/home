@@ -203,9 +203,9 @@ function generateActivityFeed(allData) {
     for (const highlight of allData.profile.highlights) {
       if (!highlight.manual) continue;
       items.push({
-        type: 'news',
+        type: highlight.type || 'news',
         text: highlight.text,
-        detail: null,
+        detail: highlight.detail || null,
         date: highlight.sortDate ? parseInt(highlight.sortDate, 10) : 0,
         link: highlight.link || null,
       });

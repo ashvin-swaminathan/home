@@ -42,6 +42,14 @@
     {
       "text": "Upcoming: BU Number Theory Seminar, April 2026.",
       "type": "upcoming"
+    },
+    {
+      "text": "ICARM Workshop on Milestones of Autonomous Mathematics, April 13–17, 2026",
+      "detail": "San Francisco, CA",
+      "link": "https://icarm.io/project/milestones-of-autonomous-mathematics/",
+      "type": "upcoming",
+      "manual": true,
+      "sortDate": "2026"
     }
   ],
   "researchInterests": [
