@@ -19,7 +19,7 @@ const PAGES = [
     template: 'index.ejs',
     title: 'Home',
     currentPage: 'home',
-    dataKeys: ['profile', 'papers', 'talks', 'vita', 'projects'],
+    dataKeys: ['profile', 'papers', 'talks', 'vita'],
   },
   {
     output: 'research.html',
@@ -150,7 +150,20 @@ function generateActivityFeed(allData) {
         }
       }
     }
-    if (bestPaper) {
+    // Skip it if a hand-written highlight already announces this paper.
+    // Titles carry TeX ($2$-Selmer, \mathbb{Q}) that the prose does not, so
+    // compare on a stripped-down form of each.
+    const plain = t => t
+      .replace(/\$/g, '')
+      .replace(/\\[a-zA-Z]+/g, '')
+      .replace(/[{}]/g, '')
+      .replace(/[^a-z0-9]+/gi, ' ')
+      .trim()
+      .toLowerCase();
+    const announced = bestPaper && ((allData.profile && allData.profile.highlights) || [])
+      .some(hl => hl.text && plain(hl.text).includes(plain(bestPaper.title).slice(0, 40)));
+
+    if (bestPaper && !announced) {
       const links = bestPaper.links || {};
       const link = links.arxiv || links.journal || links.pdf || null;
       items.push({
@@ -268,11 +281,9 @@ function build() {
       dataContext[key] = allData[key];
     }
 
-    // Generate activity feed and pick the featured project for the homepage
+    // Generate activity feed for the homepage
     if (page.currentPage === 'home') {
       dataContext.activityFeed = generateActivityFeed(allData);
-      dataContext.featuredProject =
-        (allData.projects && allData.projects.projects || []).find(p => p.featured) || null;
     }
 
     // 1. Render the page template to get inner content

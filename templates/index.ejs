@@ -49,28 +49,6 @@
     </div>
 </section>
 
-<% if (typeof featuredProject !== 'undefined' && featuredProject) { %>
-<section class="featured-project">
-    <div class="featured-inner">
-        <p class="featured-eyebrow">Featured project</p>
-        <h2 class="featured-title">
-            <a href="projects.html"><%= featuredProject.title %></a><% if (featuredProject.ai) { %><%- include('_partials/_ai-badge', { ai: featuredProject.ai }) %><% } %>
-        </h2>
-        <p class="featured-meta">
-            <span class="project-role"><%= featuredProject.role %></span>
-            <% if (featuredProject.affiliation) { %> &middot; <a href="<%= featuredProject.affiliationUrl %>" target="_blank" rel="noopener"><%= featuredProject.affiliation %></a><% } %>
-        </p>
-        <p class="featured-summary"><%- featuredProject.summary %></p>
-        <div class="featured-links">
-            <a href="projects.html" class="btn btn-project">Read more</a>
-            <% if (featuredProject.links.site) { %><a href="<%= featuredProject.links.site %>" class="resource-tag" target="_blank" rel="noopener">project site</a><% } %>
-            <% if (featuredProject.links.blueprint) { %><a href="<%= featuredProject.links.blueprint %>" class="resource-tag" target="_blank" rel="noopener">interactive blueprint</a><% } %>
-            <% if (featuredProject.links.github) { %><a href="<%= featuredProject.links.github %>" class="resource-tag" target="_blank" rel="noopener">github</a><% } %>
-        </div>
-    </div>
-</section>
-<% } %>
-
 <% if (activityFeed && activityFeed.length > 0) { %>
 <section class="recent-activity">
     <h2>News</h2>
@@ -79,9 +57,12 @@
             <li class="activity-item">
                 <span class="activity-type <%= item.type %>"><%= item.type %></span>
                 <div class="activity-text">
-                    <% if (item.link) { %><a href="<%= item.link %>" target="_blank" rel="noopener"><%= item.text %></a>
-                    <% } else { %><%= item.text %><% } %>
-                    <% if (item.detail) { %> <span class="activity-detail">&mdash; <%= item.detail %></span><% } %>
+                    <% if (item.link) { %>
+                        <a class="activity-title" href="<%= item.link %>" target="_blank" rel="noopener"><%= item.text %></a>
+                    <% } else { %>
+                        <span class="activity-title"><%= item.text %></span>
+                    <% } %>
+                    <% if (item.detail) { %><span class="activity-detail"><%= item.detail %></span><% } %>
                 </div>
             </li>
         <% }); %>

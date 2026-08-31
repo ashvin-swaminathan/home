@@ -319,12 +319,12 @@ p + p { margin-top: 0.8em; }
 .recent-activity {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.2rem 2rem 1.5rem;
+  padding: 2.6rem 2rem 2rem;
 }
 
 .recent-activity h2 {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   color: var(--color-accent);
   font-weight: 600;
 }
@@ -332,52 +332,65 @@ p + p { margin-top: 0.8em; }
 .activity-feed {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.activity-item {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  padding: 0.45rem 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.activity-item + .activity-item {
+  max-width: 60rem;
   border-top: 1px solid var(--color-border-light);
 }
 
+/* Two columns so every headline starts at the same place, however long
+   the type label happens to be. */
+.activity-item {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  column-gap: 1.15rem;
+  align-items: baseline;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
 .activity-type {
-  flex-shrink: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
   font-family: var(--font-mono);
   font-size: 0.6rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.15em 0.45em;
+  letter-spacing: 0.06em;
+  padding: 0.25em 0;
   border-radius: 3px;
 }
 
 .activity-type.paper    { background: #E3EBF6; color: #034694; }
+.activity-type.preprint { background: #E3EBF6; color: #034694; }
 .activity-type.talk     { background: #E6F4E6; color: #1B6B1B; }
 .activity-type.upcoming { background: #FFF3DB; color: #8B6914; }
 .activity-type.award    { background: #FFF3DB; color: #8B6914; }
 .activity-type.news     { background: #F0E6F6; color: #5B2D8E; }
-.activity-type.preprint { background: #E3EBF6; color: #034694; }
 .activity-type.project  { background: #EAF1EC; color: #1B5E4B; }
 .activity-type.press    { background: #FBE9E7; color: #A03A28; }
 
 .activity-text {
-  flex: 1;
-  font-weight: 300;
+  min-width: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
+.activity-title {
+  color: var(--color-body);
+  font-weight: 400;
+}
+
+a.activity-title { color: var(--color-link); }
+a.activity-title:hover { color: var(--color-link-hover); }
+
+/* The secondary line -- venue, coauthors, date -- reads far better under
+   the headline than trailing after it on the same line. */
 .activity-detail {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.845rem;
+  line-height: 1.5;
   color: var(--color-secondary);
-  font-size: 0.84rem;
 }
 
 /* ==========================================================================
@@ -863,58 +876,9 @@ main > .container > h1,
 }
 
 /* ==========================================================================
-   FEATURED PROJECT (homepage)
+   PROJECT LINK ROW
    ========================================================================== */
 
-.featured-project {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2.2rem 2rem 0.6rem;
-}
-
-.featured-inner {
-  position: relative;
-  padding: 1.5rem 1.7rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-left: 3px solid var(--color-accent);
-  border-radius: 8px;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
-}
-
-.featured-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--color-accent);
-  margin-bottom: 0.45rem;
-}
-
-.featured-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.35;
-  margin-bottom: 0.3rem;
-}
-
-.featured-title a { color: #333; }
-.featured-title a:hover { color: var(--color-link); }
-
-.featured-meta {
-  font-size: 0.82rem;
-  color: var(--color-secondary);
-  margin-bottom: 0.7rem;
-}
-
-.featured-summary {
-  font-size: 0.92rem;
-  line-height: 1.65;
-  margin-bottom: 0.9rem;
-}
-
-.featured-links,
 .project-links {
   display: flex;
   align-items: center;
@@ -1228,7 +1192,13 @@ main > .container > h1,
   .ai-badge:hover .ai-badge-tip,
   .ai-badge:focus-visible .ai-badge-tip { transform: translateY(0); }
 
-  .featured-project { padding: 1.6rem 1.5rem 0.4rem; }
-  .featured-inner { padding: 1.2rem 1.1rem; }
   .project-title { font-size: 1.25rem; }
+
+  /* Stack the feed: a fixed label column is wasted width on a phone. */
+  .activity-item {
+    grid-template-columns: 1fr;
+    row-gap: 0.3rem;
+    padding: 0.85rem 0;
+  }
+  .activity-type { width: auto; justify-self: start; padding: 0.25em 0.5em; }
 }
