@@ -316,80 +316,74 @@ p + p { margin-top: 0.8em; }
 
 /* --- Recent Activity ----------------------------------------------------- */
 
-.recent-activity {
+/* --- News ---------------------------------------------------------------
+   Date-led rows, newest first: the format academic sites converge on
+   (al-folio and friends). No category chips -- the entry says what it is.
+   ------------------------------------------------------------------------ */
+
+.news {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.6rem 2rem 2rem;
+  padding: 2.8rem 2rem 2.4rem;
 }
 
-.recent-activity h2 {
+.news h2 {
   font-size: 1.3rem;
-  margin-bottom: 1.1rem;
-  color: var(--color-accent);
   font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 1.2rem;
 }
 
-.activity-feed {
+.news-list {
   list-style: none;
   padding: 0;
-  max-width: 60rem;
-  border-top: 1px solid var(--color-border-light);
+  max-width: 56rem;
 }
 
-/* Two columns so every headline starts at the same place, however long
-   the type label happens to be. */
-.activity-item {
+.news-item {
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
-  column-gap: 1.15rem;
-  align-items: baseline;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.activity-type {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.25em 0;
-  border-radius: 3px;
-}
-
-.activity-type.paper    { background: #E3EBF6; color: #034694; }
-.activity-type.preprint { background: #E3EBF6; color: #034694; }
-.activity-type.talk     { background: #E6F4E6; color: #1B6B1B; }
-.activity-type.upcoming { background: #FFF3DB; color: #8B6914; }
-.activity-type.award    { background: #FFF3DB; color: #8B6914; }
-.activity-type.news     { background: #F0E6F6; color: #5B2D8E; }
-.activity-type.project  { background: #EAF1EC; color: #1B5E4B; }
-.activity-type.press    { background: #FBE9E7; color: #A03A28; }
-
-.activity-text {
-  min-width: 0;
+  grid-template-columns: 8.5rem 1fr;
+  column-gap: 1.5rem;
+  padding: 0.7rem 0;
   font-size: 0.95rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
-.activity-title {
+.news-item + .news-item { border-top: 1px solid var(--color-border-light); }
+
+.news-date {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-secondary);
+  white-space: nowrap;
+  padding-top: 0.32em;
+}
+
+.news-body { min-width: 0; }
+
+/* Entries are links, but a whole paragraph in link blue reads as a wall.
+   Keep them in body colour with a quiet underline; colour on hover. */
+.news-body a {
   color: var(--color-body);
-  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2.5px;
+  text-decoration-color: rgba(3, 70, 148, 0.28);
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
 }
 
-a.activity-title { color: var(--color-link); }
-a.activity-title:hover { color: var(--color-link-hover); }
+.news-body a:hover,
+.news-body a:focus-visible {
+  color: var(--color-link);
+  text-decoration-color: var(--color-link);
+}
 
-/* The secondary line -- venue, coauthors, date -- reads far better under
-   the headline than trailing after it on the same line. */
-.activity-detail {
+.news-detail {
   display: block;
   margin-top: 0.1rem;
-  font-size: 0.845rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
   color: var(--color-secondary);
 }
 
@@ -1136,7 +1130,7 @@ main > .container > h1,
   .nav-links li:last-child a { border-bottom: none; }
   .main-nav { position: relative; }
 
-  .recent-activity { padding: 1.8rem 1.5rem 1rem; }
+  .news { padding: 2rem 1.5rem 1.6rem; }
 
   .container { padding: 0 1.5rem; }
   main > .container > h1 { font-size: 1.8rem; }
@@ -1150,7 +1144,7 @@ main > .container > h1,
   .hero-role strong { font-size: 0.95rem; }
   .hero-image img { max-width: 180px; }
 
-  .recent-activity { padding: 1.3rem 1rem 0.8rem; }
+  .news { padding: 1.6rem 1rem 1.2rem; }
   main > .container > h1 { font-size: 1.5rem; }
 
   .talk-group { padding-left: 0.5rem; }
@@ -1194,11 +1188,11 @@ main > .container > h1,
 
   .project-title { font-size: 1.25rem; }
 
-  /* Stack the feed: a fixed label column is wasted width on a phone. */
-  .activity-item {
+  /* Stack the feed: a fixed date column is wasted width on a phone. */
+  .news-item {
     grid-template-columns: 1fr;
-    row-gap: 0.3rem;
+    row-gap: 0.2rem;
     padding: 0.85rem 0;
   }
-  .activity-type { width: auto; justify-self: start; padding: 0.25em 0.5em; }
+  .news-date { padding-top: 0; }
 }

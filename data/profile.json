@@ -28,81 +28,63 @@
   },
   "highlights": [
     {
-      "text": "I have joined Axiom Math as a Member of Technical Staff",
-      "type": "news",
-      "manual": true,
-      "sortDate": "2026"
+      "date": "2026-09-01",
+      "text": "I begin as a Member of Technical Staff at Axiom Math."
     },
     {
-      "text": "Bounded gaps between primes, formalized in Lean 4: the project I led at Axiom is now public",
+      "date": "2026-08-19",
+      "text": "I spoke with MTS about the bounded gaps formalization and AxiomProver.",
+      "detail": "Video interview",
+      "link": "https://x.com/MTSlive/status/2089875266487439457"
+    },
+    {
+      "date": "2026-08-17",
+      "text": "<em>IEEE Spectrum</em> covers the formalization: “AI Used to Verify Toughest Mathematics Proof Yet”.",
+      "detail": "Benjamin Skuse",
+      "link": "https://spectrum.ieee.org/axiom-math-246-theorem-formalization"
+    },
+    {
+      "date": "2026-08-17",
+      "text": "Bounded gaps between primes, the project I led at Axiom, is public: a complete Lean 4 formalization of the theorem that $p_{n+1}-p_n \\leq 246$ for infinitely many $n$.",
       "detail": "primegaps.axiommath.ai",
-      "link": "https://primegaps.axiommath.ai/",
-      "type": "project",
-      "manual": true,
-      "sortDate": "2026"
+      "link": "https://primegaps.axiommath.ai/"
     },
     {
-      "text": "IEEE Spectrum: “AI Used to Verify Toughest Mathematics Proof Yet”, on the bounded gaps formalization",
-      "detail": "Benjamin Skuse, August 17, 2026",
-      "link": "https://spectrum.ieee.org/axiom-math-246-theorem-formalization",
-      "type": "press",
-      "manual": true,
-      "sortDate": "2026"
+      "date": "2026-08-12",
+      "text": "New version of “Parity of the partition function in quadratic progressions” (with Ken Ono), with the algebraic identities verified in Lean.",
+      "link": "https://arxiv.org/abs/2509.09553"
     },
     {
-      "text": "MTS: I spoke about the bounded gaps formalization and AxiomProver",
-      "detail": "Video, August 19, 2026",
-      "link": "https://x.com/MTSlive/status/2089875266487439457",
-      "type": "press",
-      "manual": true,
-      "sortDate": "2026"
+      "date": "2026-07-14",
+      "text": "New preprint: “Beyond mock modularity: elliptic corrections for higher Dyson ranks” (with Claudia Alfes and Ken Ono).",
+      "link": "https://arxiv.org/abs/2607.13159"
     },
     {
-      "text": "Beyond mock modularity: elliptic corrections for higher Dyson ranks",
-      "detail": "With Claudia Alfes and Ken Ono",
-      "link": "https://arxiv.org/abs/2607.13159",
-      "type": "preprint",
-      "manual": true,
-      "sortDate": "2026"
+      "date": "2026-04-13",
+      "text": "I joined Axiom Math as a Resident Research Scientist."
     },
     {
-      "text": "Parity of the partition function in quadratic progressions",
-      "detail": "With Ken Ono",
-      "link": "https://arxiv.org/abs/2509.09553",
-      "type": "preprint",
-      "manual": true,
-      "sortDate": "2026"
-    },
-    {
-      "text": "On the quartic invariant of odd-degree binary forms",
-      "detail": "With a complete Lean 4 formalization",
-      "link": "https://arxiv.org/abs/2603.24330",
-      "type": "preprint",
-      "manual": true,
-      "sortDate": "2026"
-    },
-    {
-      "text": "Positive proportion results for elliptic curves over Q with small 2-Selmer rank",
-      "detail": "With Manjul Bhargava, Wei Ho, Ari Shnidman and Alexander Smith",
-      "link": "https://github.com/ashvin-swaminathan/2-Selmer-statistics",
-      "type": "preprint",
-      "manual": true,
-      "sortDate": "2026"
-    },
-    {
-      "text": "The average number of 3-torsion elements in class groups of orders in quadratic extensions of number fields",
-      "detail": "With Eliot Hodges",
-      "type": "preprint",
-      "manual": true,
-      "sortDate": "2026"
-    },
-    {
-      "text": "ICARM Workshop on Milestones of Autonomous Mathematics, April 13–17, 2026",
+      "date": "2026-04-13",
+      "dateDisplay": "Apr 13–17, 2026",
+      "text": "Attended the ICARM Workshop on Milestones of Autonomous Mathematics.",
       "detail": "San Francisco, CA",
-      "link": "https://icarm.io/project/milestones-of-autonomous-mathematics/",
-      "type": "talk",
-      "manual": true,
-      "sortDate": "2026"
+      "link": "https://icarm.io/project/milestones-of-autonomous-mathematics/"
+    },
+    {
+      "date": "2026-03-25",
+      "text": "New preprint: “On the quartic invariant of odd-degree binary forms”, accompanied by a complete Lean 4 formalization.",
+      "link": "https://arxiv.org/abs/2603.24330"
+    },
+    {
+      "date": "2026",
+      "text": "New preprint: “Positive proportion results for elliptic curves over $\\mathbb{Q}$ with small $2$-Selmer rank” (with Manjul Bhargava, Wei Ho, Ari Shnidman and Alexander Smith).",
+      "detail": "Available upon request",
+      "link": "https://github.com/ashvin-swaminathan/2-Selmer-statistics"
+    },
+    {
+      "date": "2026",
+      "text": "New preprint: “The average number of $3$-torsion elements in class groups of orders in quadratic extensions of number fields” (with Eliot Hodges).",
+      "detail": "Available upon request"
     }
   ],
   "researchInterests": [

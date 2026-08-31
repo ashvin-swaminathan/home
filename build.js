@@ -19,7 +19,7 @@ const PAGES = [
     template: 'index.ejs',
     title: 'Home',
     currentPage: 'home',
-    dataKeys: ['profile', 'papers', 'talks', 'vita'],
+    dataKeys: ['profile', 'papers'],
   },
   {
     output: 'research.html',
@@ -121,127 +121,40 @@ function parseYear(value) {
 }
 
 /**
- * Generate a curated activity feed:
- * - The most recent paper (by year)
- * - The most recent past talk (year <= current year)
- * - All upcoming talks (year >= current year, future-looking)
- * - Manual highlights from profile
+ * Format a news date for display. `date` carries whatever precision is known:
+ * "2026-09-01", "2026-09" or "2026". An explicit `dateDisplay` wins, which is
+ * how a date range ("Apr 13-17, 2026") gets rendered.
  */
-function generateActivityFeed(allData) {
-  const items = [];
-  const highlights = [];
-  const upcoming = [];
-  const now = new Date();
-  const currentYear = now.getFullYear();
-  const currentMonth =
-    currentYear + '-' + String(now.getMonth() + 1).padStart(2, '0');
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  // (a) Most recent paper: find the one with the highest year
-  if (allData.papers && allData.papers.sections) {
-    let bestPaper = null;
-    let bestYear = 0;
-    for (const section of allData.papers.sections) {
-      if (section.id === 'theses-expository') continue;
-      for (const paper of section.papers) {
-        const y = paper.year || 0;
-        if (y > bestYear) {
-          bestYear = y;
-          bestPaper = paper;
-        }
-      }
-    }
-    // Skip it if a hand-written highlight already announces this paper.
-    // Titles carry TeX ($2$-Selmer, \mathbb{Q}) that the prose does not, so
-    // compare on a stripped-down form of each.
-    const plain = t => t
-      .replace(/\$/g, '')
-      .replace(/\\[a-zA-Z]+/g, '')
-      .replace(/[{}]/g, '')
-      .replace(/[^a-z0-9]+/gi, ' ')
-      .trim()
-      .toLowerCase();
-    const announced = bestPaper && ((allData.profile && allData.profile.highlights) || [])
-      .some(hl => hl.text && plain(hl.text).includes(plain(bestPaper.title).slice(0, 40)));
+function formatNewsDate(item) {
+  if (item.dateDisplay) return item.dateDisplay;
+  const parts = String(item.date || '').split('-');
+  const [y, m, d] = parts;
+  if (!y) return '';
+  if (!m) return y;
+  const month = MONTHS[Number(m) - 1] || '';
+  return d ? `${month} ${Number(d)}, ${y}` : `${month} ${y}`;
+}
 
-    if (bestPaper && !announced) {
-      const links = bestPaper.links || {};
-      const link = links.arxiv || links.journal || links.pdf || null;
-      items.push({
-        type: 'paper',
-        text: bestPaper.title,
-        detail: bestPaper.venue || bestPaper.status || null,
-        date: bestYear,
-        link,
-      });
-    }
-  }
-
-  // (b) Talks: the most recent past talk, plus every talk still to come.
-  //     A talk counts as upcoming only if its date is in the future; a talk
-  //     earlier this year has already happened and must not be labelled so.
-  if (allData.talks) {
-    const allTalks = [
-      ...(allData.talks.invited || []),
-      ...(allData.talks.contributed || []),
-    ];
-
-    let recentTalk = null;
-    let recentSort = '';
-    const upcomingTalks = [];
-
-    for (const talk of allTalks) {
-      if (talk.year == null) continue;
-      // Sortable key: "YYYY-MM", padding a bare year to its final month so a
-      // year-only entry is treated as past once that year is over.
-      const hasMonth = talk.date && /^\d{4}-\d{2}$/.test(talk.date);
-      const key = hasMonth ? talk.date : String(talk.year) + '-12';
-      // A talk given only a year cannot be claimed as upcoming within that
-      // year -- we have no evidence it has not already happened.
-      const upcoming = hasMonth ? key >= currentMonth : talk.year > currentYear;
-      if (upcoming) {
-        upcomingTalks.push({ talk, key });
-      } else if (key > recentSort) {
-        recentSort = key;
-        recentTalk = talk;
-      }
-    }
-
-    if (recentTalk) {
-      items.push({
-        type: 'talk',
-        text: recentTalk.title,
-        detail: recentTalk.venue,
-        date: recentTalk.year,
-      });
-    }
-
-    upcomingTalks.sort((a, b) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0));
-    for (const { talk } of upcomingTalks) {
-      upcoming.push({
-        type: 'upcoming',
-        text: talk.title,
-        detail: talk.venue,
-        date: talk.year,
-      });
-    }
-  }
-
-  // (c) Hand-written highlights from profile
-  if (allData.profile && allData.profile.highlights) {
-    for (const highlight of allData.profile.highlights) {
-      highlights.push({
-        type: highlight.type || 'news',
-        text: highlight.text,
-        detail: highlight.detail || null,
-        date: highlight.sortDate ? parseInt(highlight.sortDate, 10) : 0,
-        link: highlight.link || null,
-      });
-    }
-  }
-
-  // Hand-written news first, then what is still to come, then the automatic
-  // most-recent paper and talk.
-  return [...highlights, ...upcoming, ...items];
+/**
+ * The news feed: the profile's hand-written entries, newest first.
+ * Entries known only to the year sort below the dated ones for that year,
+ * since we cannot place them any more precisely.
+ */
+function generateNewsFeed(profile) {
+  const items = (profile.highlights || []).map(item => ({
+    ...item,
+    dateLabel: formatNewsDate(item),
+    // Normalise to YYYY-MM-DD so a year-only entry ("2026-00-00") sorts
+    // below every dated entry of that year rather than above them.
+    sortKey: (() => {
+      const [y = '0000', m = '00', d = '00'] = String(item.date || '').split('-');
+      return `${y}-${m}-${d}`;
+    })(),
+  }));
+  return items.sort((a, b) => (a.sortKey < b.sortKey ? 1 : a.sortKey > b.sortKey ? -1 : 0));
 }
 
 /**
@@ -281,9 +194,9 @@ function build() {
       dataContext[key] = allData[key];
     }
 
-    // Generate activity feed for the homepage
+    // Build the news feed for the homepage
     if (page.currentPage === 'home') {
-      dataContext.activityFeed = generateActivityFeed(allData);
+      dataContext.news = generateNewsFeed(profile);
     }
 
     // 1. Render the page template to get inner content

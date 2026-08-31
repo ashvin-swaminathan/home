@@ -49,23 +49,23 @@
     </div>
 </section>
 
-<% if (activityFeed && activityFeed.length > 0) { %>
-<section class="recent-activity">
+<% if (news && news.length > 0) { %>
+<section class="news">
     <h2>News</h2>
-    <ul class="activity-feed">
-        <% activityFeed.forEach(function(item) { %>
-            <li class="activity-item">
-                <span class="activity-type <%= item.type %>"><%= item.type %></span>
-                <div class="activity-text">
+    <ol class="news-list">
+        <% news.forEach(function(item) { %>
+            <li class="news-item">
+                <div class="news-date"><time datetime="<%= item.date %>"><%= item.dateLabel %></time></div>
+                <div class="news-body">
                     <% if (item.link) { %>
-                        <a class="activity-title" href="<%= item.link %>" target="_blank" rel="noopener"><%= item.text %></a>
+                        <a href="<%= item.link %>" target="_blank" rel="noopener"><%- item.text %></a>
                     <% } else { %>
-                        <span class="activity-title"><%= item.text %></span>
+                        <%- item.text %>
                     <% } %>
-                    <% if (item.detail) { %><span class="activity-detail"><%= item.detail %></span><% } %>
+                    <% if (item.detail) { %><span class="news-detail"><%- item.detail %></span><% } %>
                 </div>
             </li>
         <% }); %>
-    </ul>
+    </ol>
 </section>
 <% } %>
