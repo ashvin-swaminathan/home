@@ -58,6 +58,36 @@
           }
         }
       ],
+      "press": [
+        {
+          "outlet": "IEEE Spectrum",
+          "title": "AI Used to Verify Toughest Mathematics Proof Yet",
+          "byline": "Benjamin Skuse",
+          "date": "August 17, 2026",
+          "url": "https://spectrum.ieee.org/axiom-math-246-theorem-formalization"
+        },
+        {
+          "outlet": "MTS",
+          "title": "Interview on the BGP246 formalization and AxiomProver (video)",
+          "byline": null,
+          "date": "August 19, 2026",
+          "url": "https://x.com/MTSlive/status/2089875266487439457"
+        },
+        {
+          "outlet": "Unite.AI",
+          "title": "Axiom Math's AI Verifies the 246 Prime-Gaps Theorem in Lean",
+          "byline": null,
+          "date": "August 2026",
+          "url": "https://www.unite.ai/axiom-maths-ai-verifies-the-246-prime-gaps-theorem-in-lean/"
+        },
+        {
+          "outlet": "Axiom on X",
+          "title": "Announcement thread for the BGP246 formalization",
+          "byline": null,
+          "date": "August 17, 2026",
+          "url": "https://x.com/axiommathai/status/2089732764279132449"
+        }
+      ],
       "credit": "The project was carried out by a large team of mathematical and engineering contributors at Axiom Math; the full author list and citation information are on the project site."
     }
   ]

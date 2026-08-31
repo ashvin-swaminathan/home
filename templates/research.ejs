@@ -33,6 +33,7 @@
                         <% if (paper.links.journal) { %><a href="<%= paper.links.journal %>" class="resource-tag" target="_blank" rel="noopener">journal</a><% } %>
                         <% if (paper.links.pdf) { %><a href="<%= paper.links.pdf %>" class="resource-tag" target="_blank" rel="noopener">pdf</a><% } %>
                         <% if (paper.links.github) { %><a href="<%= paper.links.github %>" class="resource-tag" target="_blank" rel="noopener">github</a><% } %>
+                        <% if (paper.links.catalog) { %><a href="<%= paper.links.catalog %>" class="resource-tag" target="_blank" rel="noopener">library record</a><% } %>
                     </div>
                 <% } %>
                 <% if (paper.abstract) { %>

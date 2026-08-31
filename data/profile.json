@@ -1,14 +1,19 @@
 {
   "name": "Ashvin A. Swaminathan",
   "shortName": "Ashvin Swaminathan",
-  "authorMatchStrings": ["Swaminathan", "A. Swaminathan", "A.A. Swaminathan", "Ashvin Swaminathan"],
+  "authorMatchStrings": [
+    "Swaminathan",
+    "A. Swaminathan",
+    "A.A. Swaminathan",
+    "Ashvin Swaminathan"
+  ],
   "title": "Member of Technical Staff",
   "institution": "Axiom Math",
   "institutionUrl": "https://axiommath.ai/",
   "formerTitle": "NSF Postdoctoral Fellow & Benjamin Peirce Fellow",
   "formerInstitution": "Harvard University",
   "formerInstitutionUrl": "https://www.math.harvard.edu/",
-  "email": "swaminathan@math.harvard.edu",
+  "email": "ashvins@alumni.princeton.edu",
   "photo": "img/photoNormal.jpg",
   "cv": "files/cv.pdf",
   "researchBlurb": "My research lies in <em>number&nbsp;theory</em> and <em>algebraic&nbsp;geometry</em>, with a focus on <em>arithmetic&nbsp;statistics</em>, <em>invariant&nbsp;theory</em>, the <em>Cohen-Lenstra&nbsp;heuristics</em>, <em>rational&nbsp;points on&nbsp;varieties</em>, <em>Diophantine&nbsp;equations</em>, and <em>enumerative&nbsp;geometry</em>.",
@@ -24,6 +29,7 @@
   "highlights": [
     {
       "text": "I have joined Axiom Math as a Member of Technical Staff",
+      "detail": "Cambridge, MA",
       "type": "news",
       "manual": true,
       "sortDate": "2026"
@@ -37,7 +43,23 @@
       "sortDate": "2026"
     },
     {
-      "text": "New preprint: \"Beyond Mock Modularity: Elliptic Corrections for Higher Dyson Ranks\" (with C. Alfes and K. Ono)",
+      "text": "IEEE Spectrum: “AI Used to Verify Toughest Mathematics Proof Yet”, on the bounded gaps formalization",
+      "detail": "Benjamin Skuse, August 17, 2026",
+      "link": "https://spectrum.ieee.org/axiom-math-246-theorem-formalization",
+      "type": "press",
+      "manual": true,
+      "sortDate": "2026"
+    },
+    {
+      "text": "MTS: I spoke about the bounded gaps formalization and AxiomProver",
+      "detail": "video, August 19, 2026",
+      "link": "https://x.com/MTSlive/status/2089875266487439457",
+      "type": "press",
+      "manual": true,
+      "sortDate": "2026"
+    },
+    {
+      "text": "New preprint: “Beyond Mock Modularity: Elliptic Corrections for Higher Dyson Ranks” (with C. Alfes and K. Ono)",
       "link": "https://arxiv.org/abs/2607.13159",
       "type": "preprint",
       "manual": true,

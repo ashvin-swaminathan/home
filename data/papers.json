@@ -5,21 +5,6 @@
       "title": "Articles in Preparation",
       "papers": [
         {
-          "id": "prep-1",
-          "title": "The average number of $3$-torsion elements in class groups of orders in quadratic extensions of number fields",
-          "authors": [
-            "Eliot Hodges",
-            "Ashvin Swaminathan"
-          ],
-          "year": null,
-          "status": "in-preparation",
-          "venue": null,
-          "pages": null,
-          "abstract": null,
-          "links": {},
-          "notes": null
-        },
-        {
           "id": "prep-2",
           "title": "Second-order terms for orbits of coregular representations, and applications",
           "authors": [
@@ -91,6 +76,41 @@
       "id": "arithmetic-statistics",
       "title": "Arithmetic Statistics and Invariant Theory",
       "papers": [
+        {
+          "id": "as-new-1",
+          "title": "Positive proportion results for elliptic curves over $\\mathbb{Q}$ with small $2$-Selmer rank",
+          "authors": [
+            "Manjul Bhargava",
+            "Wei Ho",
+            "Ari Shnidman",
+            "Alexander Smith",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint available upon request.",
+          "pages": null,
+          "abstract": null,
+          "links": {
+            "github": "https://github.com/ashvin-swaminathan/2-Selmer-statistics"
+          },
+          "notes": null
+        },
+        {
+          "id": "prep-1",
+          "title": "The average number of $3$-torsion elements in class groups of orders in quadratic extensions of number fields",
+          "authors": [
+            "Eliot Hodges",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint available upon request.",
+          "pages": null,
+          "abstract": null,
+          "links": {},
+          "notes": null
+        },
         {
           "id": "as-0",
           "title": "On the quartic invariant of odd-degree binary forms",
@@ -642,7 +662,7 @@
           "pages": null,
           "abstract": null,
           "links": {
-            "pdf": "https://dataspace.princeton.edu/bitstream/88435/dsp012v23vx55w/1/Swaminathan_princeton_0181D_14097.pdf"
+            "catalog": "https://catalog.princeton.edu/catalog/99130050799806421"
           },
           "notes": null
         },

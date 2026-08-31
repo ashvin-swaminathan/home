@@ -69,6 +69,21 @@
         </section>
     <% } %>
 
+    <% if (project.press && project.press.length) { %>
+        <section class="project-subsection">
+            <h3>Press and coverage</h3>
+            <ul class="project-press">
+                <% project.press.forEach(function(item) { %>
+                    <li>
+                        <span class="press-outlet"><%= item.outlet %></span>
+                        <a href="<%= item.url %>" target="_blank" rel="noopener"><%= item.title %></a>
+                        <span class="press-meta"><% if (item.byline) { %><%= item.byline %>, <% } %><%= item.date %></span>
+                    </li>
+                <% }); %>
+            </ul>
+        </section>
+    <% } %>
+
     <% if (project.credit) { %>
         <p class="project-credit"><%- project.credit %></p>
     <% } %>
