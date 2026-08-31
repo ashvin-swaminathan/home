@@ -1,6 +1,19 @@
 <h1>Vita</h1>
 
 <section class="vita-section">
+    <h2>Positions</h2>
+    <ul class="vita-list">
+        <% (vita.positions || []).forEach(function(pos) { %>
+            <li class="vita-item position-item">
+                <strong><%= pos.role %></strong>,
+                <% if (pos.url) { %><a href="<%= pos.url %>" target="_blank" rel="noopener"><%= pos.organization %></a><% } else { %><%= pos.organization %><% } %><% if (pos.period) { %>, <%= pos.period %><% } %>
+                <% if (pos.detail) { %><br><span class="position-detail"><%- pos.detail %></span><% } %>
+            </li>
+        <% }); %>
+    </ul>
+</section>
+
+<section class="vita-section">
     <h2>Education</h2>
     <ul class="vita-list">
         <% vita.education.forEach(function(ed) { %>

@@ -3,6 +3,18 @@
 <%- include('_partials/_head', { title: title, profile: profile }) %>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Gradient for the AI-assisted sparkle; defined once, referenced by every badge. -->
+    <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <linearGradient id="ai-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4796e3"/>
+                <stop offset="35%" stop-color="#9177c7"/>
+                <stop offset="70%" stop-color="#d56f76"/>
+                <stop offset="100%" stop-color="#e8a33d"/>
+            </linearGradient>
+        </defs>
+    </svg>
     <%- include('_partials/_nav', { currentPage: currentPage, profile: profile }) %>
     <main id="main-content">
         <% if (currentPage === 'home') { %>

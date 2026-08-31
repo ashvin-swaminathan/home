@@ -2,52 +2,52 @@
   "name": "Ashvin A. Swaminathan",
   "shortName": "Ashvin Swaminathan",
   "authorMatchStrings": ["Swaminathan", "A. Swaminathan", "A.A. Swaminathan", "Ashvin Swaminathan"],
-  "title": "NSF Postdoctoral Fellow & Benjamin Peirce Fellow",
-  "institution": "Department of Mathematics, Harvard University",
-  "institutionUrl": "https://www.harvard.edu/",
-  "mentor": "Melanie Matchett Wood",
-  "mentorUrl": "https://people.math.harvard.edu/~mmwood/",
+  "title": "Member of Technical Staff",
+  "institution": "Axiom Math",
+  "institutionUrl": "https://axiommath.ai/",
+  "formerTitle": "NSF Postdoctoral Fellow & Benjamin Peirce Fellow",
+  "formerInstitution": "Harvard University",
+  "formerInstitutionUrl": "https://www.math.harvard.edu/",
   "email": "swaminathan@math.harvard.edu",
   "photo": "img/photoNormal.jpg",
   "cv": "files/cv.pdf",
   "researchBlurb": "My research lies in <em>number&nbsp;theory</em> and <em>algebraic&nbsp;geometry</em>, with a focus on <em>arithmetic&nbsp;statistics</em>, <em>invariant&nbsp;theory</em>, the <em>Cohen-Lenstra&nbsp;heuristics</em>, <em>rational&nbsp;points on&nbsp;varieties</em>, <em>Diophantine&nbsp;equations</em>, and <em>enumerative&nbsp;geometry</em>.",
-  "aiBlurb": "I am increasingly focused on building workflows that combine <em>large language models</em>, <em>symbolic computation</em>, and <em>formal verification</em> to attack research problems in number&nbsp;theory.",
+  "aiBlurb": "At Axiom I build workflows that combine <em>large language models</em>, <em>symbolic computation</em>, and <em>formal verification</em> to attack research problems in number&nbsp;theory. I led <a href=\"projects.html\">Axiom's bounded gaps between primes project</a>, which produced a complete Lean&nbsp;4 formalization of the theorem that $p_{n+1}-p_n \\leq 246$ for infinitely many $n$.",
   "education": "I received my AB in mathematics from <a href=\"https://college.harvard.edu/\">Harvard College</a>, with a senior thesis supervised by <a href=\"https://www.math.harvard.edu/people/harris-joe/\">Joe Harris</a> and <a href=\"https://sites.google.com/view/anand-patel/home\">Anand Patel</a>, as well as an AM in Physics. I completed my MA and PhD at <a href=\"https://www.math.princeton.edu/\">Princeton</a> under <a href=\"https://www.math.princeton.edu/people/manjul-bhargava\">Manjul Bhargava</a>.",
-  "currentActivity": "In Fall 2025, I was on leave from Harvard, participating as a visiting researcher in the special semester on arithmetic statistics at the new <a href=\"https://lmsi.org/\">Lodha Mathematical Sciences Institute</a> in Mumbai, India.",
+  "currentActivity": "Before joining Axiom I was an NSF Postdoctoral Fellow and Benjamin Peirce Fellow at <a href=\"https://www.math.harvard.edu/\">Harvard</a>, mentored by <a href=\"https://people.math.harvard.edu/~mmwood/\">Melanie Matchett Wood</a>, and in Fall 2025 I was a visiting researcher in the special semester on arithmetic statistics at the <a href=\"https://lmsi.org/\">Lodha Mathematical Sciences Institute</a> in Mumbai, India.",
   "personal": "Outside of mathematics, I love animals and volunteer at <a href=\"https://www.brokentailrescue.org/\">Broken Tail Animal Rescue</a>. If you are interested in adopting an animal, please check out their website!",
-  "onJobMarket": true,
+  "onJobMarket": false,
   "socialLinks": {
     "x": "https://x.com/aaswaminathan01",
     "linkedin": "https://www.linkedin.com/in/ashvin-swaminathan-b159462a5/"
   },
   "highlights": [
     {
-      "text": "New preprint: \"The existence of infinitely many cubic fields with class group of exact 2-rank 1\" (with M. Bhargava, A. Shankar, and A. Siad)",
-      "link": "https://arxiv.org/pdf/2506.05539",
-      "linkText": "[arXiv]",
-      "type": "preprint"
+      "text": "I have joined Axiom Math as a Member of Technical Staff",
+      "type": "news",
+      "manual": true,
+      "sortDate": "2026"
     },
     {
-      "text": "Workshop on Arithmetic Statistics of Algebraic Objects, Mathematisches Forschungsinstitut Oberwolfach, November 2025",
-      "type": "talk"
+      "text": "Bounded gaps between primes, formalized in Lean 4: the project I led at Axiom is now public",
+      "detail": "primegaps.axiommath.ai",
+      "link": "https://primegaps.axiommath.ai/",
+      "type": "project",
+      "manual": true,
+      "sortDate": "2026"
     },
     {
-      "text": "Harvard Number Theory Seminar, February 2026.",
-      "type": "talk"
-    },
-    {
-      "text": "Workshop on Arithmetic Statistics, Centre de Recherches Mathématiques, Université de Montréal, March 2026.",
-      "type": "talk"
-    },
-    {
-      "text": "Upcoming: BU Number Theory Seminar, April 2026.",
-      "type": "upcoming"
+      "text": "New preprint: \"Beyond Mock Modularity: Elliptic Corrections for Higher Dyson Ranks\" (with C. Alfes and K. Ono)",
+      "link": "https://arxiv.org/abs/2607.13159",
+      "type": "preprint",
+      "manual": true,
+      "sortDate": "2026"
     },
     {
       "text": "ICARM Workshop on Milestones of Autonomous Mathematics, April 13–17, 2026",
       "detail": "San Francisco, CA",
       "link": "https://icarm.io/project/milestones-of-autonomous-mathematics/",
-      "type": "upcoming",
+      "type": "talk",
       "manual": true,
       "sortDate": "2026"
     }
@@ -59,7 +59,7 @@
     "Rational points on varieties",
     "Diophantine equations",
     "Enumerative geometry",
-    "AI-Assisted Theorem-Proving",
-    "Formal Verification"
+    "AI-assisted theorem-proving",
+    "Formal verification"
   ]
 }

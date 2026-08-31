@@ -19,7 +19,7 @@ const PAGES = [
     template: 'index.ejs',
     title: 'Home',
     currentPage: 'home',
-    dataKeys: ['profile', 'papers', 'talks', 'vita'],
+    dataKeys: ['profile', 'papers', 'talks', 'vita', 'projects'],
   },
   {
     output: 'research.html',
@@ -27,6 +27,13 @@ const PAGES = [
     title: 'Research',
     currentPage: 'research',
     dataKeys: ['profile', 'papers'],
+  },
+  {
+    output: 'projects.html',
+    template: 'projects.ejs',
+    title: 'Projects',
+    currentPage: 'projects',
+    dataKeys: ['profile', 'projects'],
   },
   {
     output: 'talks.html',
@@ -122,7 +129,12 @@ function parseYear(value) {
  */
 function generateActivityFeed(allData) {
   const items = [];
-  const currentYear = new Date().getFullYear();
+  const highlights = [];
+  const upcoming = [];
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth =
+    currentYear + '-' + String(now.getMonth() + 1).padStart(2, '0');
 
   // (a) Most recent paper: find the one with the highest year
   if (allData.papers && allData.papers.sections) {
@@ -151,24 +163,32 @@ function generateActivityFeed(allData) {
     }
   }
 
-  // (b) Talks: most recent past talk + all upcoming (year >= currentYear)
+  // (b) Talks: the most recent past talk, plus every talk still to come.
+  //     A talk counts as upcoming only if its date is in the future; a talk
+  //     earlier this year has already happened and must not be labelled so.
   if (allData.talks) {
     const allTalks = [
       ...(allData.talks.invited || []),
       ...(allData.talks.contributed || []),
     ];
 
-    // Find most recent past talk
     let recentTalk = null;
-    let recentYear = 0;
+    let recentSort = '';
     const upcomingTalks = [];
 
     for (const talk of allTalks) {
       if (talk.year == null) continue;
-      if (talk.year >= currentYear) {
-        upcomingTalks.push(talk);
-      } else if (talk.year > recentYear) {
-        recentYear = talk.year;
+      // Sortable key: "YYYY-MM", padding a bare year to its final month so a
+      // year-only entry is treated as past once that year is over.
+      const hasMonth = talk.date && /^\d{4}-\d{2}$/.test(talk.date);
+      const key = hasMonth ? talk.date : String(talk.year) + '-12';
+      // A talk given only a year cannot be claimed as upcoming within that
+      // year -- we have no evidence it has not already happened.
+      const upcoming = hasMonth ? key >= currentMonth : talk.year > currentYear;
+      if (upcoming) {
+        upcomingTalks.push({ talk, key });
+      } else if (key > recentSort) {
+        recentSort = key;
         recentTalk = talk;
       }
     }
@@ -182,14 +202,9 @@ function generateActivityFeed(allData) {
       });
     }
 
-    // Add all upcoming talks
-    upcomingTalks.sort((a, b) => {
-      const da = a.date || String(a.year);
-      const db = b.date || String(b.year);
-      return da < db ? -1 : da > db ? 1 : 0;
-    });
-    for (const talk of upcomingTalks) {
-      items.push({
+    upcomingTalks.sort((a, b) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0));
+    for (const { talk } of upcomingTalks) {
+      upcoming.push({
         type: 'upcoming',
         text: talk.title,
         detail: talk.venue,
@@ -198,11 +213,10 @@ function generateActivityFeed(allData) {
     }
   }
 
-  // (c) Manual highlights from profile
+  // (c) Hand-written highlights from profile
   if (allData.profile && allData.profile.highlights) {
     for (const highlight of allData.profile.highlights) {
-      if (!highlight.manual) continue;
-      items.push({
+      highlights.push({
         type: highlight.type || 'news',
         text: highlight.text,
         detail: highlight.detail || null,
@@ -212,7 +226,9 @@ function generateActivityFeed(allData) {
     }
   }
 
-  return items;
+  // Hand-written news first, then what is still to come, then the automatic
+  // most-recent paper and talk.
+  return [...highlights, ...upcoming, ...items];
 }
 
 /**
@@ -252,9 +268,11 @@ function build() {
       dataContext[key] = allData[key];
     }
 
-    // Generate activity feed for the homepage
+    // Generate activity feed and pick the featured project for the homepage
     if (page.currentPage === 'home') {
       dataContext.activityFeed = generateActivityFeed(allData);
+      dataContext.featuredProject =
+        (allData.projects && allData.projects.projects || []).find(p => p.featured) || null;
     }
 
     // 1. Render the page template to get inner content

@@ -10,7 +10,7 @@
       "rating": null,
       "ratingMax": 5.0,
       "links": {},
-      "notes": "expected"
+      "notes": null
     },
     {
       "id": "inst-2",
@@ -21,7 +21,7 @@
       "year": 2024,
       "rating": 5.0,
       "ratingMax": 5.0,
-      "links": { "website": "https://ashvin-swaminathan.github.io/home/Math223br.html" },
+      "links": {},
       "notes": null
     },
     {
@@ -33,7 +33,7 @@
       "year": 2024,
       "rating": null,
       "ratingMax": 5.0,
-      "links": { "website": "https://ashvin-swaminathan.github.io/home/Math223br.html" },
+      "links": {},
       "notes": null
     }
   ],
@@ -138,7 +138,9 @@
       "role": "Harvard PhD student",
       "period": "2022-2024",
       "description": "Coauthored paper",
-      "links": { "arxiv": "https://arxiv.org/pdf/2409.02717.pdf" }
+      "links": {
+        "arxiv": "https://arxiv.org/pdf/2409.02717.pdf"
+      }
     },
     {
       "id": "ment-2",

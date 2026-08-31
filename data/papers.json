@@ -7,7 +7,10 @@
         {
           "id": "prep-1",
           "title": "The average number of $3$-torsion elements in class groups of orders in quadratic extensions of number fields",
-          "authors": ["Eliot Hodges", "Ashvin Swaminathan"],
+          "authors": [
+            "Eliot Hodges",
+            "Ashvin Swaminathan"
+          ],
           "year": null,
           "status": "in-preparation",
           "venue": null,
@@ -19,7 +22,11 @@
         {
           "id": "prep-2",
           "title": "Second-order terms for orbits of coregular representations, and applications",
-          "authors": ["Jef Laga", "Artane Siad", "Ashvin Swaminathan"],
+          "authors": [
+            "Jef Laga",
+            "Artane Siad",
+            "Ashvin Swaminathan"
+          ],
           "year": null,
           "status": "in-preparation",
           "venue": null,
@@ -31,7 +38,11 @@
         {
           "id": "prep-3",
           "title": "Computing the second-order term in the counting function for $2$-Selmer groups of elliptic curves",
-          "authors": ["Jef Laga", "Artane Siad", "Ashvin Swaminathan"],
+          "authors": [
+            "Jef Laga",
+            "Artane Siad",
+            "Ashvin Swaminathan"
+          ],
           "year": null,
           "status": "in-preparation",
           "venue": null,
@@ -43,7 +54,13 @@
         {
           "id": "prep-4",
           "title": "Heuristics for class groups of orders in quadratic fields",
-          "authors": ["Manjul Bhargava", "Arul Shankar", "Artane Siad", "Ashvin Swaminathan", "Ila Varma"],
+          "authors": [
+            "Manjul Bhargava",
+            "Arul Shankar",
+            "Artane Siad",
+            "Ashvin Swaminathan",
+            "Ila Varma"
+          ],
           "year": null,
           "status": "in-preparation",
           "venue": null,
@@ -55,7 +72,11 @@
         {
           "id": "prep-5",
           "title": "$2$-Selmer groups of even-degree hyperelliptic curves, and $2$-class groups of even-degree number fields",
-          "authors": ["Manjul Bhargava", "Arul Shankar", "Ashvin Swaminathan"],
+          "authors": [
+            "Manjul Bhargava",
+            "Arul Shankar",
+            "Ashvin Swaminathan"
+          ],
           "year": null,
           "status": "in-preparation",
           "venue": null,
@@ -73,67 +94,104 @@
         {
           "id": "as-0",
           "title": "On the quartic invariant of odd-degree binary forms",
-          "authors": ["Ashvin Swaminathan"],
-          "year": 2025,
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
           "status": "preprint",
           "venue": "Preprint. Accompanied by a complete Lean 4 formalization (~15,000 lines).",
           "pages": null,
           "abstract": "We determine the squarefree part of the scalar factor $S(n)$ that arises when the quartic invariant of the generic binary form of odd degree $2n+1$ is expressed as the discriminant of the unique quadratic covariant. The main theorem identifies $\\mathrm{sqf}(S(n))$ with an OEIS sequence: for every prime $p$ and every $n \\geq 1$, $v_p(S(n))$ is odd if and only if $p$ is an odd prime and $n+2$ is a power of $p$. The proof uses Gauss's lemma for multivariate polynomials, Kummer's carry-counting theorem, and a $p$-adic deformation argument. The theorem is accompanied by a complete Lean 4 formalization comprising approximately 15,000 lines across 25 modules, produced via an AI-assisted workflow using Claude Code (Anthropic), Codex (OpenAI), and Aristotle (Harmonic).",
-          "links": { "arxiv": "https://github.com/ashvin-swaminathan/quartic-invariant" },
-          "notes": "AI-assisted proof and formalization"
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2603.24330",
+            "github": "https://github.com/ashvin-swaminathan/quartic-invariant"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "Proof developed with Claude Code (Anthropic) and Codex (OpenAI); key arithmetic lemmas formally verified in Lean 4 using Aristotle (Harmonic)."
+          }
         },
         {
           "id": "as-1",
           "title": "The existence of infinitely many cubic fields with class group of exact $2$-rank $1$",
-          "authors": ["Manjul Bhargava", "Arul Shankar", "Artane Siad", "Ashvin Swaminathan"],
+          "authors": [
+            "Manjul Bhargava",
+            "Arul Shankar",
+            "Artane Siad",
+            "Ashvin Swaminathan"
+          ],
           "year": 2025,
           "status": "submitted",
           "venue": "Submitted. 5 pages.",
           "pages": "5",
           "abstract": "We show that infinitely many cubic fields have class group of 2-rank 1.",
-          "links": { "arxiv": "https://arxiv.org/pdf/2602.06894" },
+          "links": {
+            "arxiv": "https://arxiv.org/pdf/2602.06894"
+          },
           "notes": null
         },
         {
           "id": "as-2",
           "title": "A parametrization of $3$-class groups of quadratic rings over Dedekind domains",
-          "authors": ["Eliot Hodges", "Ashvin Swaminathan"],
+          "authors": [
+            "Eliot Hodges",
+            "Ashvin Swaminathan"
+          ],
           "year": 2025,
           "status": "submitted",
           "venue": "Submitted. 28 pages.",
           "pages": "28",
           "abstract": "Let $R$ be a Dedekind domain with field of fractions $K$ and $\\operatorname{char}(R)\\neq3$. In this paper, we generalize Bhargava's parametrization of $3$-torsion ideal classes by binary cubic forms to work over $R$. Specifically, we construct arithmetic subgroups of $\\operatorname{GL}_2(K)$ whose actions on certain lattices of binary cubic forms over $K$ parametrize $3$-torsion ideal classes in class groups of quadratic rings over $R$.",
-          "links": { "arxiv": "https://arxiv.org/pdf/2509.01722" },
+          "links": {
+            "arxiv": "https://arxiv.org/pdf/2509.01722"
+          },
           "notes": null
         },
         {
           "id": "as-3",
           "title": "The second moment of the size of the $2$-class group of monogenized cubic fields",
-          "authors": ["Manjul Bhargava", "Arul Shankar", "Ashvin Swaminathan"],
+          "authors": [
+            "Manjul Bhargava",
+            "Arul Shankar",
+            "Ashvin Swaminathan"
+          ],
           "year": 2025,
           "status": "submitted",
           "venue": "Submitted. Based on Chapter 4 of my PhD thesis. 17 pages.",
           "pages": "17",
           "abstract": "We prove that when totally real (resp., complex) monogenized cubic number fields are ordered by height, the second moment of the size of the 2-class group is at most 3 (resp., at most 6). In the totally real case, we further prove that the second moment of the size of the narrow 2-class group is at most 9. This result gives further evidence in support of the general observation, first made in work of Bhargava--Hanke--Shankar and recently formalized into a set of heuristics in work of Siad--Venkatesh, that monogenicity has an altering effect on class group distributions. All of the upper bounds we obtain are tight, conditional on tail estimates.",
-          "links": { "arxiv": "https://arxiv.org/pdf/2506.05539" },
+          "links": {
+            "arxiv": "https://arxiv.org/pdf/2506.05539"
+          },
           "notes": "Based on Chapter 4 of my PhD thesis."
         },
         {
           "id": "as-4",
           "title": "The second moment of the size of the $2$-Selmer group of elliptic curves",
-          "authors": ["Manjul Bhargava", "Arul Shankar", "Ashvin Swaminathan"],
+          "authors": [
+            "Manjul Bhargava",
+            "Arul Shankar",
+            "Ashvin Swaminathan"
+          ],
           "year": 2021,
           "status": "submitted",
           "venue": "Submitted. Based on Chapter 4 of my PhD thesis. 49 pages.",
           "pages": "49",
           "abstract": "In this paper, we prove that when elliptic curves over Q are ordered by height, the second moment of the size of the 2-Selmer group is at most 15. This confirms a conjecture of Poonen and Rains.",
-          "links": { "arxiv": "https://arxiv.org/pdf/2110.09063.pdf" },
+          "links": {
+            "arxiv": "https://arxiv.org/pdf/2110.09063.pdf"
+          },
           "notes": "Based on Chapter 4 of my PhD thesis."
         },
         {
           "id": "as-5",
           "title": "Counting integral points on symmetric varieties with applications to arithmetic statistics",
-          "authors": ["Arul Shankar", "Artane Siad", "Ashvin Swaminathan"],
+          "authors": [
+            "Arul Shankar",
+            "Artane Siad",
+            "Ashvin Swaminathan"
+          ],
           "year": 2024,
           "status": "published",
           "venue": "Proceedings of the London Mathematical Society",
@@ -149,31 +207,45 @@
         {
           "id": "as-6",
           "title": "Geometry-of-numbers methods in the cusp",
-          "authors": ["Arul Shankar", "Artane Siad", "Ashvin Swaminathan", "Ila Varma"],
+          "authors": [
+            "Arul Shankar",
+            "Artane Siad",
+            "Ashvin Swaminathan",
+            "Ila Varma"
+          ],
           "year": 2021,
           "status": "accepted",
           "venue": "To appear in Algebra & Number Theory. Based on Chapter 5 of my PhD thesis.",
           "pages": null,
           "abstract": "In this article, we develop new methods for counting integral orbits having bounded invariants that lie inside the cusps of fundamental domains for coregular representations. We illustrate these methods for a representation of cardinal interest in number theory, namely that of the split orthogonal group acting on the space of quadratic forms.",
-          "links": { "arxiv": "https://arxiv.org/pdf/2110.09466.pdf" },
+          "links": {
+            "arxiv": "https://arxiv.org/pdf/2110.09466.pdf"
+          },
           "notes": "Based on Chapter 5 of my PhD thesis."
         },
         {
           "id": "as-7",
           "title": "The mean number of $2$-torsion elements in the class groups of cubic orders",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": 2022,
           "status": "accepted",
           "venue": "To appear in Commentarii Mathematici Helvetici.",
           "pages": null,
           "abstract": "We determine the mean number of 2-torsion elements in class groups of cubic orders, when such orders are enumerated by discriminant. Specifically, we prove that when isomorphism classes of totally real (resp., complex) cubic orders are enumerated by discriminant, the average 2-torsion in the class group is $1 + \\frac{1}{4} \\times \\frac{\\zeta(2)}{\\zeta(4)}$ (resp., $1 + \\frac{1}{2} \\times \\frac{\\zeta(2)}{\\zeta(4)}$). In particular, we find that the average 2-torsion in the class group increases when one ranges over all orders in cubic fields instead of restricting to the subfamily of rings of integers of cubic fields, where the average 2-torsion in the class group was first determined in work of Bhargava to be $\\frac{5}{4}$ (resp., $\\frac{3}{2}$). By work of Bhargava--Varma, proving this result amounts to obtaining an asymptotic count of the number of \"reducible\" $\\operatorname{SL}_3(\\mathbb{Z})$-orbits on the space $\\mathbb{Z}^2 \\otimes_{\\mathbb{Z}} \\operatorname{Sym}^2 \\mathbb{Z}^3$ of $3 \\times 3$ symmetric integer matrices having bounded invariants and satisfying local conditions. In this paper, we resolve the generalization of this orbit-counting problem where the dimension $3$ is replaced by any fixed odd integer $N \\geq 3$. More precisely, we determine asymptotic formulas for the number of reducible $\\operatorname{SL}_N(\\mathbb{Z})$-orbits on $\\mathbb{Z}^2 \\otimes_{\\mathbb{Z}} \\operatorname{Sym}^2 \\mathbb{Z}^N$ satisfying general infinite sets of congruence conditions.",
-          "links": { "arxiv": "https://arxiv.org/pdf/2211.08729.pdf" },
+          "links": {
+            "arxiv": "https://arxiv.org/pdf/2211.08729.pdf"
+          },
           "notes": null
         },
         {
           "id": "as-8",
           "title": "A positive proportion of monic odd-degree hyperelliptic curves have no unexpected quadratic points",
-          "authors": ["Jef Laga", "Ashvin Swaminathan"],
+          "authors": [
+            "Jef Laga",
+            "Ashvin Swaminathan"
+          ],
           "year": 2024,
           "status": "published",
           "venue": "International Mathematics Research Notices (2024).",
@@ -188,7 +260,9 @@
         {
           "id": "as-9",
           "title": "Most odd-degree binary forms fail to primitively represent a square",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": 2023,
           "status": "published",
           "venue": "Compositio Mathematica. Based on Chapter 3 of my PhD thesis.",
@@ -203,7 +277,9 @@
         {
           "id": "as-10",
           "title": "A new parametrization for ideal classes in rings defined by binary forms, and applications",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": 2023,
           "status": "published",
           "venue": "Journal fur die Reine und Angewandte Mathematik (Crelle's Journal). Based on Chapters 1 and 2 of my PhD thesis.",
@@ -218,7 +294,13 @@
         {
           "id": "as-11",
           "title": "Hermite equivalence of polynomials",
-          "authors": ["Manjul Bhargava", "Jan-Hendrik Evertse", "Kálmán Győry", "László Remete", "Ashvin Swaminathan"],
+          "authors": [
+            "Manjul Bhargava",
+            "Jan-Hendrik Evertse",
+            "Kálmán Győry",
+            "László Remete",
+            "Ashvin Swaminathan"
+          ],
           "year": 2023,
           "status": "published",
           "venue": "Acta Arithmetica (Special issue for Andrzej Schinzel).",
@@ -233,7 +315,12 @@
         {
           "id": "as-12",
           "title": "Hyperelliptic curves with maximal Galois action on the torsion points of their Jacobians",
-          "authors": ["Aaron Landesman", "Ashvin Swaminathan", "James Tao", "Yujie Xu"],
+          "authors": [
+            "Aaron Landesman",
+            "Ashvin Swaminathan",
+            "James Tao",
+            "Yujie Xu"
+          ],
           "year": 2020,
           "status": "published",
           "venue": "Indiana University Mathematics Journal.",
@@ -248,7 +335,12 @@
         {
           "id": "as-13",
           "title": "Surjectivity of Galois representations in rational families of abelian varieties",
-          "authors": ["Aaron Landesman", "Ashvin Swaminathan", "James Tao", "Yujie Xu"],
+          "authors": [
+            "Aaron Landesman",
+            "Ashvin Swaminathan",
+            "James Tao",
+            "Yujie Xu"
+          ],
           "year": 2019,
           "status": "published",
           "venue": "Algebra & Number Theory.",
@@ -263,13 +355,65 @@
       ]
     },
     {
+      "id": "partitions-modular-forms",
+      "title": "Partitions and Modular Forms",
+      "papers": [
+        {
+          "id": "pmf-1",
+          "title": "Beyond mock modularity: elliptic corrections for higher Dyson ranks",
+          "authors": [
+            "Claudia Alfes",
+            "Ken Ono",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint. 33 pages.",
+          "pages": null,
+          "abstract": "When $m = 1$, the Dyson rank generating function is a classical bridge between partition theory, Ramanujan's mock theta functions, and the theory of harmonic Maass forms and nonholomorphic Jacobi forms. The higher Dyson systems, for $m \\geq 2$, are a natural multivariable refinement of it, combining $m$ graded rank contributions. Unlike the classical case, these higher systems are not expected to fit the mock-modular framework, which raises the question of what analytic structure governs them. We show that their root-of-unity specializations carry a hidden elliptic structure. A finite $q$-difference recurrence produces an explicit polynomial obstruction to the expected index $m$ elliptic transformation law, and because the obstruction is finite, its partial fractions canonically determine finitely many Appell&ndash;Lerch correction terms that remove it. The corrected functions satisfy a twisted index $m$ elliptic law; a natural translation removes the twist, and their holomorphic finite parts admit finite theta decompositions. Thus, the natural analogue of Dyson's mock-modular phenomenon at higher $m$ is not mock modularity but a finite theta decomposition governed by an index $m$ elliptic transformation law.",
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2607.13159"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "These results grew out of a human&ndash;AI collaboration; the key new formulas were formalized and machine-verified in Lean/Mathlib by AxiomProver."
+          }
+        },
+        {
+          "id": "pmf-2",
+          "title": "Parity of the partition function in quadratic progressions",
+          "authors": [
+            "Ken Ono",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint. 26 pages.",
+          "pages": null,
+          "abstract": "The parity of the partition function $p(n)$ is one of the most stubborn problems in partition theory. In 2010, the first author conjectured that, for every square-free $1 &lt; D \\equiv 23 \\pmod{24}$, the values $p\\left(\\frac{Dm^2+1}{24}\\right)$, as $m$ ranges over the positive integers with $(m,6)=1$, include infinitely many even and infinitely many odd terms. We prove this conjecture. The key new idea is geometric. Logarithmic derivatives of twisted Borcherds products built from Ramanujan's third-order mock theta functions recast the problem in terms of CM points of discriminant $-D$ on $X_0(6)$. The uniqueness of canonical lifts from characteristic $2$ to characteristic zero shows that the CM points supporting the poles remain distinct after reduction modulo $2$. This fact, combined with a comparison with Eisenstein series, rules out both constant parity patterns. A Galois representation argument then gives infinitely many values of each parity. More generally, the method applies to analogous sequences arising from suitable generalized twisted Borcherds products.",
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2509.09553"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "The algebraic identities at the heart of this paper were formalized and verified in Lean by AxiomProver."
+          }
+        }
+      ]
+    },
+    {
       "id": "algebraic-geometry",
       "title": "Algebraic Geometry",
       "papers": [
         {
           "id": "ag-1",
           "title": "Inflectionary invariants for isolated complete intersection curve singularities",
-          "authors": ["Anand Patel", "Ashvin Swaminathan"],
+          "authors": [
+            "Anand Patel",
+            "Ashvin Swaminathan"
+          ],
           "year": 2022,
           "status": "published",
           "venue": "Memoirs of the American Mathematical Society. Based on my senior thesis.",
@@ -284,7 +428,11 @@
         {
           "id": "ag-2",
           "title": "On the EKL-degree of a Weyl cover",
-          "authors": ["Joseph Knight", "Ashvin Swaminathan", "Dennis Tseng"],
+          "authors": [
+            "Joseph Knight",
+            "Ashvin Swaminathan",
+            "Dennis Tseng"
+          ],
           "year": 2020,
           "status": "published",
           "venue": "Journal of Algebra.",
@@ -299,7 +447,13 @@
         {
           "id": "ag-3",
           "title": "Appendix to: An arithmetic count of the lines meeting four lines in $\\mathbb{P}^3$",
-          "authors": ["Borys Kadets", "Padmavathi Srinivasan", "Ashvin Swaminathan", "Libby Taylor", "Dennis Tseng"],
+          "authors": [
+            "Borys Kadets",
+            "Padmavathi Srinivasan",
+            "Ashvin Swaminathan",
+            "Libby Taylor",
+            "Dennis Tseng"
+          ],
           "year": 2021,
           "status": "published",
           "venue": "Transactions of the American Mathematical Society.",
@@ -320,7 +474,12 @@
         {
           "id": "ont-1",
           "title": "Lifting subgroups of symplectic groups over $\\mathbb{Z}/\\ell\\mathbb{Z}$",
-          "authors": ["Aaron Landesman", "Ashvin Swaminathan", "James Tao", "Yujie Xu"],
+          "authors": [
+            "Aaron Landesman",
+            "Ashvin Swaminathan",
+            "James Tao",
+            "Yujie Xu"
+          ],
           "year": 2017,
           "status": "published",
           "venue": "Research in Number Theory.",
@@ -335,7 +494,10 @@
         {
           "id": "ont-2",
           "title": "Permutations that destroy arithmetic progressions in elementary $p$-groups",
-          "authors": ["Noam D. Elkies", "Ashvin Swaminathan"],
+          "authors": [
+            "Noam D. Elkies",
+            "Ashvin Swaminathan"
+          ],
           "year": 2017,
           "status": "published",
           "venue": "The Electronic Journal of Combinatorics.",
@@ -350,7 +512,11 @@
         {
           "id": "ont-3",
           "title": "Elliptic curve variants of the least quadratic nonresidue problem and Linnik's Theorem",
-          "authors": ["Evan Chen", "Peter Park", "Ashvin Swaminathan"],
+          "authors": [
+            "Evan Chen",
+            "Peter Park",
+            "Ashvin Swaminathan"
+          ],
           "year": 2018,
           "status": "published",
           "venue": "International Journal of Number Theory.",
@@ -365,14 +531,18 @@
         {
           "id": "ont-4",
           "title": "On logarithmically Benford sequences",
-          "authors": ["Evan Chen", "Peter Park", "Ashvin Swaminathan"],
+          "authors": [
+            "Evan Chen",
+            "Peter Park",
+            "Ashvin Swaminathan"
+          ],
           "year": 2016,
           "status": "published",
           "venue": "Proceedings of the American Mathematical Society.",
           "pages": null,
           "abstract": "Let $\\mathcal{I} \\subset \\mathbb{N}$ be an infinite subset, and let $\\{a_i\\}_{i \\in \\mathcal{I}}$ be a sequence of nonzero real numbers indexed by $\\mathcal{I}$ such that there exist positive constants $m, C_1$ for which $|a_i| \\leq C_1 \\cdot i^m$ for all $i \\in \\mathcal{I}$. Furthermore, let $c_i \\in [-1,1]$ be defined by $c_i = \\frac{a_i}{C_1 \\cdot i^m}$ for each $i \\in \\mathcal{I}$, and suppose the $c_i$'s are equidistributed in $[-1,1]$ with respect to a continuous, symmetric probability measure $\\mu$. In this paper, we show that if $\\mathcal{I} \\subset \\mathbb{N}$ is not too sparse, then the sequence $\\{a_i\\}_{i \\in \\mathcal{I}}$ fails to obey Benford's Law with respect to arithmetic density in any sufficiently large base, and in fact in any base when $\\mu([0,t])$ is a strictly convex function of $t \\in (0,1)$. Nonetheless, we also provide conditions on the density of $\\mathcal{I} \\subset \\mathbb{N}$ under which the sequence $\\{a_i\\}_{i \\in \\mathcal{I}}$ satisfies Benford's Law with respect to logarithmic density in every base. As an application, we apply our general result to study Benford's Law-type behavior in the leading digits of Frobenius traces of newforms of positive, even weight. Our methods of proof build on the work of Jameson, Thorner, and Ye, who studied the particular case of newforms without complex multiplication.",
           "links": {
-            "journal": "http://www.ams.org/journals/proc/2016-144-11/S0002-9939-2016-13112-2/S0002-9939-2016-13112-2.pdf",
+            "journal": "https://doi.org/10.1090/proc/13112",
             "arxiv": "https://arxiv.org/pdf/1507.02629.pdf"
           },
           "notes": null
@@ -380,7 +550,9 @@
         {
           "id": "ont-5",
           "title": "On arboreal Galois representations of rational functions",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": 2015,
           "status": "published",
           "venue": "Journal of Algebra.",
@@ -395,7 +567,11 @@
         {
           "id": "ont-6",
           "title": "Linnik's theorem for Sato-Tate laws on elliptic curves with complex multiplication",
-          "authors": ["Evan Chen", "Peter Park", "Ashvin Swaminathan"],
+          "authors": [
+            "Evan Chen",
+            "Peter Park",
+            "Ashvin Swaminathan"
+          ],
           "year": 2015,
           "status": "published",
           "venue": "Research in Number Theory.",
@@ -416,19 +592,27 @@
         {
           "id": "ap-1",
           "title": "Universality theorems for zeros of random real polynomials with fixed coefficients",
-          "authors": ["Matt King", "Ashvin Swaminathan"],
+          "authors": [
+            "Matt King",
+            "Ashvin Swaminathan"
+          ],
           "year": 2024,
           "status": "submitted",
           "venue": "Submitted. 23 pages.",
           "pages": "23",
           "abstract": "Consider a monic polynomial of degree $n$ whose subleading coefficients are independent, identically distributed, nondegenerate random variables having zero mean, unit variance, and finite moments of all orders, and let $m \\geq 0$ be a fixed integer. We prove that such a random monic polynomial has exactly $m$ real zeros with probability $n^{-3/4+o(1)}$ as $n\\to \\infty$ through integers of the same parity as $m$. More generally, we determine conditions under which a similar asymptotic formula describes the corresponding probability for families of random real polynomials with multiple fixed coefficients. Our work extends well-known universality results of Dembo, Poonen, Shao, and Zeitouni, who considered the family of real polynomials with all coefficients random. As a number-theoretic consequence of these results, we deduce that an algebraic integer $\\alpha$ of degree $n$ has exactly $m$ real Galois conjugates with probability $n^{-3/4+o(1)}$, when such $\\alpha$ are ordered by the heights of their minimal polynomials.",
-          "links": { "arxiv": "https://arxiv.org/pdf/2409.02717.pdf" },
+          "links": {
+            "arxiv": "https://arxiv.org/pdf/2409.02717.pdf"
+          },
           "notes": null
         },
         {
           "id": "ap-2",
           "title": "Analysis on surreal numbers",
-          "authors": ["Simon Rubinstein-Salzedo", "Ashvin Swaminathan"],
+          "authors": [
+            "Simon Rubinstein-Salzedo",
+            "Ashvin Swaminathan"
+          ],
           "year": 2014,
           "status": "published",
           "venue": "Journal of Logic and Analysis.",
@@ -449,73 +633,97 @@
         {
           "id": "te-1",
           "title": "$2$-Selmer groups, $2$-class groups, and the arithmetic of binary forms (Princeton PhD thesis)",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": 2021,
           "status": "thesis",
           "venue": null,
           "pages": null,
           "abstract": null,
-          "links": { "pdf": "https://dataspace.princeton.edu/bitstream/88435/dsp012v23vx55w/1/Swaminathan_princeton_0181D_14097.pdf" },
+          "links": {
+            "pdf": "https://dataspace.princeton.edu/bitstream/88435/dsp012v23vx55w/1/Swaminathan_princeton_0181D_14097.pdf"
+          },
           "notes": null
         },
         {
           "id": "te-2",
           "title": "Inflection points of linear systems on families of curves (Harvard senior thesis)",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": 2017,
           "status": "thesis",
           "venue": null,
           "pages": null,
           "abstract": null,
-          "links": { "pdf": "http://www.math.harvard.edu/media/swaminathan.pdf" },
+          "links": {
+            "pdf": "http://www.math.harvard.edu/media/swaminathan.pdf"
+          },
           "notes": null
         },
         {
           "id": "te-3",
           "title": "Lie algebras and Ado's Theorem",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": null,
           "status": "expository",
           "venue": null,
           "pages": null,
           "abstract": null,
-          "links": { "pdf": "https://ashvin-swaminathan.github.io/home/ado.pdf" },
+          "links": {
+            "pdf": "files/ado.pdf"
+          },
           "notes": null
         },
         {
           "id": "te-4",
           "title": "An introduction to the theory of valued fields (Harvard junior paper)",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": null,
           "status": "expository",
           "venue": null,
           "pages": null,
           "abstract": null,
-          "links": { "pdf": "https://ashvin-swaminathan.github.io/home/ashvinswaminathan-juniorpaper.pdf" },
+          "links": {
+            "pdf": "files/ashvinswaminathan-juniorpaper.pdf"
+          },
           "notes": null
         },
         {
           "id": "te-5",
           "title": "On the Selberg-Erdős proof of the Prime Number Theorem",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": null,
           "status": "expository",
           "venue": null,
           "pages": null,
           "abstract": null,
-          "links": { "pdf": "https://ashvin-swaminathan.github.io/home/math229xfinalproject.pdf" },
+          "links": {
+            "pdf": "files/math229xfinalproject.pdf"
+          },
           "notes": null
         },
         {
           "id": "te-6",
           "title": "Arrow's impossibility theorem on social choice systems",
-          "authors": ["Ashvin Swaminathan"],
+          "authors": [
+            "Ashvin Swaminathan"
+          ],
           "year": null,
           "status": "expository",
           "venue": null,
           "pages": null,
           "abstract": null,
-          "links": { "pdf": "https://ashvin-swaminathan.github.io/home/arrow-theorem.pdf" },
+          "links": {
+            "pdf": "files/arrow-theorem.pdf"
+          },
           "notes": null
         }
       ]

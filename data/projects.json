@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "prime-gaps",
+      "title": "Bounded Gaps Between Primes, Formalized in Lean 4",
+      "shortTitle": "Bounded gaps between primes",
+      "role": "Project lead",
+      "affiliation": "Axiom Math",
+      "affiliationUrl": "https://axiommath.ai/",
+      "year": 2026,
+      "featured": true,
+      "ai": {
+        "label": "AI-assisted",
+        "note": "The Lean 4 proofs were produced by AxiomProver, Axiom Math's AI system for mathematical research through formal proof, then curated and librarized by hand."
+      },
+      "tagline": "A complete, machine-checkable proof that $p_{n+1} - p_n \\leq 246$ for infinitely many $n$.",
+      "summary": "The Twin Prime Conjecture asserts that infinitely many pairs of primes differ by $2$. That remains open, but following the breakthroughs of Yitang Zhang and James Maynard, the Polymath8b collaboration established that infinitely many pairs of primes differ by at most $246$. This project formalizes that result in Lean 4: the whole argument, from Maynard's multidimensional sieve through the enlarged-simplex refinement and numerical certificate of Polymath8b, is now a machine-checked theorem built on Mathlib and on Kontorovich and Tao's <em>PrimeNumberTheoremAnd</em>.",
+      "description": [
+        "The proof draws on two papers. We formalize Maynard's <em>Small gaps between primes</em> in detail &mdash; the multidimensional sieve, the variational quantity $M_k$, and the deduction of $H_1 \\leq 600$ &mdash; together with the portion of the Polymath8b paper <em>Variants of the Selberg sieve</em> needed for the bound $246$: the enlarged-simplex refinement and the numerical certificate.",
+        "The two sources are unified into a single blueprint. Every definition, lemma, and theorem carries a label, a precise statement, and a list of the earlier results it depends on, which yields a dependency graph that both orders the formalization effort and makes the finished proof navigable. The resulting Lean code was produced by AxiomProver, then reviewed and organized into <em>PrimeGapsLib</em>, a library structured so that its pieces can be reused beyond this single theorem."
+      ],
+      "pipeline": [
+        {
+          "step": "Write the blueprint",
+          "detail": "Restate the Maynard and Polymath8b arguments as a single unified blueprint, giving every definition, lemma, and theorem a label, a precise statement, and its dependencies. This produces a detailed dependency graph relating all the entities in the proof."
+        },
+        {
+          "step": "Formalize with AxiomProver",
+          "detail": "AxiomProver, Axiom Math's AI system for mathematical research through formal proof, produces machine-checkable Lean 4 proofs of the blueprint's nodes, built on Mathlib and on Kontorovich and Tao's PrimeNumberTheoremAnd."
+        },
+        {
+          "step": "Curate and librarize",
+          "detail": "Review the resulting code and organize it, with in-house tooling, into PrimeGapsLib &mdash; deduplicating parallel developments and stating results at the generality their consumers actually need."
+        }
+      ],
+      "links": {
+        "site": "https://primegaps.axiommath.ai/",
+        "blueprint": "https://primegaps.axiommath.ai/paper/",
+        "pdf": "https://primegaps.axiommath.ai/blueprint.pdf",
+        "github": "https://github.com/AxiomMath/PrimeGapsLib",
+        "zulip": "https://leanprover.zulipchat.com/#narrow/channel/579630-Project-announcements/topic/Prime.20gaps.20.E2.89.A4.20246.20.2F.20Axiom.27s.20PrimeGapsLib/near/617012520"
+      },
+      "sources": [
+        {
+          "citation": "James Maynard, <em>Small gaps between primes</em>, Annals of Mathematics 181 (2015), 383&ndash;413.",
+          "scope": "The multidimensional sieve, the variational quantity $M_k$, and the deduction of $H_1 \\leq 600$.",
+          "links": {
+            "journal": "https://doi.org/10.4007/annals.2015.181.1.7",
+            "arxiv": "https://arxiv.org/abs/1311.4600"
+          }
+        },
+        {
+          "citation": "D. H. J. Polymath, <em>Variants of the Selberg sieve, and bounded intervals containing many primes</em>, Research in the Mathematical Sciences 1 (2014).",
+          "scope": "The enlarged-simplex refinement and the numerical certificate. The other results in Polymath8b are not part of this project.",
+          "links": {
+            "journal": "https://doi.org/10.1186/s40687-014-0012-7",
+            "arxiv": "https://arxiv.org/abs/1407.4897"
+          }
+        }
+      ],
+      "credit": "The project was carried out by a large team of mathematical and engineering contributors at Axiom Math; the full author list and citation information are on the project site."
+    }
+  ]
+}

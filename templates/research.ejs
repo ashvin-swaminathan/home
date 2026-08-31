@@ -7,6 +7,10 @@
             <li><%= interest %></li>
         <% }); %>
     </ul>
+    <p class="ai-legend">
+        <%- include('_partials/_ai-badge', { ai: { label: 'AI-assisted', note: null } }) %>
+        marks work in which AI systems played a substantial role &mdash; in developing the proof, in formally verifying it, or both. Hover the mark on any entry for the specifics.
+    </p>
 </section>
 
 <% papers.sections.forEach(function(section) { %>
@@ -16,7 +20,7 @@
         <% section.papers.forEach(function(paper) { %>
         <li class="paper-item" id="<%= paper.id %>">
             <div class="paper-header">
-                <div class="paper-title"><%= paper.title %></div>
+                <div class="paper-title"><%= paper.title %><% if (paper.ai) { %><%- include('_partials/_ai-badge', { ai: paper.ai }) %><% } %></div>
                 <% if (paper.authors && paper.authors.length > 0) { %>
                     <div class="paper-authors"><%- paper.authorsHtml %></div>
                 <% } %>

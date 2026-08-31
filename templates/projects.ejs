@@ -1,0 +1,77 @@
+<h1>Projects</h1>
+
+<p class="page-intro">Large collaborative efforts that don't fit neatly into a paper list &mdash; formalization projects, software, and research infrastructure.</p>
+
+<% projects.projects.forEach(function(project) { %>
+<article class="project-entry" id="<%= project.id %>">
+
+    <header class="project-header">
+        <h2 class="project-title">
+            <%= project.title %><% if (project.ai) { %><%- include('_partials/_ai-badge', { ai: project.ai }) %><% } %>
+        </h2>
+        <p class="project-meta">
+            <span class="project-role"><%= project.role %></span>
+            <% if (project.affiliation) { %>
+                &middot; <a href="<%= project.affiliationUrl %>" target="_blank" rel="noopener"><%= project.affiliation %></a>
+            <% } %>
+            <% if (project.year) { %> &middot; <%= project.year %><% } %>
+        </p>
+        <% if (project.tagline) { %>
+            <p class="project-tagline"><%- project.tagline %></p>
+        <% } %>
+        <div class="project-links">
+            <% if (project.links.site) { %><a href="<%= project.links.site %>" class="btn btn-project" target="_blank" rel="noopener">Project site</a><% } %>
+            <% if (project.links.blueprint) { %><a href="<%= project.links.blueprint %>" class="resource-tag" target="_blank" rel="noopener">interactive blueprint</a><% } %>
+            <% if (project.links.pdf) { %><a href="<%= project.links.pdf %>" class="resource-tag" target="_blank" rel="noopener">blueprint pdf</a><% } %>
+            <% if (project.links.github) { %><a href="<%= project.links.github %>" class="resource-tag" target="_blank" rel="noopener">github</a><% } %>
+            <% if (project.links.zulip) { %><a href="<%= project.links.zulip %>" class="resource-tag" target="_blank" rel="noopener">zulip</a><% } %>
+        </div>
+    </header>
+
+    <div class="project-body">
+        <% if (project.summary) { %>
+            <p class="project-summary"><%- project.summary %></p>
+        <% } %>
+        <% (project.description || []).forEach(function(para) { %>
+            <p><%- para %></p>
+        <% }); %>
+    </div>
+
+    <% if (project.pipeline && project.pipeline.length) { %>
+        <section class="project-subsection">
+            <h3>How the formalization was built</h3>
+            <ol class="project-pipeline">
+                <% project.pipeline.forEach(function(stage) { %>
+                    <li>
+                        <span class="pipeline-step"><%= stage.step %></span>
+                        <span class="pipeline-detail"><%- stage.detail %></span>
+                    </li>
+                <% }); %>
+            </ol>
+        </section>
+    <% } %>
+
+    <% if (project.sources && project.sources.length) { %>
+        <section class="project-subsection">
+            <h3>Sources and scope</h3>
+            <ul class="project-sources">
+                <% project.sources.forEach(function(src) { %>
+                    <li>
+                        <div class="source-citation"><%- src.citation %></div>
+                        <div class="source-scope"><%- src.scope %></div>
+                        <div class="source-links">
+                            <% if (src.links && src.links.journal) { %><a href="<%= src.links.journal %>" class="resource-tag" target="_blank" rel="noopener">journal</a><% } %>
+                            <% if (src.links && src.links.arxiv) { %><a href="<%= src.links.arxiv %>" class="resource-tag" target="_blank" rel="noopener">arXiv</a><% } %>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        </section>
+    <% } %>
+
+    <% if (project.credit) { %>
+        <p class="project-credit"><%- project.credit %></p>
+    <% } %>
+
+</article>
+<% }); %>
