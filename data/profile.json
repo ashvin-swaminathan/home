@@ -28,6 +28,12 @@
   },
   "highlights": [
     {
+      "date": "2026-09-03",
+      "text": "New preprint: “A new bound for small gaps between primes”, proving $\\liminf_{n \\to \\infty}(p_{n+1}-p_n) \\leq 212$.",
+      "detail": "With François Charton, Letong Hong, Kenny Lau, Ken Ono, Guillaume Remy, Ho Chung Siu, Jesse Thorner and Yunzhou Xie",
+      "link": "https://primegaps.axiommath.ai/bgp212.pdf"
+    },
+    {
       "date": "2026-09-01",
       "text": "I begin as a Member of Technical Staff at Axiom Math."
     },

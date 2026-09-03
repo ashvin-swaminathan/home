@@ -375,6 +375,40 @@
       ]
     },
     {
+      "id": "analytic-number-theory",
+      "title": "Analytic Number Theory",
+      "papers": [
+        {
+          "id": "ant-1",
+          "title": "A new bound for small gaps between primes",
+          "authors": [
+            "François Charton",
+            "Letong Hong",
+            "Kenny Lau",
+            "Ken Ono",
+            "Guillaume Remy",
+            "Ho Chung Siu",
+            "Ashvin A. Swaminathan",
+            "Jesse Thorner",
+            "Yunzhou Xie"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preliminary draft, September 2026. 46 pages.",
+          "pages": null,
+          "abstract": "Stadlmann recently proved that infinitely many pairs of distinct primes are apart by at most $240$, improving upon the longstanding bound $246$ established by Polymath8b. Building on her work, we prove that $\\liminf_{n \\to \\infty} (p_{n+1} - p_n) \\leq 212$.",
+          "links": {
+            "pdf": "https://primegaps.axiommath.ai/bgp212.pdf"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "AxiomProver, Axiom Math's AI system, autonomously generated a Lean certificate of the deduction of the main theorem from natural-language specifications."
+          }
+        }
+      ]
+    },
+    {
       "id": "partitions-modular-forms",
       "title": "Partitions and Modular Forms",
       "papers": [
