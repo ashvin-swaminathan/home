@@ -405,55 +405,63 @@
             "label": "AI-assisted",
             "note": "AxiomProver, Axiom Math's AI system, autonomously generated a Lean certificate of the deduction of the main theorem from natural-language specifications."
           }
-        }
-      ]
-    },
-    {
-      "id": "partitions-modular-forms",
-      "title": "Partitions and Modular Forms",
-      "papers": [
-        {
-          "id": "pmf-1",
-          "title": "Beyond mock modularity: elliptic corrections for higher Dyson ranks",
-          "authors": [
-            "Claudia Alfes",
-            "Ken Ono",
-            "Ashvin Swaminathan"
-          ],
-          "year": 2026,
-          "status": "preprint",
-          "venue": "Preprint. 33 pages.",
-          "pages": null,
-          "abstract": "When $m = 1$, the Dyson rank generating function is a classical bridge between partition theory, Ramanujan's mock theta functions, and the theory of harmonic Maass forms and nonholomorphic Jacobi forms. The higher Dyson systems, for $m \\geq 2$, are a natural multivariable refinement of it, combining $m$ graded rank contributions. Unlike the classical case, these higher systems are not expected to fit the mock-modular framework, which raises the question of what analytic structure governs them. We show that their root-of-unity specializations carry a hidden elliptic structure. A finite $q$-difference recurrence produces an explicit polynomial obstruction to the expected index $m$ elliptic transformation law, and because the obstruction is finite, its partial fractions canonically determine finitely many Appell&ndash;Lerch correction terms that remove it. The corrected functions satisfy a twisted index $m$ elliptic law; a natural translation removes the twist, and their holomorphic finite parts admit finite theta decompositions. Thus, the natural analogue of Dyson's mock-modular phenomenon at higher $m$ is not mock modularity but a finite theta decomposition governed by an index $m$ elliptic transformation law.",
-          "links": {
-            "arxiv": "https://arxiv.org/abs/2607.13159"
-          },
-          "notes": null,
-          "ai": {
-            "label": "AI-assisted",
-            "note": "These results grew out of a human&ndash;AI collaboration; the key new formulas were formalized and machine-verified in Lean/Mathlib by AxiomProver."
-          }
         },
         {
-          "id": "pmf-2",
-          "title": "Parity of the partition function in quadratic progressions",
+          "id": "ont-3",
+          "title": "Elliptic curve variants of the least quadratic nonresidue problem and Linnik's Theorem",
           "authors": [
-            "Ken Ono",
+            "Evan Chen",
+            "Peter Park",
             "Ashvin Swaminathan"
           ],
-          "year": 2026,
-          "status": "preprint",
-          "venue": "Preprint. 26 pages.",
+          "year": 2018,
+          "status": "published",
+          "venue": "International Journal of Number Theory.",
           "pages": null,
-          "abstract": "The parity of the partition function $p(n)$ is one of the most stubborn problems in partition theory. In 2010, the first author conjectured that, for every square-free $1 &lt; D \\equiv 23 \\pmod{24}$, the values $p\\left(\\frac{Dm^2+1}{24}\\right)$, as $m$ ranges over the positive integers with $(m,6)=1$, include infinitely many even and infinitely many odd terms. We prove this conjecture. The key new idea is geometric. Logarithmic derivatives of twisted Borcherds products built from Ramanujan's third-order mock theta functions recast the problem in terms of CM points of discriminant $-D$ on $X_0(6)$. The uniqueness of canonical lifts from characteristic $2$ to characteristic zero shows that the CM points supporting the poles remain distinct after reduction modulo $2$. This fact, combined with a comparison with Eisenstein series, rules out both constant parity patterns. A Galois representation argument then gives infinitely many values of each parity. More generally, the method applies to analogous sequences arising from suitable generalized twisted Borcherds products.",
+          "abstract": "Let $E_1$ and $E_2$ be $\\overline{\\mathbb{Q}}$-nonisogenous, semistable elliptic curves over $\\mathbb{Q}$, having respective conductors $N_{E_1}$ and $N_{E_2}$ and both without complex multiplication. For each prime $p$, denote by $a_{E_i}(p) := p+1-\\#E_i(\\mathbb{F}_p)$ the trace of Frobenius. Under the assumption of the Generalized Riemann Hypothesis (GRH) for the convolved symmetric power $L$-functions $L(s, \\mathrm{Sym}^i E_1\\otimes\\mathrm{Sym}^j E_2)$ where $i,j\\in\\{0,1,2\\}$, we prove an explicit result that can be stated succinctly as follows: there exists a prime $p\\nmid N_{E_1}N_{E_2}$ such that $a_{E_1}(p)a_{E_2}(p)<0$ and $p < \\big( (32+o(1))\\cdot \\log N_{E_1} N_{E_2}\\big)^2$. This improves and makes explicit a result of Bucur and Kedlaya. Now, if $I\\subset[-1,1]$ is a subinterval with Sato-Tate measure $\\mu$ and if the symmetric power $L$-functions $L(s, \\mathrm{Sym}^k E_1)$ are functorial and satisfy GRH for all $k \\le 8/\\mu$, we employ similar techniques to prove an explicit result that can be stated succinctly as follows: there exists a prime $p\\nmid N_{E_1}$ such that $a_{E_1}(p)/(2\\sqrt{p})\\in I$ and $p < \\left((21+o(1)) \\cdot \\mu^{-2}\\log (N_{E_1}/\\mu)\\right)^2$.",
           "links": {
-            "arxiv": "https://arxiv.org/abs/2509.09553"
+            "journal": "https://www.worldscientific.com/doi/10.1142/S1793042118500161",
+            "arxiv": "https://arxiv.org/abs/1507.07122"
           },
-          "notes": null,
-          "ai": {
-            "label": "AI-assisted",
-            "note": "The algebraic identities at the heart of this paper were formalized and verified in Lean by AxiomProver."
-          }
+          "notes": null
+        },
+        {
+          "id": "ont-4",
+          "title": "On logarithmically Benford sequences",
+          "authors": [
+            "Evan Chen",
+            "Peter Park",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2016,
+          "status": "published",
+          "venue": "Proceedings of the American Mathematical Society.",
+          "pages": null,
+          "abstract": "Let $\\mathcal{I} \\subset \\mathbb{N}$ be an infinite subset, and let $\\{a_i\\}_{i \\in \\mathcal{I}}$ be a sequence of nonzero real numbers indexed by $\\mathcal{I}$ such that there exist positive constants $m, C_1$ for which $|a_i| \\leq C_1 \\cdot i^m$ for all $i \\in \\mathcal{I}$. Furthermore, let $c_i \\in [-1,1]$ be defined by $c_i = \\frac{a_i}{C_1 \\cdot i^m}$ for each $i \\in \\mathcal{I}$, and suppose the $c_i$'s are equidistributed in $[-1,1]$ with respect to a continuous, symmetric probability measure $\\mu$. In this paper, we show that if $\\mathcal{I} \\subset \\mathbb{N}$ is not too sparse, then the sequence $\\{a_i\\}_{i \\in \\mathcal{I}}$ fails to obey Benford's Law with respect to arithmetic density in any sufficiently large base, and in fact in any base when $\\mu([0,t])$ is a strictly convex function of $t \\in (0,1)$. Nonetheless, we also provide conditions on the density of $\\mathcal{I} \\subset \\mathbb{N}$ under which the sequence $\\{a_i\\}_{i \\in \\mathcal{I}}$ satisfies Benford's Law with respect to logarithmic density in every base. As an application, we apply our general result to study Benford's Law-type behavior in the leading digits of Frobenius traces of newforms of positive, even weight. Our methods of proof build on the work of Jameson, Thorner, and Ye, who studied the particular case of newforms without complex multiplication.",
+          "links": {
+            "journal": "https://doi.org/10.1090/proc/13112",
+            "arxiv": "https://arxiv.org/pdf/1507.02629.pdf"
+          },
+          "notes": null
+        },
+        {
+          "id": "ont-6",
+          "title": "Linnik's theorem for Sato-Tate laws on elliptic curves with complex multiplication",
+          "authors": [
+            "Evan Chen",
+            "Peter Park",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2015,
+          "status": "published",
+          "venue": "Research in Number Theory.",
+          "pages": null,
+          "abstract": "Let $E/\\mathbb{Q}$ be an elliptic curve with complex multiplication (CM), and for each prime $p$ of good reduction, let $a_E(p) = p + 1 - \\#E(\\mathbb{F}_p)$ denote the trace of Frobenius. By the Hasse bound, $a_E(p) = 2\\sqrt{p} \\cos \\theta_p$ for a unique $\\theta_p \\in [0, \\pi]$. In this paper, we prove that the least prime $p$ such that $\\theta_p \\in [\\alpha, \\beta] \\subset [0, \\pi]$ satisfies $p \\ll \\left(\\frac{N_E}{\\beta - \\alpha}\\right)^A$, where $N_E$ is the conductor of $E$ and the implied constant and exponent $A > 2$ are absolute and effectively computable. Our result is an analogue for CM elliptic curves of Linnik's Theorem for arithmetic progressions, which states that the least prime $p \\equiv a \\pmod q$ for $(a,q)=1$ satisfies $p \\ll q^L$ for an absolute constant $L > 0$.",
+          "links": {
+            "journal": "https://link.springer.com/content/pdf/10.1007%2Fs40993-015-0028-0.pdf",
+            "arxiv": "https://arxiv.org/pdf/1506.09170.pdf"
+          },
+          "notes": null
         }
       ]
     },
@@ -526,6 +534,49 @@
       "title": "Other Number Theory",
       "papers": [
         {
+          "id": "pmf-1",
+          "title": "Beyond mock modularity: elliptic corrections for higher Dyson ranks",
+          "authors": [
+            "Claudia Alfes",
+            "Ken Ono",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint. 33 pages.",
+          "pages": null,
+          "abstract": "When $m = 1$, the Dyson rank generating function is a classical bridge between partition theory, Ramanujan's mock theta functions, and the theory of harmonic Maass forms and nonholomorphic Jacobi forms. The higher Dyson systems, for $m \\geq 2$, are a natural multivariable refinement of it, combining $m$ graded rank contributions. Unlike the classical case, these higher systems are not expected to fit the mock-modular framework, which raises the question of what analytic structure governs them. We show that their root-of-unity specializations carry a hidden elliptic structure. A finite $q$-difference recurrence produces an explicit polynomial obstruction to the expected index $m$ elliptic transformation law, and because the obstruction is finite, its partial fractions canonically determine finitely many Appell&ndash;Lerch correction terms that remove it. The corrected functions satisfy a twisted index $m$ elliptic law; a natural translation removes the twist, and their holomorphic finite parts admit finite theta decompositions. Thus, the natural analogue of Dyson's mock-modular phenomenon at higher $m$ is not mock modularity but a finite theta decomposition governed by an index $m$ elliptic transformation law.",
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2607.13159"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "These results grew out of a human&ndash;AI collaboration; the key new formulas were formalized and machine-verified in Lean/Mathlib by AxiomProver."
+          }
+        },
+        {
+          "id": "pmf-2",
+          "title": "Parity of the partition function in quadratic progressions",
+          "authors": [
+            "Ken Ono",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint. 26 pages.",
+          "pages": null,
+          "abstract": "The parity of the partition function $p(n)$ is one of the most stubborn problems in partition theory. In 2010, the first author conjectured that, for every square-free $1 &lt; D \\equiv 23 \\pmod{24}$, the values $p\\left(\\frac{Dm^2+1}{24}\\right)$, as $m$ ranges over the positive integers with $(m,6)=1$, include infinitely many even and infinitely many odd terms. We prove this conjecture. The key new idea is geometric. Logarithmic derivatives of twisted Borcherds products built from Ramanujan's third-order mock theta functions recast the problem in terms of CM points of discriminant $-D$ on $X_0(6)$. The uniqueness of canonical lifts from characteristic $2$ to characteristic zero shows that the CM points supporting the poles remain distinct after reduction modulo $2$. This fact, combined with a comparison with Eisenstein series, rules out both constant parity patterns. A Galois representation argument then gives infinitely many values of each parity. More generally, the method applies to analogous sequences arising from suitable generalized twisted Borcherds products.",
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2509.09553"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "The algebraic identities at the heart of this paper were formalized and verified in Lean by AxiomProver."
+          }
+        },
+        {
           "id": "ont-1",
           "title": "Lifting subgroups of symplectic groups over $\\mathbb{Z}/\\ell\\mathbb{Z}$",
           "authors": [
@@ -564,44 +615,6 @@
           "notes": null
         },
         {
-          "id": "ont-3",
-          "title": "Elliptic curve variants of the least quadratic nonresidue problem and Linnik's Theorem",
-          "authors": [
-            "Evan Chen",
-            "Peter Park",
-            "Ashvin Swaminathan"
-          ],
-          "year": 2018,
-          "status": "published",
-          "venue": "International Journal of Number Theory.",
-          "pages": null,
-          "abstract": "Let $E_1$ and $E_2$ be $\\overline{\\mathbb{Q}}$-nonisogenous, semistable elliptic curves over $\\mathbb{Q}$, having respective conductors $N_{E_1}$ and $N_{E_2}$ and both without complex multiplication. For each prime $p$, denote by $a_{E_i}(p) := p+1-\\#E_i(\\mathbb{F}_p)$ the trace of Frobenius. Under the assumption of the Generalized Riemann Hypothesis (GRH) for the convolved symmetric power $L$-functions $L(s, \\mathrm{Sym}^i E_1\\otimes\\mathrm{Sym}^j E_2)$ where $i,j\\in\\{0,1,2\\}$, we prove an explicit result that can be stated succinctly as follows: there exists a prime $p\\nmid N_{E_1}N_{E_2}$ such that $a_{E_1}(p)a_{E_2}(p)<0$ and $p < \\big( (32+o(1))\\cdot \\log N_{E_1} N_{E_2}\\big)^2$. This improves and makes explicit a result of Bucur and Kedlaya. Now, if $I\\subset[-1,1]$ is a subinterval with Sato-Tate measure $\\mu$ and if the symmetric power $L$-functions $L(s, \\mathrm{Sym}^k E_1)$ are functorial and satisfy GRH for all $k \\le 8/\\mu$, we employ similar techniques to prove an explicit result that can be stated succinctly as follows: there exists a prime $p\\nmid N_{E_1}$ such that $a_{E_1}(p)/(2\\sqrt{p})\\in I$ and $p < \\left((21+o(1)) \\cdot \\mu^{-2}\\log (N_{E_1}/\\mu)\\right)^2$.",
-          "links": {
-            "journal": "https://www.worldscientific.com/doi/10.1142/S1793042118500161",
-            "arxiv": "https://arxiv.org/abs/1507.07122"
-          },
-          "notes": null
-        },
-        {
-          "id": "ont-4",
-          "title": "On logarithmically Benford sequences",
-          "authors": [
-            "Evan Chen",
-            "Peter Park",
-            "Ashvin Swaminathan"
-          ],
-          "year": 2016,
-          "status": "published",
-          "venue": "Proceedings of the American Mathematical Society.",
-          "pages": null,
-          "abstract": "Let $\\mathcal{I} \\subset \\mathbb{N}$ be an infinite subset, and let $\\{a_i\\}_{i \\in \\mathcal{I}}$ be a sequence of nonzero real numbers indexed by $\\mathcal{I}$ such that there exist positive constants $m, C_1$ for which $|a_i| \\leq C_1 \\cdot i^m$ for all $i \\in \\mathcal{I}$. Furthermore, let $c_i \\in [-1,1]$ be defined by $c_i = \\frac{a_i}{C_1 \\cdot i^m}$ for each $i \\in \\mathcal{I}$, and suppose the $c_i$'s are equidistributed in $[-1,1]$ with respect to a continuous, symmetric probability measure $\\mu$. In this paper, we show that if $\\mathcal{I} \\subset \\mathbb{N}$ is not too sparse, then the sequence $\\{a_i\\}_{i \\in \\mathcal{I}}$ fails to obey Benford's Law with respect to arithmetic density in any sufficiently large base, and in fact in any base when $\\mu([0,t])$ is a strictly convex function of $t \\in (0,1)$. Nonetheless, we also provide conditions on the density of $\\mathcal{I} \\subset \\mathbb{N}$ under which the sequence $\\{a_i\\}_{i \\in \\mathcal{I}}$ satisfies Benford's Law with respect to logarithmic density in every base. As an application, we apply our general result to study Benford's Law-type behavior in the leading digits of Frobenius traces of newforms of positive, even weight. Our methods of proof build on the work of Jameson, Thorner, and Ye, who studied the particular case of newforms without complex multiplication.",
-          "links": {
-            "journal": "https://doi.org/10.1090/proc/13112",
-            "arxiv": "https://arxiv.org/pdf/1507.02629.pdf"
-          },
-          "notes": null
-        },
-        {
           "id": "ont-5",
           "title": "On arboreal Galois representations of rational functions",
           "authors": [
@@ -615,25 +628,6 @@
           "links": {
             "journal": "http://www.sciencedirect.com/science/article/pii/S0021869315005001",
             "arxiv": "https://arxiv.org/pdf/1407.7012.pdf"
-          },
-          "notes": null
-        },
-        {
-          "id": "ont-6",
-          "title": "Linnik's theorem for Sato-Tate laws on elliptic curves with complex multiplication",
-          "authors": [
-            "Evan Chen",
-            "Peter Park",
-            "Ashvin Swaminathan"
-          ],
-          "year": 2015,
-          "status": "published",
-          "venue": "Research in Number Theory.",
-          "pages": null,
-          "abstract": "Let $E/\\mathbb{Q}$ be an elliptic curve with complex multiplication (CM), and for each prime $p$ of good reduction, let $a_E(p) = p + 1 - \\#E(\\mathbb{F}_p)$ denote the trace of Frobenius. By the Hasse bound, $a_E(p) = 2\\sqrt{p} \\cos \\theta_p$ for a unique $\\theta_p \\in [0, \\pi]$. In this paper, we prove that the least prime $p$ such that $\\theta_p \\in [\\alpha, \\beta] \\subset [0, \\pi]$ satisfies $p \\ll \\left(\\frac{N_E}{\\beta - \\alpha}\\right)^A$, where $N_E$ is the conductor of $E$ and the implied constant and exponent $A > 2$ are absolute and effectively computable. Our result is an analogue for CM elliptic curves of Linnik's Theorem for arithmetic progressions, which states that the least prime $p \\equiv a \\pmod q$ for $(a,q)=1$ satisfies $p \\ll q^L$ for an absolute constant $L > 0$.",
-          "links": {
-            "journal": "https://link.springer.com/content/pdf/10.1007%2Fs40993-015-0028-0.pdf",
-            "arxiv": "https://arxiv.org/pdf/1506.09170.pdf"
           },
           "notes": null
         }
