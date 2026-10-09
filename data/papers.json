@@ -101,6 +101,27 @@
           }
         },
         {
+          "id": "as-hypersurfaces",
+          "title": "On a conjecture of Browning and Sawin on random hypersurfaces with sign coefficients",
+          "authors": [
+            "Ken Ono",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint. 19 pages.",
+          "pages": null,
+          "abstract": "Browning and Sawin conjectured that random hypersurfaces with sign coefficients are smooth with probability tending to one as the degree grows. We prove this conjecture and obtain a quantitative bound. For each $n \\geq 1$, a degree $d$ form in $n+1$ variables, with independent uniform coefficients in $\\{-1,1\\}$, defines a singular complex hypersurface with probability $O_n(d^{-1/2})$. The positive-dimensional singular loci occur with exponentially small probability. For $n \\geq 3$, the same exponential bound holds for failure of absolute irreducibility.",
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2609.18879"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "These results have been formalized in Lean by AxiomProver, assuming existing literature."
+          }
+        },
+        {
           "id": "as-new-1",
           "title": "Positive proportion results for elliptic curves over $\\mathbb{Q}$ with small $2$-Selmer rank",
           "authors": [
@@ -661,27 +682,6 @@
       "id": "analysis-probability",
       "title": "Analysis and Probability",
       "papers": [
-        {
-          "id": "ap-hypersurfaces",
-          "title": "On a conjecture of Browning and Sawin on random hypersurfaces with sign coefficients",
-          "authors": [
-            "Ken Ono",
-            "Ashvin Swaminathan"
-          ],
-          "year": 2026,
-          "status": "preprint",
-          "venue": "Preprint. 19 pages.",
-          "pages": null,
-          "abstract": "Browning and Sawin conjectured that random hypersurfaces with sign coefficients are smooth with probability tending to one as the degree grows. We prove this conjecture and obtain a quantitative bound. For each $n \\geq 1$, a degree $d$ form in $n+1$ variables, with independent uniform coefficients in $\\{-1,1\\}$, defines a singular complex hypersurface with probability $O_n(d^{-1/2})$. The positive-dimensional singular loci occur with exponentially small probability. For $n \\geq 3$, the same exponential bound holds for failure of absolute irreducibility.",
-          "links": {
-            "arxiv": "https://arxiv.org/abs/2609.18879"
-          },
-          "notes": null,
-          "ai": {
-            "label": "AI-assisted",
-            "note": "These results have been formalized in Lean by AxiomProver, assuming existing literature."
-          }
-        },
         {
           "id": "ap-1",
           "title": "Universality theorems for zeros of random real polynomials with fixed coefficients",
