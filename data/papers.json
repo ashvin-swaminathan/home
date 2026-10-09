@@ -77,6 +77,30 @@
       "title": "Arithmetic Statistics and Invariant Theory",
       "papers": [
         {
+          "id": "as-bsd",
+          "title": "Local factors in the BSD conjecture: a unified statistical view",
+          "authors": [
+            "David Kurniadi Angdinata",
+            "Kenny Lau",
+            "Ken Ono",
+            "Ashvin Swaminathan",
+            "Sameera Vemulapalli"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint.",
+          "pages": null,
+          "abstract": "For elliptic curves $E/\\mathbb{Q}$ in short Weierstrass form $E = E(a_4,a_6) : y^2 = x^3 + a_4 x + a_6$, we derive a multivariable Euler product generating function which encodes the Tamagawa product $\\mathrm{Tam}(E) = \\prod_p c_p(E)$. Using this generating function, we compute limiting distributions, exact covariances, and moment and tail bounds for four important statistics on the Tamagawa number; for example we show that more than half of all curves in this height ordering have trivial Tamagawa product, about $42.2\\%$ have exactly one prime with nontrivial local Tamagawa number, and only about $6.8\\%$ have exactly two such primes. The product is obtained by specializing an Euler product indexed by local reduction data that we derive from Tate's algorithm.",
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2610.10243"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "The results in this paper were autoformalized in Lean by AxiomProver."
+          }
+        },
+        {
           "id": "as-new-1",
           "title": "Positive proportion results for elliptic curves over $\\mathbb{Q}$ with small $2$-Selmer rank",
           "authors": [
@@ -566,14 +590,14 @@
           "status": "preprint",
           "venue": "Preprint. 26 pages.",
           "pages": null,
-          "abstract": "The parity of the partition function $p(n)$ is one of the most stubborn problems in partition theory. In 2010, the first author conjectured that, for every square-free $1 &lt; D \\equiv 23 \\pmod{24}$, the values $p\\left(\\frac{Dm^2+1}{24}\\right)$, as $m$ ranges over the positive integers with $(m,6)=1$, include infinitely many even and infinitely many odd terms. We prove this conjecture. The key new idea is geometric. Logarithmic derivatives of twisted Borcherds products built from Ramanujan's third-order mock theta functions recast the problem in terms of CM points of discriminant $-D$ on $X_0(6)$. The uniqueness of canonical lifts from characteristic $2$ to characteristic zero shows that the CM points supporting the poles remain distinct after reduction modulo $2$. This fact, combined with a comparison with Eisenstein series, rules out both constant parity patterns. A Galois representation argument then gives infinitely many values of each parity. More generally, the method applies to analogous sequences arising from suitable generalized twisted Borcherds products.",
+          "abstract": "The parity of the partition function $p(n)$ is one of the most stubborn problems in number theory. In 2010, the first author conjectured, for square-free $1 &lt; D \\equiv 23 \\pmod{24}$, that the values $p\\left(\\frac{Dm^2+1}{24}\\right)$, as $m$ ranges over positive integers with $(m,6)=1$, include infinitely many even and infinitely many odd terms. We prove this conjecture. The key new idea is geometric. Logarithmic derivatives of twisted Borcherds products built from Ramanujan's third-order mock theta functions recast the problem in terms of CM points of discriminant $-D$ on $X_0(6)$. The uniqueness of canonical lifts from characteristic $2$ to characteristic zero shows that the CM points supporting the poles remain distinct after reduction modulo $2$. This fact, combined with an Eisenstein series comparison and a Galois representation argument, rules out constant parity and gives infinitely many values of each parity. The method applies to the coefficients of analogous generalized twisted Borcherds products. These results imply that $\\#\\{0 \\leq n \\leq X : p(n) \\text{ is odd}\\} \\gg \\sqrt{X}$, which is now the best known lower bound for odd values of $p(n)$.",
           "links": {
             "arxiv": "https://arxiv.org/abs/2509.09553"
           },
           "notes": null,
           "ai": {
             "label": "AI-assisted",
-            "note": "The algebraic identities at the heart of this paper were formalized and verified in Lean by AxiomProver."
+            "note": "The algebraic identities at the heart of this paper, as well as the improved lower bound for odd partition numbers, have been formalized in Lean by AxiomProver."
           }
         },
         {
@@ -637,6 +661,27 @@
       "id": "analysis-probability",
       "title": "Analysis and Probability",
       "papers": [
+        {
+          "id": "ap-hypersurfaces",
+          "title": "On a conjecture of Browning and Sawin on random hypersurfaces with sign coefficients",
+          "authors": [
+            "Ken Ono",
+            "Ashvin Swaminathan"
+          ],
+          "year": 2026,
+          "status": "preprint",
+          "venue": "Preprint. 19 pages.",
+          "pages": null,
+          "abstract": "Browning and Sawin conjectured that random hypersurfaces with sign coefficients are smooth with probability tending to one as the degree grows. We prove this conjecture and obtain a quantitative bound. For each $n \\geq 1$, a degree $d$ form in $n+1$ variables, with independent uniform coefficients in $\\{-1,1\\}$, defines a singular complex hypersurface with probability $O_n(d^{-1/2})$. The positive-dimensional singular loci occur with exponentially small probability. For $n \\geq 3$, the same exponential bound holds for failure of absolute irreducibility.",
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2609.18879"
+          },
+          "notes": null,
+          "ai": {
+            "label": "AI-assisted",
+            "note": "These results have been formalized in Lean by AxiomProver, assuming existing literature."
+          }
+        },
         {
           "id": "ap-1",
           "title": "Universality theorems for zeros of random real polynomials with fixed coefficients",

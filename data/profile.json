@@ -28,6 +28,18 @@
   },
   "highlights": [
     {
+      "date": "2026-10-07",
+      "text": "New preprint: “Local factors in the BSD conjecture: a unified statistical view”, computing limiting distributions and moments for the Tamagawa product of elliptic curves.",
+      "detail": "With David Kurniadi Angdinata, Kenny Lau, Ken Ono and Sameera Vemulapalli",
+      "link": "https://arxiv.org/abs/2610.10243"
+    },
+    {
+      "date": "2026-09-16",
+      "text": "New preprint: “On a conjecture of Browning and Sawin on random hypersurfaces with sign coefficients”, proving the conjecture with a quantitative bound.",
+      "detail": "With Ken Ono",
+      "link": "https://arxiv.org/abs/2609.18879"
+    },
+    {
       "date": "2026-09-03",
       "text": "New preprint: “A new bound for small gaps between primes”, proving $\\liminf_{n \\to \\infty}(p_{n+1}-p_n) \\leq 212$.",
       "detail": "With François Charton, Letong Hong, Kenny Lau, Ken Ono, Guillaume Remy, Ho Chung Siu, Jesse Thorner and Yunzhou Xie",
@@ -56,8 +68,8 @@
       "link": "https://primegaps.axiommath.ai/"
     },
     {
-      "date": "2026-08-12",
-      "text": "New version of “Parity of the partition function in quadratic progressions” (with Ken Ono), with the algebraic identities verified in Lean.",
+      "date": "2026-09-01",
+      "text": "New version of “Parity of the partition function in quadratic progressions” (with Ken Ono), adding a corollary that $\\#\\{0 \\leq n \\leq X : p(n) \\text{ odd}\\} \\gg \\sqrt{X}$.",
       "link": "https://arxiv.org/abs/2509.09553"
     },
     {
