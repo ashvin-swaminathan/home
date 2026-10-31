@@ -1,7 +1,5 @@
 <h1>Projects</h1>
 
-<p class="page-intro">Large collaborative efforts that don't fit neatly into a paper list &mdash; formalization projects, software, and research infrastructure.</p>
-
 <% projects.projects.forEach(function(project) { %>
 <article class="project-entry" id="<%= project.id %>">
 
@@ -28,6 +26,7 @@
             pdf:       'blueprint pdf',
             errata:    'errata',
             blog:      'blog post',
+            x:         'announcement',
             github:    'github',
             zulip:     'zulip'
         };
@@ -53,20 +52,6 @@
         <% }); %>
     </div>
 
-    <% if (project.pipeline && project.pipeline.length) { %>
-        <section class="project-subsection">
-            <h3>How the formalization was built</h3>
-            <ol class="project-pipeline">
-                <% project.pipeline.forEach(function(stage) { %>
-                    <li>
-                        <span class="pipeline-step"><%= stage.step %></span>
-                        <span class="pipeline-detail"><%- stage.detail %></span>
-                    </li>
-                <% }); %>
-            </ol>
-        </section>
-    <% } %>
-
     <% if (project.outputs && project.outputs.length) { %>
         <section class="project-subsection">
             <h3><%= project.outputsHeading || 'Papers from the project' %></h3>
@@ -88,27 +73,9 @@
         </section>
     <% } %>
 
-    <% if (project.sources && project.sources.length) { %>
-        <section class="project-subsection">
-            <h3>Sources and scope</h3>
-            <ul class="project-sources">
-                <% project.sources.forEach(function(src) { %>
-                    <li>
-                        <div class="source-citation"><%- src.citation %></div>
-                        <div class="source-scope"><%- src.scope %></div>
-                        <div class="source-links">
-                            <% if (src.links && src.links.journal) { %><a href="<%= src.links.journal %>" class="resource-tag" target="_blank" rel="noopener">journal</a><% } %>
-                            <% if (src.links && src.links.arxiv) { %><a href="<%= src.links.arxiv %>" class="resource-tag" target="_blank" rel="noopener">arXiv</a><% } %>
-                        </div>
-                    </li>
-                <% }); %>
-            </ul>
-        </section>
-    <% } %>
-
     <% if (project.press && project.press.length) { %>
         <section class="project-subsection">
-            <h3>Press and coverage</h3>
+            <h3>Press</h3>
             <ul class="project-press">
                 <% project.press.forEach(function(item) { %>
                     <li>
@@ -119,10 +86,6 @@
                 <% }); %>
             </ul>
         </section>
-    <% } %>
-
-    <% if (project.credit) { %>
-        <p class="project-credit"><%- project.credit %></p>
     <% } %>
 
 </article>

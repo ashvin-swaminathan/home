@@ -11,53 +11,19 @@
       "featured": true,
       "ai": {
         "label": "AI-assisted",
-        "note": "The Lean 4 proofs were produced by AxiomProver, Axiom Math's AI system for mathematical research through formal proof, then curated and librarized by hand."
+        "note": "The Lean proofs were produced by AxiomProver and then curated into PrimeGapsLib."
       },
-      "tagline": "A complete, machine-checkable proof that $p_{n+1} - p_n \\leq 246$ for infinitely many $n$.",
-      "summary": "The Twin Prime Conjecture asserts that infinitely many pairs of primes differ by $2$. That remains open, but following the breakthroughs of Yitang Zhang and James Maynard, the Polymath8b collaboration established that infinitely many pairs of primes differ by at most $246$. This project formalizes that result in Lean 4: the whole argument, from Maynard's multidimensional sieve through the enlarged-simplex refinement and numerical certificate of Polymath8b, is now a machine-checked theorem built on Mathlib and on Kontorovich and Tao's <em>PrimeNumberTheoremAnd</em>.",
-      "description": [
-        "The proof draws on two papers. We formalize Maynard's <em>Small gaps between primes</em> in detail &mdash; the multidimensional sieve, the variational quantity $M_k$, and the deduction of $H_1 \\leq 600$ &mdash; together with the portion of the Polymath8b paper <em>Variants of the Selberg sieve</em> needed for the bound $246$: the enlarged-simplex refinement and the numerical certificate.",
-        "The two sources are unified into a single blueprint. Every definition, lemma, and theorem carries a label, a precise statement, and a list of the earlier results it depends on, which yields a dependency graph that both orders the formalization effort and makes the finished proof navigable. The resulting Lean code was produced by AxiomProver, then reviewed and organized into <em>PrimeGapsLib</em>, a library structured so that its pieces can be reused beyond this single theorem."
-      ],
-      "pipeline": [
-        {
-          "step": "Write the blueprint",
-          "detail": "Restate the Maynard and Polymath8b arguments as a single unified blueprint, giving every definition, lemma, and theorem a label, a precise statement, and its dependencies. This produces a detailed dependency graph relating all the entities in the proof."
-        },
-        {
-          "step": "Formalize with AxiomProver",
-          "detail": "AxiomProver, Axiom Math's AI system for mathematical research through formal proof, produces machine-checkable Lean 4 proofs of the blueprint's nodes, built on Mathlib and on Kontorovich and Tao's PrimeNumberTheoremAnd."
-        },
-        {
-          "step": "Curate and librarize",
-          "detail": "Review the resulting code and organize it, with in-house tooling, into PrimeGapsLib &mdash; deduplicating parallel developments and stating results at the generality their consumers actually need."
-        }
-      ],
+      "tagline": "A Lean 4 proof that $p_{n+1} - p_n \\leq 246$ for infinitely many $n$.",
+      "summary": "Formalizes Maynard's multidimensional sieve and the part of Polymath8b that brings the bound to $246$, on top of Mathlib and Kontorovich and Tao's <em>PrimeNumberTheoremAnd</em>. The Lean code is released as <em>PrimeGapsLib</em>.",
+      "description": [],
       "links": {
         "site": "https://primegaps.axiommath.ai/",
         "blueprint": "https://primegaps.axiommath.ai/paper/",
         "pdf": "https://primegaps.axiommath.ai/blueprint.pdf",
         "github": "https://github.com/AxiomMath/PrimeGapsLib",
-        "zulip": "https://leanprover.zulipchat.com/#narrow/channel/579630-Project-announcements/topic/Prime.20gaps.20.E2.89.A4.20246.20.2F.20Axiom.27s.20PrimeGapsLib/near/617012520"
+        "zulip": "https://leanprover.zulipchat.com/#narrow/channel/579630-Project-announcements/topic/Prime.20gaps.20.E2.89.A4.20246.20.2F.20Axiom.27s.20PrimeGapsLib/near/617012520",
+        "x": "https://x.com/axiommathai/status/2089732764279132449"
       },
-      "sources": [
-        {
-          "citation": "James Maynard, <em>Small gaps between primes</em>, Annals of Mathematics 181 (2015), 383&ndash;413.",
-          "scope": "The multidimensional sieve, the variational quantity $M_k$, and the deduction of $H_1 \\leq 600$.",
-          "links": {
-            "journal": "https://doi.org/10.4007/annals.2015.181.1.7",
-            "arxiv": "https://arxiv.org/abs/1311.4600"
-          }
-        },
-        {
-          "citation": "D. H. J. Polymath, <em>Variants of the Selberg sieve, and bounded intervals containing many primes</em>, Research in the Mathematical Sciences 1 (2014).",
-          "scope": "The enlarged-simplex refinement and the numerical certificate. The other results in Polymath8b are not part of this project.",
-          "links": {
-            "journal": "https://doi.org/10.1186/s40687-014-0012-7",
-            "arxiv": "https://arxiv.org/abs/1407.4897"
-          }
-        }
-      ],
       "press": [
         {
           "outlet": "IEEE Spectrum",
@@ -79,16 +45,8 @@
           "byline": null,
           "date": "August 2026",
           "url": "https://www.unite.ai/axiom-maths-ai-verifies-the-246-prime-gaps-theorem-in-lean/"
-        },
-        {
-          "outlet": "Axiom on X",
-          "title": "Announcement thread for the BGP246 formalization",
-          "byline": null,
-          "date": "August 17, 2026",
-          "url": "https://x.com/axiommathai/status/2089732764279132449"
         }
-      ],
-      "credit": "The project was carried out by a large team of mathematical and engineering contributors at Axiom Math; the full author list and citation information are on the project site."
+      ]
     },
     {
       "id": "cfsg",
@@ -101,46 +59,31 @@
       "featured": false,
       "ai": {
         "label": "AI-assisted",
-        "note": "Engineers and mathematicians at Axiom Math directed swarms of AxiomProver agents, which claimed milestones and wrote the Lean proofs; human mathematicians investigated the mathematical obstructions the agents ran into."
+        "note": "The Lean proofs were produced by swarms of AxiomProver agents; the mathematical obstructions they ran into were handled by hand."
       },
-      "tagline": "A complete Lean formalization, following the first-generation proof, of the theorem that every finite simple group is cyclic of prime order, alternating, of Lie type, or one of the 26 sporadic groups.",
-      "summary": "The classification of finite simple groups is one of the great collective achievements of mathematics: a first-generation proof spanning thousands of journal pages, written by about a hundred mathematicians over several decades. This project formalizes it in Lean, with every logical step checked by the kernel &mdash; some 43 million lines of Lean, following the original first-generation argument rather than a later simplification.",
+      "tagline": "A Lean formalization of the classification of finite simple groups, following the first-generation proof.",
+      "summary": "Every finite simple group is cyclic of prime order, alternating, of Lie type, or one of the 26 sporadic groups. The original proof runs to some 15,000 journal pages written over several decades; the formalization is about 43 million lines of Lean, produced over 24 days.",
       "description": [
-        "The formalization is organized as a proof map: a hierarchy of milestones, each tied to the papers and books in the literature it formalizes, and each resolving into the Lean declarations that discharge it. The published site lets you move between the mathematical statement, the source it comes from, and the Lean code, which is what makes a formalization of this size navigable at all.",
-        "Working through the first-generation proof at this level of detail turned up places where the published arguments do not say quite what their users need, and these are recorded in an errata document. The most substantial of them concerns the Unbalanced Group Theorem: the project found counterexamples to a closure assertion used in a published route to it, and an alternative argument for the simple-group case, resting on Solomon's 1976 theory of maximal 2-components, was developed in its place."
-      ],
-      "pipeline": [
-        {
-          "step": "Write the agent blueprint",
-          "detail": "Lay out the first-generation proof as an initial blueprint for the agents: the milestones to be formalized, and the literature each one rests on."
-        },
-        {
-          "step": "Formalize with swarms of agents",
-          "detail": "Dozens of AxiomProver agents work in parallel, claiming milestones through GitHub issues and either locating existing results or writing the Lean proofs themselves."
-        },
-        {
-          "step": "Resolve the mathematical obstructions",
-          "detail": "Where an agent runs into an argument that does not go through, human mathematicians take over &mdash; which is how the gap in the published route to the Unbalanced Group Theorem came to light. Group theorists who did the original work on the classification were consulted on the arguments and their place in it."
-        }
+        "Formalizing the first-generation argument turned up counterexamples to a closure assertion used in a published route to the Unbalanced Group Theorem. That and the other departures from the literature are recorded in the errata."
       ],
       "links": {
         "site": "https://cfsg.axiommath.ai/",
         "proofMap": "https://cfsg.axiommath.ai/proof-map",
         "errata": "https://cfsg.axiommath.ai/CFSG_errata.pdf",
         "blog": "https://axiommath.ai/research/the-enormous-theorem-formalized/",
-        "github": "https://github.com/AxiomMath/CFSG"
+        "github": "https://github.com/AxiomMath/CFSG",
+        "x": "https://x.com/axiommathai/status/2115089794867040584"
       },
-      "outputsHeading": "New mathematics from the project",
+      "outputsHeading": "Paper from the project",
       "outputs": [
         {
-          "citation": "Colin Defant and Ken Ono, <em>The Unbalanced Group Theorem</em>, 2026. 35 pages.",
-          "scope": "Explains the counterexamples to the closure assertion found while formalizing the first-generation proof, and gives the alternative argument for the simple-group case built on Solomon's theory of maximal 2-components.",
+          "citation": "<em>The Unbalanced Group Theorem</em>, Hexagon 2610.00575 (2026), contributed by Colin Defant and Ken Ono.",
+          "scope": "The counterexamples, and an alternative argument for the simple-group case using Solomon's theory of maximal 2-components.",
           "links": {
             "hexagon": "https://hexagonmath.org/2610.00575"
           }
         }
-      ],
-      "credit": "The formalization was carried out by a large team of mathematical and engineering contributors at Axiom Math; the full contributor list and citation information are on the project site."
+      ]
     }
   ]
 }
