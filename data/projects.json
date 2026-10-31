@@ -4,7 +4,7 @@
       "id": "prime-gaps",
       "title": "Bounded Gaps Between Primes, Formalized in Lean 4",
       "shortTitle": "Bounded gaps between primes",
-      "role": "Project lead",
+      "role": "Team lead; mathematical and engineering contributor",
       "affiliation": "Axiom Math",
       "affiliationUrl": "https://axiommath.ai/",
       "year": 2026,
@@ -89,6 +89,58 @@
         }
       ],
       "credit": "The project was carried out by a large team of mathematical and engineering contributors at Axiom Math; the full author list and citation information are on the project site."
+    },
+    {
+      "id": "cfsg",
+      "title": "The Classification of Finite Simple Groups, Formalized in Lean",
+      "shortTitle": "Classification of finite simple groups",
+      "role": "Mathematical and engineering contributor",
+      "affiliation": "Axiom Math",
+      "affiliationUrl": "https://axiommath.ai/",
+      "year": 2026,
+      "featured": false,
+      "ai": {
+        "label": "AI-assisted",
+        "note": "Engineers and mathematicians at Axiom Math directed swarms of AxiomProver agents, which claimed milestones and wrote the Lean proofs; human mathematicians investigated the mathematical obstructions the agents ran into."
+      },
+      "tagline": "A complete Lean formalization, following the first-generation proof, of the theorem that every finite simple group is cyclic of prime order, alternating, of Lie type, or one of the 26 sporadic groups.",
+      "summary": "The classification of finite simple groups is one of the great collective achievements of mathematics: a first-generation proof spanning thousands of journal pages, written by about a hundred mathematicians over several decades. This project formalizes it in Lean, with every logical step checked by the kernel &mdash; some 43 million lines of Lean, following the original first-generation argument rather than a later simplification.",
+      "description": [
+        "The formalization is organized as a proof map: a hierarchy of milestones, each tied to the papers and books in the literature it formalizes, and each resolving into the Lean declarations that discharge it. The published site lets you move between the mathematical statement, the source it comes from, and the Lean code, which is what makes a formalization of this size navigable at all.",
+        "Working through the first-generation proof at this level of detail turned up places where the published arguments do not say quite what their users need, and these are recorded in an errata document. The most substantial of them concerns the Unbalanced Group Theorem: the project found counterexamples to a closure assertion used in a published route to it, and an alternative argument for the simple-group case, resting on Solomon's 1976 theory of maximal 2-components, was developed in its place."
+      ],
+      "pipeline": [
+        {
+          "step": "Write the agent blueprint",
+          "detail": "Lay out the first-generation proof as an initial blueprint for the agents: the milestones to be formalized, and the literature each one rests on."
+        },
+        {
+          "step": "Formalize with swarms of agents",
+          "detail": "Dozens of AxiomProver agents work in parallel, claiming milestones through GitHub issues and either locating existing results or writing the Lean proofs themselves."
+        },
+        {
+          "step": "Resolve the mathematical obstructions",
+          "detail": "Where an agent runs into an argument that does not go through, human mathematicians take over &mdash; which is how the gap in the published route to the Unbalanced Group Theorem came to light. Group theorists who did the original work on the classification were consulted on the arguments and their place in it."
+        }
+      ],
+      "links": {
+        "site": "https://cfsg.axiommath.ai/",
+        "proofMap": "https://cfsg.axiommath.ai/proof-map",
+        "errata": "https://cfsg.axiommath.ai/CFSG_errata.pdf",
+        "blog": "https://axiommath.ai/research/the-enormous-theorem-formalized/",
+        "github": "https://github.com/AxiomMath/CFSG"
+      },
+      "outputsHeading": "New mathematics from the project",
+      "outputs": [
+        {
+          "citation": "Colin Defant and Ken Ono, <em>The Unbalanced Group Theorem</em>, 2026. 35 pages.",
+          "scope": "Explains the counterexamples to the closure assertion found while formalizing the first-generation proof, and gives the alternative argument for the simple-group case built on Solomon's theory of maximal 2-components.",
+          "links": {
+            "hexagon": "https://hexagonmath.org/2610.00575"
+          }
+        }
+      ],
+      "credit": "The formalization was carried out by a large team of mathematical and engineering contributors at Axiom Math; the full contributor list and citation information are on the project site."
     }
   ]
 }

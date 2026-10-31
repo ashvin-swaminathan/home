@@ -28,6 +28,12 @@
   },
   "highlights": [
     {
+      "date": "2026-10-26",
+      "text": "Axiom's Lean formalization of the classification of finite simple groups is public, following the first-generation proof. I was a mathematical and engineering contributor.",
+      "detail": "cfsg.axiommath.ai",
+      "link": "https://cfsg.axiommath.ai/"
+    },
+    {
       "date": "2026-10-07",
       "text": "New preprint: “Local factors in the BSD conjecture: a unified statistical view”, computing limiting distributions and moments for the Tamagawa product of elliptic curves.",
       "detail": "With David Kurniadi Angdinata, Kenny Lau, Ken Ono and Sameera Vemulapalli",

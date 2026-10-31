@@ -19,12 +19,28 @@
         <% if (project.tagline) { %>
             <p class="project-tagline"><%- project.tagline %></p>
         <% } %>
+        <%
+        /* Link label and display order; anything not named here still renders,
+           in its own key order, using the key as its label. */
+        var LINK_LABELS = {
+            blueprint: 'interactive blueprint',
+            proofMap:  'proof map',
+            pdf:       'blueprint pdf',
+            errata:    'errata',
+            blog:      'blog post',
+            github:    'github',
+            zulip:     'zulip'
+        };
+        var linkKeys = Object.keys(LINK_LABELS).filter(function (k) { return project.links[k]; })
+            .concat(Object.keys(project.links).filter(function (k) {
+                return k !== 'site' && !LINK_LABELS[k];
+            }));
+        %>
         <div class="project-links">
             <% if (project.links.site) { %><a href="<%= project.links.site %>" class="btn btn-project" target="_blank" rel="noopener">Project site</a><% } %>
-            <% if (project.links.blueprint) { %><a href="<%= project.links.blueprint %>" class="resource-tag" target="_blank" rel="noopener">interactive blueprint</a><% } %>
-            <% if (project.links.pdf) { %><a href="<%= project.links.pdf %>" class="resource-tag" target="_blank" rel="noopener">blueprint pdf</a><% } %>
-            <% if (project.links.github) { %><a href="<%= project.links.github %>" class="resource-tag" target="_blank" rel="noopener">github</a><% } %>
-            <% if (project.links.zulip) { %><a href="<%= project.links.zulip %>" class="resource-tag" target="_blank" rel="noopener">zulip</a><% } %>
+            <% linkKeys.forEach(function (k) { %>
+                <a href="<%= project.links[k] %>" class="resource-tag" target="_blank" rel="noopener"><%= LINK_LABELS[k] || k %></a>
+            <% }); %>
         </div>
     </header>
 
@@ -48,6 +64,27 @@
                     </li>
                 <% }); %>
             </ol>
+        </section>
+    <% } %>
+
+    <% if (project.outputs && project.outputs.length) { %>
+        <section class="project-subsection">
+            <h3><%= project.outputsHeading || 'Papers from the project' %></h3>
+            <ul class="project-sources">
+                <% project.outputs.forEach(function(item) { %>
+                    <li>
+                        <div class="source-citation"><%- item.citation %></div>
+                        <% if (item.scope) { %><div class="source-scope"><%- item.scope %></div><% } %>
+                        <% if (item.links) { %>
+                            <div class="source-links">
+                                <% Object.keys(item.links).forEach(function(k) { %>
+                                    <a href="<%= item.links[k] %>" class="resource-tag" target="_blank" rel="noopener"><%= k %></a>
+                                <% }); %>
+                            </div>
+                        <% } %>
+                    </li>
+                <% }); %>
+            </ul>
         </section>
     <% } %>
 
