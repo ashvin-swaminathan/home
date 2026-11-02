@@ -78,10 +78,10 @@
                 <% project.press.forEach(function(item) { %>
                     <li>
                         <span class="press-outlet"><%= item.outlet %></span>
-                        <div class="press-body">
-                            <a href="<%= item.url %>" target="_blank" rel="noopener"><%= item.title %></a>
-                            <span class="press-meta"><% if (item.byline) { %><%= item.byline %>, <% } %><%= item.date %></span>
-                        </div>
+                        <span class="press-body">
+                            <a href="<%= item.url %>" target="_blank" rel="noopener"><%= item.title %></a><% if (item.byline) { %><span class="press-byline"><%= item.byline %></span><% } %>
+                        </span>
+                        <span class="press-date"><%= item.date %></span>
                     </li>
                 <% }); %>
             </ul>

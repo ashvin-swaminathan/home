@@ -1005,19 +1005,29 @@ main > .container > h1,
 
 .project-press li {
   display: grid;
-  grid-template-columns: 9rem 1fr;
-  column-gap: 1.1rem;
-  padding: 0.6rem 0;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  grid-template-columns: 8.5rem 1fr auto;
+  column-gap: 1rem;
+  align-items: baseline;
+  padding: 0.3rem 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
 }
 
 .press-body { min-width: 0; }
 
+.press-byline,
+.press-date {
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+}
+
+.press-byline::before { content: "\00a0\00b7\00a0"; }
+
+.press-date { white-space: nowrap; }
+
 .project-press li + li { border-top: 1px solid var(--color-border-light); }
 
 .press-outlet {
-  padding-top: 0.2em;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 600;
@@ -1026,15 +1036,9 @@ main > .container > h1,
   color: var(--color-accent);
 }
 
-.press-meta {
-  display: block;
-  font-size: 0.82rem;
-  color: var(--color-secondary);
-}
-
 @media (max-width: 640px) {
-  .project-press li { grid-template-columns: 1fr; row-gap: 0.2rem; }
-  .press-outlet { padding-top: 0; }
+  .project-press li { grid-template-columns: 1fr; row-gap: 0.1rem; }
+  .press-date { grid-column: 1; }
 }
 
 .project-sources li {
