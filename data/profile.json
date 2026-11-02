@@ -17,7 +17,7 @@
   "photo": "img/photoNormal.jpg",
   "cv": "files/cv.pdf",
   "researchBlurb": "My research lies in <em>number&nbsp;theory</em> and <em>algebraic&nbsp;geometry</em>, with a focus on <em>arithmetic&nbsp;statistics</em>, <em>invariant&nbsp;theory</em>, the <em>Cohen-Lenstra&nbsp;heuristics</em>, <em>rational&nbsp;points on&nbsp;varieties</em>, <em>Diophantine&nbsp;equations</em>, and <em>enumerative&nbsp;geometry</em>.",
-  "aiBlurb": "At Axiom I build workflows that combine <em>large language models</em>, <em>symbolic computation</em>, and <em>formal verification</em> to attack research problems in number&nbsp;theory. I led <a href=\"projects.html\">Axiom's bounded gaps between primes project</a>, which produced a complete Lean&nbsp;4 formalization of the theorem that $p_{n+1}-p_n \\leq 246$ for infinitely many $n$.",
+  "aiBlurb": "At Axiom I build workflows that combine <em>large language models</em>, <em>symbolic computation</em>, and <em>formal verification</em> to attack research problems in number&nbsp;theory. See my <a href=\"projects.html\">projects</a> for the formalization work.",
   "education": "I received my AB in mathematics from <a href=\"https://college.harvard.edu/\">Harvard College</a>, with a senior thesis supervised by <a href=\"https://www.math.harvard.edu/people/harris-joe/\">Joe Harris</a> and <a href=\"https://sites.google.com/view/anand-patel/home\">Anand Patel</a>, as well as an AM in Physics. I completed my MA and PhD at <a href=\"https://www.math.princeton.edu/\">Princeton</a> under <a href=\"https://www.math.princeton.edu/people/manjul-bhargava\">Manjul Bhargava</a>.",
   "currentActivity": "Before joining Axiom I was an NSF Postdoctoral Fellow and Benjamin Peirce Fellow at <a href=\"https://www.math.harvard.edu/\">Harvard</a>, mentored by <a href=\"https://people.math.harvard.edu/~mmwood/\">Melanie Matchett Wood</a>, and in Fall 2025 I was a visiting researcher in the special semester on arithmetic statistics at the <a href=\"https://lmsi.org/\">Lodha Mathematical Sciences Institute</a> in Mumbai, India.",
   "personal": "Outside of mathematics, I love animals and volunteer at <a href=\"https://www.brokentailrescue.org/\">Broken Tail Animal Rescue</a>. If you are interested in adopting an animal, please check out their website!",
@@ -29,63 +29,65 @@
   "highlights": [
     {
       "date": "2026-10-26",
-      "text": "Axiom's Lean formalization of the classification of finite simple groups is public, following the first-generation proof. I was a mathematical and engineering contributor.",
-      "detail": "cfsg.axiommath.ai",
+      "text": "Axiom's Lean formalization of the classification of finite simple groups is public.",
+      "detail": "Mathematical and engineering contributor",
       "link": "https://cfsg.axiommath.ai/"
     },
     {
       "date": "2026-10-07",
-      "text": "New preprint: “Local factors in the BSD conjecture: a unified statistical view”, computing limiting distributions and moments for the Tamagawa product of elliptic curves.",
-      "detail": "With David Kurniadi Angdinata, Kenny Lau, Ken Ono and Sameera Vemulapalli",
+      "text": "New preprint: “Local factors in the BSD conjecture: a unified statistical view”.",
+      "detail": "With Angdinata, Lau, Ono and Vemulapalli",
       "link": "https://arxiv.org/abs/2610.10243"
     },
     {
       "date": "2026-09-16",
-      "text": "New preprint: “On a conjecture of Browning and Sawin on random hypersurfaces with sign coefficients”, proving the conjecture with a quantitative bound.",
+      "text": "New preprint: “On a conjecture of Browning and Sawin on random hypersurfaces”.",
       "detail": "With Ken Ono",
       "link": "https://arxiv.org/abs/2609.18879"
     },
     {
       "date": "2026-09-03",
-      "text": "New preprint: “A new bound for small gaps between primes”, proving $\\liminf_{n \\to \\infty}(p_{n+1}-p_n) \\leq 212$.",
-      "detail": "With François Charton, Letong Hong, Kenny Lau, Ken Ono, Guillaume Remy, Ho Chung Siu, Jesse Thorner and Yunzhou Xie",
+      "text": "New preprint: “A new bound for small gaps between primes”.",
+      "detail": "$\\liminf (p_{n+1}-p_n) \\leq 212$. With Charton, Hong, Lau, Ono, Remy, Siu, Thorner and Xie",
       "link": "https://primegaps.axiommath.ai/bgp212.pdf"
     },
     {
       "date": "2026-09-01",
-      "text": "I begin as a Member of Technical Staff at Axiom Math."
+      "text": "Started as a Member of Technical Staff at Axiom Math."
+    },
+    {
+      "date": "2026-09-01",
+      "text": "New version of “Parity of the partition function in quadratic progressions”.",
+      "detail": "Adds $\\#\\{n \\leq X : p(n) \\text{ odd}\\} \\gg \\sqrt{X}$. With Ken Ono",
+      "link": "https://arxiv.org/abs/2509.09553"
     },
     {
       "date": "2026-08-19",
-      "text": "I spoke with MTS about the bounded gaps formalization and AxiomProver.",
-      "detail": "Video interview",
+      "text": "MTS interview on the bounded gaps formalization and AxiomProver.",
+      "detail": "Video",
       "link": "https://x.com/MTSlive/status/2089875266487439457"
     },
     {
       "date": "2026-08-17",
-      "text": "<em>IEEE Spectrum</em> covers the formalization: “AI Used to Verify Toughest Mathematics Proof Yet”.",
+      "text": "<em>IEEE Spectrum</em>: “AI Used to Verify Toughest Mathematics Proof Yet”.",
       "detail": "Benjamin Skuse",
       "link": "https://spectrum.ieee.org/axiom-math-246-theorem-formalization"
     },
     {
       "date": "2026-08-17",
-      "text": "Bounded gaps between primes, the project I led at Axiom, is public: a complete Lean formalization of the theorem that $p_{n+1}-p_n \\leq 246$ for infinitely many $n$.",
-      "detail": "primegaps.axiommath.ai",
+      "text": "Axiom's Lean formalization of bounded gaps between primes is public.",
+      "detail": "Team lead. $p_{n+1}-p_n \\leq 246$ for infinitely many $n$",
       "link": "https://primegaps.axiommath.ai/"
     },
     {
-      "date": "2026-09-01",
-      "text": "New version of “Parity of the partition function in quadratic progressions” (with Ken Ono), adding a corollary that $\\#\\{0 \\leq n \\leq X : p(n) \\text{ odd}\\} \\gg \\sqrt{X}$.",
-      "link": "https://arxiv.org/abs/2509.09553"
-    },
-    {
       "date": "2026-07-14",
-      "text": "New preprint: “Beyond mock modularity: elliptic corrections for higher Dyson ranks” (with Claudia Alfes and Ken Ono).",
+      "text": "New preprint: “Beyond mock modularity: elliptic corrections for higher Dyson ranks”.",
+      "detail": "With Claudia Alfes and Ken Ono",
       "link": "https://arxiv.org/abs/2607.13159"
     },
     {
       "date": "2026-04-13",
-      "text": "I joined Axiom Math as a Resident Research Scientist."
+      "text": "Joined Axiom Math as a Resident Research Scientist."
     },
     {
       "date": "2026-04-13",
@@ -96,19 +98,20 @@
     },
     {
       "date": "2026-03-25",
-      "text": "New preprint: “On the quartic invariant of odd-degree binary forms”, accompanied by a complete Lean formalization.",
+      "text": "New preprint: “On the quartic invariant of odd-degree binary forms”.",
+      "detail": "With a complete Lean formalization",
       "link": "https://arxiv.org/abs/2603.24330"
     },
     {
       "date": "2026",
-      "text": "New preprint: “Positive proportion results for elliptic curves over $\\mathbb{Q}$ with small $2$-Selmer rank” (with Manjul Bhargava, Wei Ho, Ari Shnidman and Alexander Smith).",
-      "detail": "Available upon request",
+      "text": "New preprint: “Positive proportion results for elliptic curves with small $2$-Selmer rank”.",
+      "detail": "With Bhargava, Ho, Shnidman and Smith. Available on request",
       "link": "https://github.com/ashvin-swaminathan/2-Selmer-statistics"
     },
     {
       "date": "2026",
-      "text": "New preprint: “The average number of $3$-torsion elements in class groups of orders in quadratic extensions of number fields” (with Eliot Hodges).",
-      "detail": "Available upon request"
+      "text": "New preprint: “The average number of $3$-torsion elements in class groups of quadratic orders”.",
+      "detail": "With Eliot Hodges. Available on request"
     }
   ],
   "researchInterests": [
