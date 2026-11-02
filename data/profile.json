@@ -36,7 +36,7 @@
     {
       "date": "2026-10-07",
       "text": "New preprint: “Local factors in the BSD conjecture: a unified statistical view”.",
-      "detail": "With Angdinata, Lau, Ono and Vemulapalli",
+      "detail": "With David Kurniadi Angdinata, Kenny Lau, Ken Ono and Sameera Vemulapalli",
       "link": "https://arxiv.org/abs/2610.10243"
     },
     {
@@ -48,7 +48,7 @@
     {
       "date": "2026-09-03",
       "text": "New preprint: “A new bound for small gaps between primes”.",
-      "detail": "$\\liminf (p_{n+1}-p_n) \\leq 212$. With Charton, Hong, Lau, Ono, Remy, Siu, Thorner and Xie",
+      "detail": "$\\liminf (p_{n+1}-p_n) \\leq 212$",
       "link": "https://primegaps.axiommath.ai/bgp212.pdf"
     },
     {
@@ -105,7 +105,7 @@
     {
       "date": "2026",
       "text": "New preprint: “Positive proportion results for elliptic curves with small $2$-Selmer rank”.",
-      "detail": "With Bhargava, Ho, Shnidman and Smith. Available on request",
+      "detail": "With Manjul Bhargava, Wei Ho, Ari Shnidman and Alexander Smith. Available on request",
       "link": "https://github.com/ashvin-swaminathan/2-Selmer-statistics"
     },
     {
