@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "prime-gaps",
-      "title": "Bounded Gaps Between Primes, Formalized in Lean 4",
+      "title": "Bounded Gaps Between Primes, Formalized in Lean",
       "shortTitle": "Bounded gaps between primes",
       "role": "Team lead; mathematical and engineering contributor",
       "affiliation": "Axiom Math",
@@ -13,15 +13,13 @@
         "label": "AI-assisted",
         "note": "The Lean proofs were produced by AxiomProver and then curated into PrimeGapsLib."
       },
-      "tagline": "A Lean 4 proof that $p_{n+1} - p_n \\leq 246$ for infinitely many $n$.",
+      "tagline": "A Lean proof that $p_{n+1} - p_n \\leq 246$ for infinitely many $n$.",
       "summary": "Formalizes Maynard's multidimensional sieve and the part of Polymath8b that brings the bound to $246$, on top of Mathlib and Kontorovich and Tao's <em>PrimeNumberTheoremAnd</em>. The Lean code is released as <em>PrimeGapsLib</em>.",
       "description": [],
       "links": {
         "site": "https://primegaps.axiommath.ai/",
         "blueprint": "https://primegaps.axiommath.ai/paper/",
-        "pdf": "https://primegaps.axiommath.ai/blueprint.pdf",
         "github": "https://github.com/AxiomMath/PrimeGapsLib",
-        "zulip": "https://leanprover.zulipchat.com/#narrow/channel/579630-Project-announcements/topic/Prime.20gaps.20.E2.89.A4.20246.20.2F.20Axiom.27s.20PrimeGapsLib/near/617012520",
         "x": "https://x.com/axiommathai/status/2089732764279132449"
       },
       "press": [
@@ -68,20 +66,68 @@
       ],
       "links": {
         "site": "https://cfsg.axiommath.ai/",
-        "proofMap": "https://cfsg.axiommath.ai/proof-map",
-        "errata": "https://cfsg.axiommath.ai/CFSG_errata.pdf",
-        "blog": "https://axiommath.ai/research/the-enormous-theorem-formalized/",
         "github": "https://github.com/AxiomMath/CFSG",
         "x": "https://x.com/axiommathai/status/2115089794867040584"
       },
       "outputsHeading": "Paper from the project",
       "outputs": [
         {
-          "citation": "<em>The Unbalanced Group Theorem</em>, Hexagon 2610.00575 (2026), contributed by Colin Defant and Ken Ono.",
+          "citation": "<em>The Unbalanced Group Theorem</em>, Hexagon 2610.00575 (2026).",
           "scope": "The counterexamples, and an alternative argument for the simple-group case using Solomon's theory of maximal 2-components.",
           "links": {
             "hexagon": "https://hexagonmath.org/2610.00575"
           }
+        }
+      ],
+      "press": [
+        {
+          "outlet": "Unite.AI",
+          "title": "Axiom Math Releases 43.1M-Line Lean Proof of Group Classification",
+          "byline": null,
+          "date": "October 2026",
+          "url": "https://www.unite.ai/axiom-math-releases-43-1m-line-lean-proof-of-group-classification/"
+        },
+        {
+          "outlet": "36Kr",
+          "title": "Dozens of Agents Spent 24 Days Tackling a Massive Math Community Project & Uncovered a 40-Year-Old Unnoticed Loophole",
+          "byline": null,
+          "date": "October 2026",
+          "url": "https://eu.36kr.com/en/p/4045021328675973"
+        },
+        {
+          "outlet": "The Neuron",
+          "title": "Everything That Happened in AI Today, Wednesday October 28",
+          "byline": null,
+          "date": "October 28, 2026",
+          "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-october-28-2026/"
+        },
+        {
+          "outlet": "How Machines Think",
+          "title": "AI Update: October Week 5",
+          "byline": null,
+          "date": "October 2026",
+          "url": "https://howmachinesthink.substack.com/p/ai-update-october-week-5"
+        },
+        {
+          "outlet": "HyperAI",
+          "title": "Chinese AI startup formalizes math's longest proof, open-sources 43.1M lines",
+          "byline": null,
+          "date": "October 2026",
+          "url": "https://hyper.ai/en/stories/bd1027fb42db2301ed3f8325994713f5"
+        },
+        {
+          "outlet": "John D. Cook",
+          "title": "The Unbalanced Group Theorem",
+          "byline": null,
+          "date": "October 28, 2026",
+          "url": "https://johndcook.com/blog/2026/10/28/the-unbalanced-group-theorem"
+        },
+        {
+          "outlet": "RuntimeWire",
+          "title": "Axiom publishes Lean proof artifacts to support independent reproduction",
+          "byline": null,
+          "date": "October 2026",
+          "url": "https://runtimewire.com/article/axiom-s-ceo-says-no-one-outside-the-company-has-rebuilt-its-43-million-line-proo"
         }
       ]
     }

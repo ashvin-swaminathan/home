@@ -887,6 +887,17 @@ main > .container > h1,
 
 .btn-project { background: var(--color-link); }
 
+/* X logo sits inline with the text chips, not as a 30px social button. */
+.project-links .social-link {
+  width: auto;
+  height: auto;
+  padding: 0.3em 0.55em;
+  border-radius: 4px;
+  background: var(--color-tag-bg);
+  color: var(--color-body);
+}
+.project-links .social-link:hover { background: var(--color-tag-hover); color: #000; }
+
 /* ==========================================================================
    PROJECTS PAGE
    ========================================================================== */
@@ -993,16 +1004,20 @@ main > .container > h1,
 }
 
 .project-press li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  column-gap: 1.1rem;
   padding: 0.6rem 0;
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
+.press-body { min-width: 0; }
+
 .project-press li + li { border-top: 1px solid var(--color-border-light); }
 
 .press-outlet {
-  display: inline-block;
-  min-width: 8.5rem;
+  padding-top: 0.2em;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 600;
@@ -1013,14 +1028,13 @@ main > .container > h1,
 
 .press-meta {
   display: block;
-  margin-left: 8.5rem;
   font-size: 0.82rem;
   color: var(--color-secondary);
 }
 
 @media (max-width: 640px) {
-  .press-outlet { display: block; min-width: 0; }
-  .press-meta { margin-left: 0; }
+  .project-press li { grid-template-columns: 1fr; row-gap: 0.2rem; }
+  .press-outlet { padding-top: 0; }
 }
 
 .project-sources li {

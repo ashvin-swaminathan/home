@@ -18,21 +18,16 @@
             <p class="project-tagline"><%- project.tagline %></p>
         <% } %>
         <%
-        /* Link label and display order; anything not named here still renders,
-           in its own key order, using the key as its label. */
+        /* Text-chip links, in display order. `site` is the button and `x` is
+           the logo, so neither appears here. */
         var LINK_LABELS = {
             blueprint: 'interactive blueprint',
-            proofMap:  'proof map',
-            pdf:       'blueprint pdf',
-            errata:    'errata',
-            blog:      'blog post',
-            x:         'announcement',
             github:    'github',
             zulip:     'zulip'
         };
         var linkKeys = Object.keys(LINK_LABELS).filter(function (k) { return project.links[k]; })
             .concat(Object.keys(project.links).filter(function (k) {
-                return k !== 'site' && !LINK_LABELS[k];
+                return k !== 'site' && k !== 'x' && !LINK_LABELS[k];
             }));
         %>
         <div class="project-links">
@@ -40,6 +35,9 @@
             <% linkKeys.forEach(function (k) { %>
                 <a href="<%= project.links[k] %>" class="resource-tag" target="_blank" rel="noopener"><%= LINK_LABELS[k] || k %></a>
             <% }); %>
+            <% if (project.links.x) { %>
+                <a href="<%= project.links.x %>" class="social-link" target="_blank" rel="noopener" aria-label="Announcement thread on X" title="Announcement thread on X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <% } %>
         </div>
     </header>
 
@@ -80,8 +78,10 @@
                 <% project.press.forEach(function(item) { %>
                     <li>
                         <span class="press-outlet"><%= item.outlet %></span>
-                        <a href="<%= item.url %>" target="_blank" rel="noopener"><%= item.title %></a>
-                        <span class="press-meta"><% if (item.byline) { %><%= item.byline %>, <% } %><%= item.date %></span>
+                        <div class="press-body">
+                            <a href="<%= item.url %>" target="_blank" rel="noopener"><%= item.title %></a>
+                            <span class="press-meta"><% if (item.byline) { %><%= item.byline %>, <% } %><%= item.date %></span>
+                        </div>
                     </li>
                 <% }); %>
             </ul>

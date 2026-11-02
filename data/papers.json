@@ -164,9 +164,9 @@
           ],
           "year": 2026,
           "status": "preprint",
-          "venue": "Preprint. Accompanied by a complete Lean 4 formalization (~15,000 lines).",
+          "venue": "Preprint. Accompanied by a complete Lean formalization (~15,000 lines).",
           "pages": null,
-          "abstract": "We determine the squarefree part of the scalar factor $S(n)$ that arises when the quartic invariant of the generic binary form of odd degree $2n+1$ is expressed as the discriminant of the unique quadratic covariant. The main theorem identifies $\\mathrm{sqf}(S(n))$ with an OEIS sequence: for every prime $p$ and every $n \\geq 1$, $v_p(S(n))$ is odd if and only if $p$ is an odd prime and $n+2$ is a power of $p$. The proof uses Gauss's lemma for multivariate polynomials, Kummer's carry-counting theorem, and a $p$-adic deformation argument. The theorem is accompanied by a complete Lean 4 formalization comprising approximately 15,000 lines across 25 modules, produced via an AI-assisted workflow using Claude Code (Anthropic), Codex (OpenAI), and Aristotle (Harmonic).",
+          "abstract": "We determine the squarefree part of the scalar factor $S(n)$ that arises when the quartic invariant of the generic binary form of odd degree $2n+1$ is expressed as the discriminant of the unique quadratic covariant. The main theorem identifies $\\mathrm{sqf}(S(n))$ with an OEIS sequence: for every prime $p$ and every $n \\geq 1$, $v_p(S(n))$ is odd if and only if $p$ is an odd prime and $n+2$ is a power of $p$. The proof uses Gauss's lemma for multivariate polynomials, Kummer's carry-counting theorem, and a $p$-adic deformation argument. The theorem is accompanied by a complete Lean formalization comprising approximately 15,000 lines across 25 modules, produced via an AI-assisted workflow using Claude Code (Anthropic), Codex (OpenAI), and Aristotle (Harmonic).",
           "links": {
             "arxiv": "https://arxiv.org/abs/2603.24330",
             "github": "https://github.com/ashvin-swaminathan/quartic-invariant"
@@ -174,7 +174,7 @@
           "notes": null,
           "ai": {
             "label": "AI-assisted",
-            "note": "Proof developed with Claude Code (Anthropic) and Codex (OpenAI); key arithmetic lemmas formally verified in Lean 4 using Aristotle (Harmonic)."
+            "note": "Proof developed with Claude Code (Anthropic) and Codex (OpenAI); key arithmetic lemmas formally verified in Lean using Aristotle (Harmonic)."
           }
         },
         {

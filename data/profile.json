@@ -69,7 +69,7 @@
     },
     {
       "date": "2026-08-17",
-      "text": "Bounded gaps between primes, the project I led at Axiom, is public: a complete Lean 4 formalization of the theorem that $p_{n+1}-p_n \\leq 246$ for infinitely many $n$.",
+      "text": "Bounded gaps between primes, the project I led at Axiom, is public: a complete Lean formalization of the theorem that $p_{n+1}-p_n \\leq 246$ for infinitely many $n$.",
       "detail": "primegaps.axiommath.ai",
       "link": "https://primegaps.axiommath.ai/"
     },
@@ -96,7 +96,7 @@
     },
     {
       "date": "2026-03-25",
-      "text": "New preprint: “On the quartic invariant of odd-degree binary forms”, accompanied by a complete Lean 4 formalization.",
+      "text": "New preprint: “On the quartic invariant of odd-degree binary forms”, accompanied by a complete Lean formalization.",
       "link": "https://arxiv.org/abs/2603.24330"
     },
     {
