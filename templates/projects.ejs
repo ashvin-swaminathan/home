@@ -21,9 +21,8 @@
         /* Text-chip links, in display order. `site` is the button and `x` is
            the logo, so neither appears here. */
         var LINK_LABELS = {
-            blueprint: 'interactive blueprint',
-            github:    'github',
-            zulip:     'zulip'
+            github: 'github',
+            zulip:  'zulip'
         };
         var linkKeys = Object.keys(LINK_LABELS).filter(function (k) { return project.links[k]; })
             .concat(Object.keys(project.links).filter(function (k) {
