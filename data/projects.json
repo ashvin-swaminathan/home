@@ -129,6 +129,30 @@
           "url": "https://runtimewire.com/article/axiom-s-ceo-says-no-one-outside-the-company-has-rebuilt-its-43-million-line-proo"
         }
       ]
+    },
+    {
+      "id": "stacks",
+      "title": "The Stacks Project, Formalized in Lean",
+      "shortTitle": "Stacks Project",
+      "role": "Project lead",
+      "affiliation": "Axiom Math",
+      "affiliationUrl": "https://axiommath.ai/",
+      "year": 2026,
+      "featured": false,
+      "ai": {
+        "label": "AI-assisted",
+        "note": "The Lean proofs were produced by AxiomProver agents. StacksCore is the part since checked by hand against the Stacks Project and brought up to Mathlib standards."
+      },
+      "tagline": "A Lean formalization of the Stacks Project, the open-source reference work on algebraic geometry.",
+      "summary": "Every definition, lemma, proposition and theorem in the Stacks Project carries a stable four-character tag. 15,279 of them are formalized here as Lean definitions and proofs built on Mathlib &mdash; about 15.75 million lines across 62,975 files &mdash; with Lean's kernel checking every completed proof, and each tag linked to its Lean code and its dependencies.",
+      "description": [
+        "The library comes in two tiers. <em>StacksCore</em> is code that has been checked against the Stacks Project and brought up to Mathlib standards; <em>StacksFrontier</em> is agent-written code that has not had that review yet. Lean checks every proof in both. The project takes outside contributions, and the aim is to upstream as much as is reasonable to Mathlib."
+      ],
+      "links": {
+        "site": "https://stacks.axiommath.ai/",
+        "github": "https://github.com/AxiomMath/Stacks",
+        "x": "https://x.com/axiommathai/status/2118028838517219335"
+      }
     }
   ]
 }
