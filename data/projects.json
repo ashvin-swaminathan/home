@@ -134,19 +134,19 @@
       "id": "stacks",
       "title": "The Stacks Project, Formalized in Lean",
       "shortTitle": "Stacks Project",
-      "role": "Project lead",
+      "role": "Project lead; mathematical and engineering contributor",
       "affiliation": "Axiom Math",
       "affiliationUrl": "https://axiommath.ai/",
       "year": 2026,
       "featured": false,
       "ai": {
         "label": "AI-assisted",
-        "note": "The Lean proofs were produced by AxiomProver agents. StacksCore is the part since checked by hand against the Stacks Project and brought up to Mathlib standards."
+        "note": "The Lean proofs were produced by AxiomProver agents, then reviewed and brought up to Mathlib standards."
       },
       "tagline": "A Lean formalization of the Stacks Project, the open-source reference work on algebraic geometry.",
-      "summary": "Every definition, lemma, proposition and theorem in the Stacks Project carries a stable four-character tag. 15,279 of them are formalized here as Lean definitions and proofs built on Mathlib &mdash; about 15.75 million lines across 62,975 files &mdash; with Lean's kernel checking every completed proof, and each tag linked to its Lean code and its dependencies.",
+      "summary": "The Stacks Project is the standard open-source reference on algebraic geometry, a collaboratively written work of some 7,500 pages covering commutative algebra, schemes, cohomology and the theory of algebraic stacks, with every definition, lemma, proposition and theorem carrying a stable four-character tag. The formalization runs to 663,090 Lean declarations across about 15.75 million lines, built on Mathlib, with Lean's kernel checking every completed proof and each tag linked to its Lean code and its dependencies.",
       "description": [
-        "The library comes in two tiers. <em>StacksCore</em> is code that has been checked against the Stacks Project and brought up to Mathlib standards; <em>StacksFrontier</em> is agent-written code that has not had that review yet. Lean checks every proof in both. The project takes outside contributions, and the aim is to upstream as much as is reasonable to Mathlib."
+        "The emphasis throughout is on code quality: definitions and statements are written to Mathlib standards and at the generality their consumers need, so that the library is something to build on and to upstream from, rather than a pile of individually verified theorems."
       ],
       "links": {
         "site": "https://stacks.axiommath.ai/",
