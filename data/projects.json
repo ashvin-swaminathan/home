@@ -152,6 +152,37 @@
         "site": "https://stacks.axiommath.ai/",
         "github": "https://github.com/AxiomMath/Stacks",
         "x": "https://x.com/axiommathai/status/2118028838517219335"
+      },
+      "press": [
+        {
+          "outlet": "TechCrunch",
+          "title": "Axiom Math wants to keep AI slop out of mathematics",
+          "byline": "Aditya Mehta",
+          "date": "Nov 5, 2026",
+          "url": "https://techcrunch.com/2026/11/05/axiom-math-wants-to-keep-ai-slop-out-of-mathematics/"
+        }
+      ]
+    },
+    {
+      "id": "weil",
+      "title": "The Weil Conjectures, Formalized in Lean",
+      "shortTitle": "Weil conjectures",
+      "role": "Mathematical and engineering contributor",
+      "affiliation": "Axiom Math",
+      "affiliationUrl": "https://axiommath.ai/",
+      "year": 2026,
+      "featured": false,
+      "ai": {
+        "label": "AI-assisted",
+        "note": "The Lean proofs were produced by AxiomProver agents, and Lean's kernel checks every one of them."
+      },
+      "tagline": "A Lean formalization of the proof of the Weil conjectures, following Freitag and Kiehl.",
+      "summary": "For a smooth proper variety over a finite field, all four conjectures are proved: rationality of the zeta function, the functional equation, the Riemann hypothesis &mdash; Deligne's theorem &mdash; and the identification of $\\deg P_\\nu$ with the Betti numbers of a complex lift. The library is built on Mathlib and on the Stacks Project in Lean, with no <code>sorry</code>, no <code>native_decide</code> and no added axiom: every proof rests on <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code> alone.",
+      "description": [
+        "The development follows Freitag and Kiehl's <em>Étale Cohomology and the Weil Conjecture</em> across some 980 modules, each declaration tagged with the item of the book it formalizes, and it also proves verbatim the Mathlib-only statement of the <code>weil_conjectures</code> problem from lean-eval."
+      ],
+      "links": {
+        "github": "https://github.com/AxiomMath/Weil"
       }
     }
   ]
