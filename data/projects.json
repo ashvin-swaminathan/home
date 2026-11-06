@@ -180,7 +180,7 @@
       "summary": "Deligne's theorem is about as deep as algebraic geometry gets, and the étale cohomology it runs on is exactly what the Stacks Project in Lean supplies. All four conjectures &mdash; rationality, the functional equation, the Riemann hypothesis and the Betti-number statement &mdash; are proved in 213,000 lines of new Lean, following Freitag and Kiehl.",
       "description": [
         "The point is reuse. The library imports 730 modules of the Stacks formalization against 557 of Mathlib, more than half its files depend on Stacks directly, and it cites 283 Stacks tags; Deligne's theorem itself falls out of the Stacks weight bound at Tag 03VH rather than being proved again.",
-        "Quality carries over with the code. The library takes the Stacks conventions &mdash; the same étale site, the same $\\ell$-adic sheaves &mdash; pins the same Mathlib commit, and holds the same standard: no <code>sorry</code>, no <code>native_decide</code>, no added axiom."
+        "Quality carries over with the code. The library takes the Stacks conventions &mdash; the same étale site, the same $\\ell$-adic sheaves &mdash; pins the same Mathlib commit, and is written to the same standard."
       ],
       "links": {
         "github": "https://github.com/AxiomMath/Weil"
