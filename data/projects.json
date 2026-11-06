@@ -176,10 +176,11 @@
         "label": "AI-assisted",
         "note": "The Lean proofs were produced by AxiomProver agents, and Lean's kernel checks every one of them."
       },
-      "tagline": "A Lean formalization of the proof of the Weil conjectures, following Freitag and Kiehl.",
-      "summary": "For a smooth proper variety over a finite field, all four conjectures are proved: rationality of the zeta function, the functional equation, the Riemann hypothesis &mdash; Deligne's theorem &mdash; and the identification of $\\deg P_\\nu$ with the Betti numbers of a complex lift. The library is built on Mathlib and on the Stacks Project in Lean, with no <code>sorry</code>, no <code>native_decide</code> and no added axiom: every proof rests on <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code> alone.",
+      "tagline": "The Weil conjectures proved in Lean on top of the Stacks Project formalization, at a seventieth of its size.",
+      "summary": "Deligne's theorem is about as deep as algebraic geometry gets, and the étale cohomology it runs on is exactly what the Stacks Project in Lean supplies. All four conjectures &mdash; rationality, the functional equation, the Riemann hypothesis and the Betti-number statement &mdash; are proved in 213,000 lines of new Lean, following Freitag and Kiehl.",
       "description": [
-        "The development follows Freitag and Kiehl's <em>Étale Cohomology and the Weil Conjecture</em> across some 980 modules, each declaration tagged with the item of the book it formalizes, and it also proves verbatim the Mathlib-only statement of the <code>weil_conjectures</code> problem from lean-eval."
+        "The point is reuse. The library imports 730 modules of the Stacks formalization against 557 of Mathlib, more than half its files depend on Stacks directly, and it cites 283 Stacks tags; Deligne's theorem itself falls out of the Stacks weight bound at Tag 03VH rather than being proved again.",
+        "Quality carries over with the code. The library takes the Stacks conventions &mdash; the same étale site, the same $\\ell$-adic sheaves &mdash; pins the same Mathlib commit, and holds the same standard: no <code>sorry</code>, no <code>native_decide</code>, no added axiom."
       ],
       "links": {
         "github": "https://github.com/AxiomMath/Weil"
