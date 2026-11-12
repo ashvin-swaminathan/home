@@ -197,6 +197,7 @@
         "Quality carries over with the code. The library takes the Stacks conventions &mdash; the same étale site, the same $\\ell$-adic sheaves &mdash; pins the same Mathlib commit, and is written to the same standard."
       ],
       "links": {
+        "site": "https://axiommath.ai/research/the-weil-conjectures-formalized-in-lean/",
         "github": "https://github.com/AxiomMath/Weil"
       },
       "press": [
@@ -242,6 +243,30 @@
           "url": "https://www.quantamagazine.org/update/169054/"
         }
       ]
+    },
+    {
+      "id": "mordell",
+      "title": "The Mordell Conjecture, Formalized in Lean",
+      "shortTitle": "Mordell conjecture",
+      "role": "Project lead; mathematical and engineering contributor",
+      "affiliation": "Axiom Math",
+      "affiliationUrl": "https://axiommath.ai/",
+      "year": 2026,
+      "featured": false,
+      "ai": {
+        "label": "AI-assisted",
+        "note": "The Lean proofs were produced by AxiomProver agents, and Lean's kernel checks every one of them."
+      },
+      "tagline": "Faltings' theorem in Lean: a curve of genus at least two over a number field has only finitely many rational points.",
+      "summary": "The first complete machine-checked proof of the Mordell conjecture, following Bombieri's rendering of Vojta's proof. The Stacks Project formalization supplies the schemes, curves, Picard groups, cohomology and abelian varieties; heights on projective space, the Mordell&ndash;Weil theorem, the Jacobian and its theta divisor, the Néron&ndash;Tate pairing and Bombieri's estimates are new, about 124,000 lines of Lean.",
+      "description": [
+        "Stacks carries the weight. The library imports 336 modules of the Stacks formalization against 26 of Mathlib, and 194 of its 432 files depend on Stacks directly &mdash; the arithmetic is what had to be built, not the algebraic geometry under it.",
+        "The statement is checked against someone else's. LeanEval's <em>faltings</em> problem defines places, adeles and the genus of a function field from Mathlib alone; that statement is proved verbatim, with its own definitions, and the library's genus is shown to agree with it. The theorem is also stated scheme-theoretically, for a smooth projective geometrically integral curve of genus at least two over a number field."
+      ],
+      "links": {
+        "site": "https://axiommath.ai/research/faltings-theorem-formalized/",
+        "github": "https://github.com/AxiomMath/Mordell"
+      }
     }
   ]
 }

@@ -28,6 +28,12 @@
   },
   "highlights": [
     {
+      "date": "2026-11-12",
+      "text": "Axiom's Lean formalization of the Mordell conjecture is public.",
+      "detail": "Project lead; mathematical and engineering contributor",
+      "link": "https://axiommath.ai/research/faltings-theorem-formalized/"
+    },
+    {
       "date": "2026-11-10",
       "text": "Axiom's Lean formalization of <em>Introduction to Cluster Algebras</em>, Chapters 1–7, is public.",
       "detail": "Mathematical and engineering contributor",
