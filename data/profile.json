@@ -28,6 +28,18 @@
   },
   "highlights": [
     {
+      "date": "2026-11-10",
+      "text": "Axiom's Lean formalization of <em>Introduction to Cluster Algebras</em>, Chapters 1–7, is public.",
+      "detail": "Mathematical and engineering contributor",
+      "link": "https://clusteralgebras.axiommath.ai/"
+    },
+    {
+      "date": "2026-11-06",
+      "text": "Axiom's Lean formalization of the Weil conjectures is public.",
+      "detail": "Mathematical and engineering contributor",
+      "link": "https://axiommath.ai/research/the-weil-conjectures-formalized-in-lean/"
+    },
+    {
       "date": "2026-11-04",
       "text": "Axiom's Lean formalization of the Stacks Project is public.",
       "detail": "Project lead; mathematical and engineering contributor",
